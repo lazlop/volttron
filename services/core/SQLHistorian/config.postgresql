@@ -2,11 +2,12 @@
     "connection": {
         "type": "postgresql",
         "params": {
-            "dbname": "test_historian",
+            "dbname": "tutorial",
             "host": "127.0.0.1",
             "port": 5432,
-            "user": "historian",
-            "password": "historian"
+            "user": "postgres",
+            "password": "postgres_t3st",
+            "timescale_dialect": true
         }
     }
 }
