@@ -192,7 +192,7 @@ def test_current_fail(weather, query_agent, locations):
 
 @pytest.mark.weather2
 @pytest.mark.parametrize("locations", [
-    [{"lat": 39.7555, "long": -105.2211}],
+    [{"lat": 39.0693, "long": -94.6716}],
     [{"lat": 39.0693, "long": -94.6716}],
     [{"wfo": 'BOU', 'x': 54, 'y': 62}],
     [{"wfo": 'BOU', 'x': 54, 'y': 62}, {"lat": 39.7555, "long": -105.2211}],
