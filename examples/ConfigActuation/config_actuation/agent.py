@@ -65,9 +65,9 @@ class ConfigActuation(Agent):
     def configure(self, config_name, action, contents):
         device = config_name
 
-        start = str(datetime.datetime.now())
-        end = str(datetime.datetime.now() + datetime.timedelta(minutes=1))
-        msg = [[device, start, end]]
+        start = utils.get_aware_utc_now()
+        end = utils.get_aware_utc_now() + datetime.timedelta(minutes=1)
+        msg = [[device, str(start), str(end)]]
 
         try:
             result = self.vip.rpc.call('platform.actuator',
@@ -89,12 +89,22 @@ class ConfigActuation(Agent):
         for point, value in contents.items():
             full_topic = os.path.join(device, point)
             topics_values.append((full_topic, value))
-
+        print(full_topic)
+        try:
+            result = self.vip.rpc.call('platform.actuator',
+                                       'get_point',
+                                       full_topic).get(timeout=10)
+            print("HEY LOOK AT THIS",result)
+            default = []
+            default.append((full_topic,result))
+        except Exception as e:
+            print(e)
         try:
             result = self.vip.rpc.call('platform.actuator',
                                        'set_multiple_points',
                                        REQUESTER_ID,
                                        topics_values).get(timeout=10)
+            self.core.schedule(end,self.set,(default))
         except Exception as e:
             print(e)
 
@@ -102,6 +112,12 @@ class ConfigActuation(Agent):
                           'request_cancel_schedule',
                           REQUESTER_ID,
                           TASK_ID).get()
+    def set(self,default):
+            print("NOW!")
+            result = self.vip.rpc.call('platform.actuator',
+                                       'set_multiple_points',
+                                       REQUESTER_ID,
+                                       default).get(timeout=10)
 
 
 def main(argv=sys.argv):
