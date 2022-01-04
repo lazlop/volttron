@@ -6,7 +6,7 @@
             "host": "lbnl-btm-drl.lbl.gov",
             "port": 9003,
             "user": "hil_flexlab",
-            "password": "h!l2021da+a$tore",
+            "password": "hardware2021da+a$tore",
             "timescale_dialect":true
         }
     }
