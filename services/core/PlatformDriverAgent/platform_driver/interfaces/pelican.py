@@ -88,7 +88,7 @@ class Interface(BasicRevert, BaseInterface):
                 default_value = None
             type_name = regDef.get("Type", 'string')
             # Make sure the type specified in the configuration is mapped to an actual Python data type
-            reg_type = type_mapping.get(type_name, str)
+            pytype = type_mapping.get(type_name, str)
             # Create an instance of the register class based on the configuration values
             payload = self.payload_dict
             payload['value'] = point_name
@@ -98,7 +98,7 @@ class Interface(BasicRevert, BaseInterface):
                 read_only,
                 point_name,
                 units,
-                reg_type,
+                pytype,
                 default_value=default_value,
                 description=description)
             # Update the register's value if there is a default value provided
@@ -138,29 +138,38 @@ class Interface(BasicRevert, BaseInterface):
         :return: Results dictionary of the form {<register point name>: <register value>, ...}
         """
         # Get all of the registers that are configured for this device, whether they can be written to or not
-        payload= self.payload_dict
-        values = ''
-        for index, regDef in enumerate(self.registry_config_str):
-            values = values + ';' + regDef.get("Point Name")
-        payload['value'] = values
-        payload['request'] = 'get'
-        print(payload)
-        r = requests.get(self.url,payload)
+        # payload= self.payload_dict
+        # values = ''
+        # for index, regDef in enumerate(self.registry_config_str):
+        #     values = values + ';' + regDef.get("Point Name")
+        # payload['value'] = values
+        # payload['request'] = 'get'
+        # print(payload)
+        # r = requests.get(self.url,payload)
         # Return the results
-        return dict(xmltodict.parse(r.content).get('result').get('Thermostat'))
-        
+        #return dict(xmltodict.parse(r.content).get('result').get('Thermostat'))
+        result = {}
+        # Get all of the registers that are configured for this device, whether they can be written to or not
+        read_registers = self.get_registers_by_type("byte", True)
+        write_registers = self.get_registers_by_type("byte", False)
+        # For each register, create an entry in the results dictionary with its name as the key and state as the value
+        for register in read_registers + write_registers:
+            result[register.point_name] = register.get_state()
+        # Return the results
+        return result
 
 class PelRegister(BaseRegister):
     """
     Register class for reading and writing to specific lines of a CSV file
     """
-    def __init__(self, url, payload, read_only, pointName, units, reg_type, description = '',
+    def __init__(self, url, payload, read_only, pointName, units, pytype, description = '',
                  default_value=None):
         # set inherited values
         super(PelRegister, self).__init__("byte", read_only, pointName, units,
                                           description=description)
         self.payload = payload
         self.url = url
+        self.pytype = pytype
     def get_state(self):
         """
         Iterate over the CSV, find the row where the Point Name matches the name of this register
@@ -171,17 +180,30 @@ class PelRegister(BaseRegister):
         payload['request'] = 'get'
         print(payload)
         r = requests.get(self.url, self.payload)
-        return xmltodict.parse(r.content).get('result').get('Thermostat').get(self.point_name)
+        print(xmltodict.parse(r.content))
+        value = xmltodict.parse(r.content).get('result').get('Thermostat').get(self.point_name)
+        return self.set_type(self.pytype, value)
+
     def set_state(self, value):
         """
         Set the value of the row this register represents in the CSV file
         :param value: the value to set in the row
         :return: The new value of the row
         """
-        
         payload = self.payload
         payload['value'] = self.point_name + ':' + str(value)
         payload['request'] = 'set'
         print(payload)
         r = requests.get(self.url, self.payload)
         return dict(xmltodict.parse(r.content))
+
+    def set_type(self,pytype,value):
+        if pytype is int:
+            return int(value)
+        elif pytype is float:
+            return float(value)
+        elif pytype is bool:
+            return bool(value)
+        elif pytype is str:
+            return str(value)
+
