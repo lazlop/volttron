@@ -1,5 +1,4 @@
 import os
-import sys
 from platform_driver.interfaces import BaseInterface, BaseRegister, BasicRevert
 from csv import DictReader, DictWriter
 import logging
@@ -78,7 +77,7 @@ class C1ARegister(BaseRegister):
                 else:
                     # Copy values which don't correspond to our register as they are
                     points.append(point)
-        print(os.path.abspath(self.csv_path))
+
         if not found:
             # We never encountered a row that matches our register
             raise RuntimeError("Point {} not found on CSV Device".format(self.point_name))
@@ -88,7 +87,6 @@ class C1ARegister(BaseRegister):
                 writer = DictWriter(csv_device, fieldnames=field_names)
                 writer.writeheader()
                 writer.writerows([dict(row) for row in points])
-                csv_device.flush()
         # Let the Interface know that we succeeded in updating the point
         return self.get_state()
 
@@ -114,22 +112,20 @@ class Interface(BasicRevert, BaseInterface):
         self.csv_path = config_dict.get("csv_path", "csv_device.csv")
         # If the configured path doesn't exist, create the CSV "device" file using the global defaults
         # so that we have something to test against
-        print(sys.path)
-        if True:  # not os.path.isfile(self.csv_path):
+        if True  # not os.path.isfile(self.csv_path
             _log.info("Creating csv 'device'")
-            CSV_DEFAULT = []
             with open(self.csv_path, "w+") as csv_device:
                 writer = DictWriter(csv_device, fieldnames=CSV_FIELDNAMES)
                 writer.writeheader()
-                for index, regDef in enumerate(registry_config_str):
+                CSV_DEFAULT = []
+                for index, regDef in enumerate(config_dict):
                     point = {"Point Name": regDef.get('Volttron Point Name'),
                              "Point Value": 0}
-                    CSV_DEFAULT.append(point)
+                    CSV_DEFAULT = CSVDEFAULT.append(point)
                 writer.writerows(CSV_DEFAULT)
-                csv_device.flush()
         # Then parse the registry configuration to create our registers
         self.parse_config(registry_config_str)
-        print(os.path.abspath(self.csv_path))
+
     def get_point(self, point_name):
         """
         Read the value of the register which matches the passed point name
@@ -151,7 +147,6 @@ class Interface(BasicRevert, BaseInterface):
         # Determine which register instance is configured for the point we desire
         register = self.get_register_by_name(point_name)
         # We don't want to try to overwrite "write-protected" data so throw an error
-        print(register.read_only)
         if register.read_only:
             raise IOError("Trying to write to a point configured read only: " + point_name)
         # set the state, and return the new value
