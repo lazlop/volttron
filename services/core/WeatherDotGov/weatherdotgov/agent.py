@@ -82,6 +82,8 @@ def weather_agent(config_path, **kwargs):
         config_dict = utils.load_config(config_path)
     _log.debug("config_dict before init: {}".format(config_dict))
     utils.update_kwargs_with_config(kwargs, config_dict)
+    _log.error("SETTING UP")
+    print("setting up!")
     return WeatherDotGovAgent(**kwargs)
 
 
@@ -93,6 +95,8 @@ class WeatherDotGovAgent(BaseWeatherAgent):
 
     def __init__(self, **kwargs):
         super(WeatherDotGovAgent, self).__init__(**kwargs)
+        _log.debug("SETTING UP")
+        print("setting up!")
         self.headers = {"Accept": "application/json",
                         "Accept-Language": "en-US"
                         }
@@ -211,6 +215,8 @@ class WeatherDotGovAgent(BaseWeatherAgent):
         :return: boolean indicating whether the location/service combination
         is valid for the weather api.
         """
+        _log.debug("SETTING UP: VALIDATEING LOC")
+        print("setting up! VALIDATING LOC")
         if service_name == "get_current_weather":
             return self.validate_location_formats(("station",), location)
         else:
