@@ -51,7 +51,7 @@ import sys
 
 import gevent
 from volttron.platform.agent.utils import get_utc_seconds_from_epoch
-from volttron.platform.vip.agent import Agent, Core, PubSub, compat
+from volttron.platform.vip.agent import Agent, Core, PubSub, compat, RPC
 from volttron.platform.agent import utils
 from volttron.platform.messaging import topics
 from volttron.platform.messaging.health import ALERT_KEY, STATUS_BAD, Status, \
@@ -280,6 +280,7 @@ class EmailerAgent(Agent):
                 self.vip.pubsub.publish("pubsub", "record/sent_email",
                                         message=sent_email_record)
 
+    @RPC.export
     def send_email(self, from_address, to_addresses, subject, message):
         """
         RPC Method allowing a platform to send an email address.
