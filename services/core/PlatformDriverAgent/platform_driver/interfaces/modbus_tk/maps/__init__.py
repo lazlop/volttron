@@ -71,7 +71,8 @@ transform_map = dict(
     mod10k64=helpers.mod10k64,
     mod10k48=helpers.mod10k48,
     scale_reg=helpers.scale_reg,
-    scale_reg_pow_10=helpers.scale_reg_pow_10
+    scale_reg_pow_10=helpers.scale_reg_pow_10,
+    scale_int16_between = helpers.scale_int16_between
 )
 
 table_map = dict(
@@ -169,7 +170,7 @@ class CSVRegister:
 
         try:
             if csv_transform:
-                match = re.match(r'(\w+)\(([a-zA-z0-9.]*)\)', csv_transform)
+                match = re.match(r'(\w+)\(([a-zA-z0-9.-]*)\)', csv_transform)
                 func = match.group(1)
                 arg = match.group(2)
 

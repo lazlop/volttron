@@ -1,0 +1,5 @@
+address,device_id,max_apdu_length,segmentation_supported,vendor_id
+192.168.0.112,1,1476,noSegmentation,245
+192.168.0.100,0,1476,noSegmentation,245
+2002:2,1610102,480,noSegmentation,16
+2001:1,1610101,480,noSegmentation,16
