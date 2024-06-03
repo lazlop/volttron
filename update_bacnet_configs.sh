@@ -3,7 +3,7 @@ for f in "$dir"/*; do
  # echo "$f"
   config_name="${f##*/}"
  # echo "$config_name"
-  vctl config store platform.driver devices/wcec/$config_name $f
+  vctl config store platform.driver devices/aql/$config_name $f
 done
 
 dir="configs/registry_configs"

@@ -1,0 +1,809 @@
+Reference Point Name,Volttron Point Name,Units,Unit Details,BACnet Object Type,Property,Writable,Index,Write Priority,Notes
+cch_max_t,cch_max_t,degreesFahrenheit,,analogValue,presentValue,FALSE,2,,CCH Max Temperature
+dmpr_cmd,dmpr_cmd,percent,,analogValue,presentValue,FALSE,4,,Econo Commanded Position
+mp_uspd2,mp_uspd2,percent,,analogValue,presentValue,FALSE,5,,
+sf_vfd_feedback,sf_vfd_feedback,percent,,analogValue,presentValue,FALSE,6,,Commanded IDF Speed
+ucsp,ucsp,degreesFahrenheit,,analogValue,presentValue,FALSE,8,,Unoccupied Cool Setpoint
+idf_sa_temp,idf_sa_temp,degreesFahrenheit,,analogValue,presentValue,FALSE,10,,Fan Supply Air Temp
+iaq_20ma,iaq_20ma,partsPerMillion,,analogValue,presentValue,FALSE,12,,IAQ Sensor Value at 20mA
+iaq_4ma,iaq_4ma,partsPerMillion,,analogValue,presentValue,FALSE,13,,IAQ Sensor Value at 4mA
+alarm_info,alarm_info,noUnits,,analogValue,presentValue,FALSE,14,,Alarm display info
+mp_spd2,mp_spd2,percent,,analogValue,presentValue,FALSE,15,,Min Pos Curve - Speed 2
+oarh_4ma,oarh_4ma,percent,,analogValue,presentValue,FALSE,21,,OARH Sensor Value at 4mA
+oarh_20ma,oarh_20ma,percent,,analogValue,presentValue,FALSE,22,,OARH Sensor Val. at 20mA
+odf1_rpm,odf1_rpm,revolutionsPerMinute,,analogValue,presentValue,FALSE,26,,ODF Speed Signal Output1
+odf2_rpm,odf2_rpm,revolutionsPerMinute,,analogValue,presentValue,FALSE,27,,ODF Speed Signal Output2
+odf3_rpm,odf3_rpm,revolutionsPerMinute,,analogValue,presentValue,FALSE,28,,ODF Speed Signal Output3
+rarh,rarh,percent,,analogValue,presentValue,FALSE,30,,RA Relative Humidity
+rarh_4ma,rarh_4ma,percent,,analogValue,presentValue,FALSE,31,,RARH Sensor Value at 4mA
+rarh_20ma,rarh_20ma,percent,,analogValue,presentValue,FALSE,32,,RARH Sensor Value @ 20mA
+req_fan_spd,req_fan_spd,percent,,analogValue,presentValue,FALSE,35,,Requested IDF Speed
+speed_max,speed_max,percent,,analogValue,presentValue,FALSE,36,,IDF Maximum Fan Speed
+sys_demand,sys_demand,noUnits,,analogValue,presentValue,FALSE,37,,System Demand
+prime_v,prime_v,noUnits,,analogValue,presentValue,FALSE,39,,Value of Prime variable
+cl_sel_timeguard,cl_sel_timeguard,seconds,,analogValue,presentValue,FALSE,40,,Cool Mode Select T.guard
+max_enth,max_enth,btusPerPound,,analogValue,presentValue,FALSE,44,,Max Enthalpy OA limit
+ht_sel_timeguard,ht_sel_timeguard,seconds,,analogValue,presentValue,FALSE,45,,Heat Mode Select T.guard
+acthstgs,acthstgs,noUnits,,analogValue,presentValue,FALSE,46,,Actual Heat Stage Active
+hour_a1,hour_a1,hours,,analogValue,presentValue,FALSE,47,,Compressor A1 Run Hours
+hour_a2,hour_a2,hours,,analogValue,presentValue,FALSE,48,,Compressor A2 Run Hours
+hour_alarm,hour_alarm,hours,,analogValue,presentValue,FALSE,49,,Alarm Relay Run Hours
+timgd_h2,timgd_h2,seconds,,analogValue,presentValue,FALSE,50,,Heat Stage 2 Timeguard
+hour_damp,hour_damp,hours,,analogValue,presentValue,FALSE,51,,Econ Damper Run Hours
+hour_full_ld,hour_full_ld,hours,,analogValue,presentValue,FALSE,52,,Unit Full Load Run Hours
+hour_free_cl,hour_free_cl,hours,,analogValue,presentValue,FALSE,53,,Free Cooling Run Hours
+hour_ht_1,hour_ht_1,hours,,analogValue,presentValue,FALSE,54,,Heat Stage 1 Run Hours
+hour_ht_2,hour_ht_2,hours,,analogValue,presentValue,FALSE,55,,Heat Stage 2 Run Hours
+hour_idf,hour_idf,hours,,analogValue,presentValue,FALSE,56,,Indoor Fan Run Hours
+hour_max_fan,hour_max_fan,hours,,analogValue,presentValue,FALSE,57,,Max Fan Speed Run Hours
+hour_pe_1,hour_pe_1,hours,,analogValue,presentValue,FALSE,61,,Power Exhaust1 Run Hours
+hour_pe_2,hour_pe_2,hours,,analogValue,presentValue,FALSE,62,,Power Exhaust2 Run Hours
+hour_serv_tst,hour_serv_tst,hours,,analogValue,presentValue,FALSE,63,,Service Test Run Hours
+hour_vent_fan,hour_vent_fan,hours,,analogValue,presentValue,FALSE,64,,Vent IDF Run Hours
+max_free_cl_temp,max_free_cl_temp,degreesFahrenheit,,analogValue,presentValue,FALSE,67,,Free Cooling Max OAT
+min_free_cl_temp,min_free_cl_temp,degreesFahrenheit,,analogValue,presentValue,FALSE,71,,Free Cooling Min Temp
+oa_enth,oa_enth,btusPerPound,,analogValue,presentValue,FALSE,76,,Outdoor Air Enthalpy
+oa_ra_diff_enth,oa_ra_diff_enth,btusPerPound,,analogValue,presentValue,FALSE,77,,Enthalpy Cross Deadband
+oa_ra_diff_temp,oa_ra_diff_temp,degreesFahrenheit,,analogValue,presentValue,FALSE,78,,Diff. Dry Bulb Deadband
+odf_out_speed,odf_out_speed,revolutionsPerMinute,,analogValue,presentValue,FALSE,87,,Commanded ODF Speed
+ra_enth,ra_enth,btusPerPound,,analogValue,presentValue,FALSE,95,,Return Air Enthalpy
+rs_a1,rs_a1,noUnits,,analogValue,presentValue,FALSE,97,,Comp A1 Resets Count
+rs_a2,rs_a2,noUnits,,analogValue,presentValue,FALSE,98,,Comp A2 Resets Count
+rs_alm,rs_alm,noUnits,,analogValue,presentValue,FALSE,99,,Alarm Relay Resets Count
+rs_alrst,rs_alrst,noUnits,,analogValue,presentValue,FALSE,100,,Alarm Reset Resets Count
+rs_damp,rs_damp,noUnits,,analogValue,presentValue,FALSE,102,,Econ Damper Resets Count
+rs_fload,rs_fload,noUnits,,analogValue,presentValue,FALSE,103,,Full Load Resets Count
+rs_freec,rs_freec,noUnits,,analogValue,presentValue,FALSE,104,,Free Cooling Reset Count
+ufctime,ufctime,minutes,,analogValue,presentValue,FALSE,105,,UFC PreOcc Time
+rs_htr_1,rs_htr_1,noUnits,,analogValue,presentValue,FALSE,106,,Heat Stage 1 Reset Count
+rs_htr_2,rs_htr_2,noUnits,,analogValue,presentValue,FALSE,107,,Heat Stage 2 Reset Count
+rs_idf,rs_idf,noUnits,,analogValue,presentValue,FALSE,108,,Indoor Fan Reset Count
+rs_maxf,rs_maxf,noUnits,,analogValue,presentValue,FALSE,109,,Max IDF Spd Resets Count
+rs_pe_1,rs_pe_1,noUnits,,analogValue,presentValue,FALSE,113,,P.Exhaust 1 Resets Count
+rs_pe_2,rs_pe_2,noUnits,,analogValue,presentValue,FALSE,114,,P.Exhaust 2 Resets Count
+rs_por,rs_por,noUnits,,analogValue,presentValue,FALSE,115,,Power Cycle Resets Count
+rs_stest,rs_stest,noUnits,,analogValue,presentValue,FALSE,116,,Service Test Reset Count
+rs_ventf,rs_ventf,noUnits,,analogValue,presentValue,FALSE,117,,Vent IDF Resets Count
+s_damper,s_damper,percent,,analogValue,presentValue,FALSE,118,,Economizer Position Test
+s_idfspd,s_idfspd,percent,,analogValue,presentValue,FALSE,119,,Indoor Fan Speed Test
+sdp_a,sdp_a,poundsForcePerSquareInch,,analogValue,presentValue,FALSE,124,,Cir.A Discharge Pressure
+ssp_a,ssp_a,poundsForcePerSquareInch,,analogValue,presentValue,FALSE,131,,Cir.A Suction Pressure
+st_a1,st_a1,noUnits,,analogValue,presentValue,FALSE,134,,Compressor A1 Starts
+st_a2,st_a2,noUnits,,analogValue,presentValue,FALSE,135,,Compressor A2 Starts
+st_alm,st_alm,noUnits,,analogValue,presentValue,FALSE,136,,Alarm Relay Starts
+st_alrst,st_alrst,noUnits,,analogValue,presentValue,FALSE,137,,Alarm Reset Counts
+mp_uspd3,mp_uspd3,percent,,analogValue,presentValue,FALSE,138,,
+st_damp,st_damp,noUnits,,analogValue,presentValue,FALSE,139,,Economizer Damper Starts
+st_fload,st_fload,noUnits,,analogValue,presentValue,FALSE,140,,Unit Full Load Starts
+st_freec,st_freec,noUnits,,analogValue,presentValue,FALSE,141,,Free Cooling Starts
+st_htr_1,st_htr_1,noUnits,,analogValue,presentValue,FALSE,142,,Heat Stage 1 Starts
+st_htr_2,st_htr_2,noUnits,,analogValue,presentValue,FALSE,143,,Heat Stage 2 Starts
+st_idf,st_idf,noUnits,,analogValue,presentValue,FALSE,144,,Indoor Fan Starts
+st_maxf,st_maxf,noUnits,,analogValue,presentValue,FALSE,145,,Max IDF Speed Starts
+st_pe_1,st_pe_1,noUnits,,analogValue,presentValue,FALSE,148,,Power Exhaust 1 Starts
+st_pe_2,st_pe_2,noUnits,,analogValue,presentValue,FALSE,149,,Power Exhaust 2 Starts
+st_por,st_por,noUnits,,analogValue,presentValue,FALSE,150,,Power Cycle Counts
+st_stest,st_stest,noUnits,,analogValue,presentValue,FALSE,151,,Service Test Starts
+st_ventf,st_ventf,noUnits,,analogValue,presentValue,FALSE,152,,Ventilation Fan Starts
+startdly,startdly,seconds,,analogValue,presentValue,FALSE,153,,Unit Startup Delay
+timgd_a2,timgd_a2,seconds,,analogValue,presentValue,FALSE,157,,Compressor A2 Timeguard
+altitude,altitude,noUnits,,analogValue,presentValue,FALSE,159,,Altitude in Feet
+barp,barp,inchesOfMercury,,analogValue,presentValue,FALSE,161,,Barometric Pressure
+timgd_a1,timgd_a1,seconds,,analogValue,presentValue,FALSE,162,,Compressor A1 Timeguard
+temp_eff,temp_eff,degreesFahrenheit,,analogValue,presentValue,FALSE,163,,Effective Demand Temp
+timg_ald,timg_ald,seconds,,analogValue,presentValue,FALSE,164,,cmp Loader Timeguard
+brts_adj,brts_adj,noUnits,,analogValue,presentValue,FALSE,165,,Brightness Adjustment
+cntr_adj,cntr_adj,noUnits,,analogValue,presentValue,FALSE,167,,Contrast Adjustment
+fw_bldtm,fw_bldtm,noUnits,,analogValue,presentValue,FALSE,169,,Software Build Time
+language,language,noUnits,,analogValue,presentValue,FALSE,172,,Display Language Select
+timgd_h1,timgd_h1,seconds,,analogValue,presentValue,FALSE,173,,Heat Stage 1 Timeguard
+mintiloc,mintiloc,minutes,,analogValue,presentValue,FALSE,175,,Mins until next occupied
+nxtoctim,nxtoctim,minutes,,analogValue,presentValue,FALSE,176,,Next Occupied Time
+nxtuntim,nxtuntim,minutes,,analogValue,presentValue,FALSE,177,,Next Unoccupied Time
+uhsp,uhsp,degreesFahrenheit,,analogValue,presentValue,FALSE,178,,Unoccupied Heat Setpoint
+otl_cfg,otl_cfg,hours,,analogValue,presentValue,FALSE,179,,Timed Override Duration
+ovr_ext,ovr_ext,minutes,,analogValue,presentValue,FALSE,180,,Timed Override Hours
+password,password,noUnits,,analogValue,presentValue,FALSE,181,,User Password
+prvuntim,prvuntim,minutes,,analogValue,presentValue,FALSE,182,,Previous Unoccupied Time
+resetdev,resetdev,noUnits,,analogValue,presentValue,FALSE,184,,Reset Device
+dampmax,dampmax,percent,,analogValue,presentValue,FALSE,185,,Econ Max Damper Position
+tdmd_tg2,tdmd_tg2,seconds,,analogValue,presentValue,FALSE,186,,Space Demand Time Guard2
+tdmd_tg3,tdmd_tg3,minutes,,analogValue,presentValue,FALSE,187,,Space Demand Time Guard3
+bac_id,bac_id,noUnits,,analogValue,presentValue,FALSE,188,,BACnet ID Number
+bac_mac,bac_mac,noUnits,,analogValue,presentValue,FALSE,189,,BACnet Device Macaddress
+utc_ofst,utc_ofst,minutes,,analogValue,presentValue,FALSE,191,,Local Std Time offset
+a1strike,a1strike,noUnits,,analogValue,presentValue,FALSE,192,,Compressor A1 strikes
+a2strike,a2strike,noUnits,,analogValue,presentValue,FALSE,193,,Compressor A2 Strikes
+actcstgs,actcstgs,noUnits,,analogValue,presentValue,FALSE,194,,Actual Cool Stage Active
+aq_diff,aq_diff,partsPerMillion,,analogValue,presentValue,FALSE,195,,Differential Air Quality
+aq_pos1,aq_pos1,percent,,analogValue,presentValue,FALSE,196,,IAQ DCV Curve - Pos 1
+aq_pos2,aq_pos2,percent,,analogValue,presentValue,FALSE,197,,IAQ DCV Curve - Pos 2
+aq_pos3,aq_pos3,percent,,analogValue,presentValue,FALSE,198,,IAQ DCV Curve - Pos 3
+aq_spd1,aq_spd1,percent,,analogValue,presentValue,FALSE,199,,IAQ DCV Curve - Speed 1
+aq_spd2,aq_spd2,percent,,analogValue,presentValue,FALSE,200,,IAQ DCV Curve - Speed 2
+aq_spd3,aq_spd3,percent,,analogValue,presentValue,FALSE,201,,IAQ DCV Curve - Speed 3
+c_minoff,c_minoff,seconds,,analogValue,presentValue,FALSE,202,,Compressor Min Off Time
+c_minon,c_minon,seconds,,analogValue,presentValue,FALSE,203,,Compressor Min On Time
+cira_pr,cira_pr,noUnits,,analogValue,presentValue,FALSE,204,,Circuit A Pressure Ratio
+cldtrend,cldtrend,noUnits,,analogValue,presentValue,FALSE,205,,Cooling Demand Trend
+cool_dmd,cool_dmd,deltaDegreesFahrenheit,,analogValue,presentValue,FALSE,206,,Space Cooling Demand
+cool_fod,cool_fod,seconds,,analogValue,presentValue,FALSE,207,,Cooling Fan-Off Delay
+csp_eff,csp_eff,degreesFahrenheit,,analogValue,presentValue,FALSE,208,,Cool Setpoint in Effect
+dampact,dampact,percent,,analogValue,presentValue,FALSE,211,,Econo Actual Position
+daq_high,daq_high,noUnits,,analogValue,presentValue,FALSE,212,,AQ Differential High
+daq_low,daq_low,noUnits,,analogValue,presentValue,FALSE,213,,AQ Differential Low
+mp_upt3,mp_upt3,noUnits,,analogValue,presentValue,FALSE,214,,User Min Pos Pnt 3 Valid
+dmdhcon,dmdhcon,degreesFahrenheit,,analogValue,presentValue,FALSE,215,,High Cool Demand On
+dmdhhon,dmdhhon,degreesFahrenheit,,analogValue,presentValue,FALSE,217,,High Heat Demand On
+dmdlcoff,dmdlcoff,degreesFahrenheit,,analogValue,presentValue,FALSE,218,,Low Cool Demand Off
+dmdlcon,dmdlcon,degreesFahrenheit,,analogValue,presentValue,FALSE,219,,Low Cool Demand On
+dmdlhoff,dmdlhoff,degreesFahrenheit,,analogValue,presentValue,FALSE,220,,Low Heat Demand Off
+dmdlhon,dmdlhon,degreesFahrenheit,,analogValue,presentValue,FALSE,221,,Low Heat Demand On
+mp_uspd1,mp_uspd1,percent,,analogValue,presentValue,FALSE,222,,
+dmdmcon,dmdmcon,degreesFahrenheit,,analogValue,presentValue,FALSE,223,,Medium Cool Demand On
+eceonotrv,eceonotrv,seconds,,analogValue,presentValue,FALSE,226,,Economizer Travel Time
+sys_dmd_alert,sys_dmd_alert,noUnits,,analogValue,presentValue,FALSE,227,,System Demand Alert
+pe2_offs,pe2_offs,percent,,analogValue,presentValue,FALSE,229,,P.Exhaust 2 Curve Offset
+h_minoff,h_minoff,seconds,,analogValue,presentValue,FALSE,235,,Heat Minimum Off Time
+h_minon,h_minon,seconds,,analogValue,presentValue,FALSE,236,,Heat Minimum On Time
+high_cool_sasp,high_cool_sasp,degreesFahrenheit,,analogValue,presentValue,FALSE,237,,High FreeCool SAT Setpnt
+hcsp_gap,hcsp_gap,degreesFahrenheit,,analogValue,presentValue,FALSE,238,,Heat-Cool Setpoint Gap
+hadmd_lup,hadmd_lup,degreesFahrenheit,,analogValue,presentValue,FALSE,239,,Heat Demand Level Up
+heat_dmd,heat_dmd,deltaDegreesFahrenheit,,analogValue,presentValue,FALSE,240,,Heating Space Demand
+heat_fod,heat_fod,seconds,,analogValue,presentValue,FALSE,241,,Heating Fan-Off Delay
+hour_cchr1,hour_cchr1,hours,,analogValue,presentValue,FALSE,242,,CCH1 Relay Run Hours
+hsp_eff,hsp_eff,degreesFahrenheit,,analogValue,presentValue,FALSE,243,,Heat Setpoint in Effect
+htdtrend,htdtrend,noUnits,,analogValue,presentValue,FALSE,244,,Heat Space Demand Trend
+iaq_offs,iaq_offs,percent,,analogValue,presentValue,FALSE,245,,IAQ DCV Curve Offset
+iaqminp,iaqminp,percent,,analogValue,presentValue,FALSE,246,,IAQ Position at Max Fan
+iaqp_la,iaqp_la,degreesFahrenheit,,analogValue,presentValue,FALSE,248,,Preocc Purge Lockout OAT
+iaqptime,iaqptime,minutes,,analogValue,presentValue,FALSE,252,,Preocc Purge Duration
+la_temp,la_temp,degreesFahrenheit,,analogValue,presentValue,FALSE,253,,Low Ambient Temperature
+low_cool_sasp,low_cool_sasp,degreesFahrenheit,,analogValue,presentValue,FALSE,254,,LowFree Cool SAT Setpnt
+lnk_aozt,lnk_aozt,degreesFahrenheit,,analogValue,presentValue,FALSE,255,,Average Occup. Zone Temp
+lnk_azt,lnk_azt,degreesFahrenheit,,analogValue,presentValue,FALSE,256,,Average Zone Temperature
+lnk_creq,lnk_creq,degreesFahrenheit,,analogValue,presentValue,FALSE,257,,Linkage Cooling Required
+lnk_dpos,lnk_dpos,percent,,analogValue,presentValue,FALSE,258,,Linkage Damper Position
+lnk_hreq,lnk_hreq,degreesFahrenheit,,analogValue,presentValue,FALSE,259,,Linkage Heating Required
+lnk_mair,lnk_mair,noUnits,,analogValue,presentValue,FALSE,260,,Linkage Maximum Airflow
+lnk_mode,lnk_mode,noUnits,,analogValue,presentValue,FALSE,261,,Linkage Equipment Mode
+lnk_mzbk,lnk_mzbk,noUnits,,analogValue,presentValue,FALSE,262,,Block No: in Master Zone
+lnk_ocrq,lnk_ocrq,degreesFahrenheit,,analogValue,presentValue,FALSE,263,,Occ Cooling Required
+lnk_ocsp,lnk_ocsp,degreesFahrenheit,,analogValue,presentValue,FALSE,264,,Average Occup. Cool Stp.
+lnk_ohrq,lnk_ohrq,degreesFahrenheit,,analogValue,presentValue,FALSE,265,,Occ Heating required
+lnk_ohsp,lnk_ohsp,degreesFahrenheit,,analogValue,presentValue,FALSE,266,,Average Occup. Heat Stp.
+lnk_opst,lnk_opst,minutes,,analogValue,presentValue,FALSE,267,,Linkage Optimal Start
+lnk_sat,lnk_sat,degreesFahrenheit,,analogValue,presentValue,FALSE,268,,Linkage Supply air temp
+lnk_sbt,lnk_sbt,minutes,,analogValue,presentValue,FALSE,269,,Linkage Start Bias time
+lnk_siaq,lnk_siaq,partsPerMillion,,analogValue,presentValue,FALSE,270,,Linkage Space Air Qual.
+lnk_sprh,lnk_sprh,percent,,analogValue,presentValue,FALSE,271,,Linkage Space RH
+lnk_supb,lnk_supb,noUnits,,analogValue,presentValue,FALSE,272,,Linkage CCN Bus number
+lnk_supe,lnk_supe,noUnits,,analogValue,presentValue,FALSE,273,,Linkage CCN element #
+lnk_ucsp,lnk_ucsp,degreesFahrenheit,,analogValue,presentValue,FALSE,274,,Average Unocc. Cool Stp.
+lnk_uhsp,lnk_uhsp,degreesFahrenheit,,analogValue,presentValue,FALSE,275,,Average Unocc. Heat Stp.
+loch_lot,loch_lot,degreesFahrenheit,,analogValue,presentValue,FALSE,276,,Low Charge Disable Temp
+locharge,locharge,poundsForcePerSquareInch,,analogValue,presentValue,FALSE,277,,Low Refrig Charge Level
+max_cstgs,max_cstgs,noUnits,,analogValue,presentValue,FALSE,278,,Max Allowed Cool Stages
+max_hstgs,max_hstgs,noUnits,,analogValue,presentValue,FALSE,279,,Max Allowed Heat Stages
+minodftm,minodftm,seconds,,analogValue,presentValue,FALSE,280,,ODF High Speed Time
+no_igctm,no_igctm,minutes,,analogValue,presentValue,FALSE,281,,No IGC IFO input Timeout
+numcstgs,numcstgs,noUnits,,analogValue,presentValue,FALSE,283,,Number Of Cooling Stages
+numhstgs,numhstgs,noUnits,,analogValue,presentValue,FALSE,284,,Number Of Heating Stages
+oat_loc,oat_loc,degreesFahrenheit,,analogValue,presentValue,FALSE,286,,Outdoor Air Temp Sensor
+oatlufc,oatlufc,degreesFahrenheit,,analogValue,presentValue,FALSE,287,,Unocc Free Cool Low Temp
+ocsp,ocsp,degreesFahrenheit,,analogValue,presentValue,FALSE,288,,Occupied Cool Setpoint
+ohsp,ohsp,degreesFahrenheit,,analogValue,presentValue,FALSE,289,,Occupied Heat Setpoint
+mp_dpos2,mp_dpos2,percent,,analogValue,presentValue,FALSE,290,,Min Pos - Default Pos 2
+rat_loc,rat_loc,degreesFahrenheit,,analogValue,presentValue,FALSE,291,,Return Air Temp Sensor
+req_cstgs,req_cstgs,noUnits,,analogValue,presentValue,FALSE,292,,Requested Cooling Stages
+reqhstgs,reqhstgs,noUnits,,analogValue,presentValue,FALSE,293,,Requested Heating Stages
+rs_cchr1,rs_cchr1,noUnits,,analogValue,presentValue,FALSE,294,,CCH1 Relay Resets Count
+sdt_a,sdt_a,degreesFahrenheit,,analogValue,presentValue,FALSE,295,,Cir.A Sat.Discharge Temp
+space_t,space_t,degreesFahrenheit,,analogValue,presentValue,FALSE,296,,Space Temperature
+spt_loc,spt_loc,degreesFahrenheit,,analogValue,presentValue,FALSE,297,,Space Temperature Sensor
+spto_rng,spto_rng,degreesFahrenheit,,analogValue,presentValue,FALSE,298,,SPT Offset Range (+/-)
+sstckdly,sstckdly,seconds,,analogValue,presentValue,FALSE,300,,Delay On Low SST Check
+st_cchr1,st_cchr1,noUnits,,analogValue,presentValue,FALSE,301,,CCH1 Relay Starts
+std_barp,std_barp,inchesOfMercury,,analogValue,presentValue,FALSE,303,,Std Barometric Pressure
+t24chdly,t24chdly,minutes,,analogValue,presentValue,FALSE,305,,T24 Heat/Cool End Delay
+t24ecsts,t24ecsts,percent,,analogValue,presentValue,FALSE,306,,T24Econ Min Move for SAT
+t24ratdf,t24ratdf,degreesFahrenheit,,analogValue,presentValue,FALSE,307,,T24 Min Diff in RAT-OAT
+t24satdb,t24satdb,degreesFahrenheit,,analogValue,presentValue,FALSE,308,,Damper SAT deadband
+t24tstmn,t24tstmn,percent,,analogValue,presentValue,FALSE,309,,T24 Test Minimum Pos
+t24tstmx,t24tstmx,percent,,analogValue,presentValue,FALSE,310,,T24 Test Maximum Pos
+tdmd_tg1,tdmd_tg1,seconds,,analogValue,presentValue,FALSE,311,,Space Demand Time Guard1
+link_ahu_static,link_ahu_static,inchesOfWater,,analogValue,presentValue,FALSE,312,,Linkage static pressure
+pe_offdb,pe_offdb,percent,,analogValue,presentValue,FALSE,316,,PE Turn Off Dead band
+pe1_offs,pe1_offs,percent,,analogValue,presentValue,FALSE,317,,P.Exhaust 1 Curve Offset
+minp_max,minp_max,percent,,analogValue,presentValue,FALSE,318,,Econ Min at Max Fanspeed
+mp_dpos1,mp_dpos1,percent,,analogValue,presentValue,FALSE,319,,Min Pos - Default Pos 1
+mp_dpos3,mp_dpos3,percent,,analogValue,presentValue,FALSE,320,,Min Pos - Default Pos 3
+mp_dspd1,mp_dspd1,percent,,analogValue,presentValue,FALSE,321,,Min Pos - Default Speed1
+mp_dspd2,mp_dspd2,percent,,analogValue,presentValue,FALSE,322,,Min Pos - Default Speed2
+ms_dspd3,ms_dspd3,percent,,analogValue,presentValue,FALSE,323,,Min Pos - Default Speed3
+mp_pos1,mp_pos1,percent,,analogValue,presentValue,FALSE,324,,Min Pos Curve - Pos 1
+mp_pos2,mp_pos2,percent,,analogValue,presentValue,FALSE,325,,Min Pos Curve - Pos 2
+mp_pos3,mp_pos3,percent,,analogValue,presentValue,FALSE,326,,Min Pos Curve - Pos 3
+mp_spd1,mp_spd1,percent,,analogValue,presentValue,FALSE,327,,Min Pos Curve - Speed 1
+mp_spd3,mp_spd3,percent,,analogValue,presentValue,FALSE,328,,Min Pos Curve - Speed 3
+mp_upos1,mp_upos1,percent,,analogValue,presentValue,FALSE,329,,
+mp_upos2,mp_upos2,percent,,analogValue,presentValue,FALSE,330,,
+mp_upos3,mp_upos3,percent,,analogValue,presentValue,FALSE,331,,
+mp_upt1,mp_upt1,noUnits,,analogValue,presentValue,FALSE,332,,User Min Pos Pnt 1 Valid
+mp_upt2,mp_upt2,noUnits,,analogValue,presentValue,FALSE,333,,User Min Pos Pnt 2 Valid
+num_active_alerts,num_active_alerts,noUnits,,analogValue,presentValue,FALSE,334,,Number of Active Alerts
+num_active_faults,num_active_faults,noUnits,,analogValue,presentValue,FALSE,335,,Number of Active Faults
+bkpreptm,bkpreptm,noUnits,,analogValue,presentValue,FALSE,336,,BACKUP Preparation Time
+rstcomtm,rstcomtm,noUnits,,analogValue,presentValue,FALSE,337,,Restore Completion Time
+sst_a,sst_a,degreesFahrenheit,,analogValue,presentValue,FALSE,339,,Cir.A Sat.Suction Temp
+sattrend,sattrend,noUnits,,analogValue,presentValue,FALSE,342,,Supply Air Temp Trend
+pe1_pmax,pe1_pmax,percent,,analogValue,presentValue,FALSE,343,,PE Stage 1 At Max Speed
+pe2_pmax,pe2_pmax,percent,,analogValue,presentValue,FALSE,344,,PE Stage 2 At Max Speed
+pe1_pos1,pe1_pos1,percent,,analogValue,presentValue,FALSE,345,,Power Exhaust 1 - Pos 1
+pe1_pos2,pe1_pos2,percent,,analogValue,presentValue,FALSE,346,,Power Exhaust 1 - Pos 2
+pe1_pos3,pe1_pos3,percent,,analogValue,presentValue,FALSE,347,,Power Exhaust 1 - Pos 3
+pe1_spd1,pe1_spd1,percent,,analogValue,presentValue,FALSE,348,,Power Exhaust 1 - Speed1
+pe1_spd2,pe1_spd2,percent,,analogValue,presentValue,FALSE,349,,Power Exhaust 1 - Speed2
+pe1_spd3,pe1_spd3,percent,,analogValue,presentValue,FALSE,350,,Power Exhaust 1 - Speed3
+pe2_pos1,pe2_pos1,percent,,analogValue,presentValue,FALSE,351,,Power Exhaust 2 - Pos 1
+pe2_pos2,pe2_pos2,percent,,analogValue,presentValue,FALSE,352,,Power Exhaust 2 - Pos 2
+pe2_pos3,pe2_pos3,percent,,analogValue,presentValue,FALSE,353,,Power Exhaust 2 - Pos 3
+pe2_spd1,pe2_spd1,percent,,analogValue,presentValue,FALSE,354,,Power Exhaust 2 - Speed1
+pe2_spd2,pe2_spd2,percent,,analogValue,presentValue,FALSE,355,,Power Exhaust 2 - Speed2
+pe2_spd3,pe2_spd3,percent,,analogValue,presentValue,FALSE,356,,Power Exhaust 2 - Speed3
+aqp_pos1,aqp_pos1,percent,,analogValue,presentValue,FALSE,358,,IAQ Purge Curve - Pos 1
+aqp_pos2,aqp_pos2,percent,,analogValue,presentValue,FALSE,359,,IAQ Purge Curve - Pos 2
+aqp_pos3,aqp_pos3,percent,,analogValue,presentValue,FALSE,360,,IAQ Purge Curve - Pos 3
+aqp_spd1,aqp_spd1,percent,,analogValue,presentValue,FALSE,361,,IAQ Purge Curve - Speed1
+aqp_spd2,aqp_spd2,percent,,analogValue,presentValue,FALSE,362,,IAQ Purge Curve - Speed2
+aqp_spd3,aqp_spd3,percent,,analogValue,presentValue,FALSE,363,,IAQ Purge Curve - Speed3
+aqp_offs,aqp_offs,percent,,analogValue,presentValue,FALSE,364,,IAQ Purge Curve Offset
+sprh_osp,sprh_osp,percent,,analogValue,presentValue,FALSE,367,,Occupied SPRH Setpoint
+sprh_db,sprh_db,percent,,analogValue,presentValue,FALSE,368,,Space RH Deadband
+ocfm_4ma,ocfm_4ma,cubicFeetPerMinute,,analogValue,presentValue,FALSE,369,,OACFM at 4MA
+ocfm_net,ocfm_net,cubicFeetPerMinute,,analogValue,presentValue,FALSE,371,,Network OACFM Value
+sprh_20ma,sprh_20ma,percent,,analogValue,presentValue,FALSE,373,,SPRH Sensor Value @ 20mA
+sprh_4ma,sprh_4ma,percent,,analogValue,presentValue,FALSE,375,,SPRH Sensor Value at 4mA
+sprh_net,sprh_net,percent,,analogValue,presentValue,FALSE,376,,Network SPRH Value
+hour_ldv_a,hour_ldv_a,hours,,analogValue,presentValue,FALSE,380,,LDV_A Run Hours
+hour_rdv_a,hour_rdv_a,hours,,analogValue,presentValue,FALSE,381,,RDV_A Run Hours
+hour_rqhl1,hour_rqhl1,hours,,analogValue,presentValue,FALSE,382,,Reheat level 1 Run Hrs
+hour_rqhl2,hour_rqhl2,hours,,analogValue,presentValue,FALSE,383,,Reheat level 2 Run Hrs
+st_ldv_a,st_ldv_a,noUnits,,analogValue,presentValue,FALSE,384,,ldv_a Starts
+st_rdv_a,st_rdv_a,noUnits,,analogValue,presentValue,FALSE,385,,rdv_a Starts
+st_rqhl1,st_rqhl1,noUnits,,analogValue,presentValue,FALSE,386,,Reheat level 1 Starts
+st_rqhl2,st_rqhl2,noUnits,,analogValue,presentValue,FALSE,387,,Reheat level 2 Starts
+rs_ldv_a,rs_ldv_a,noUnits,,analogValue,presentValue,FALSE,388,,LDV_A Resets Count
+rs_rdv_a,rs_rdv_a,noUnits,,analogValue,presentValue,FALSE,389,,rdv_a Resets Count
+rs_rqhl1,rs_rqhl1,noUnits,,analogValue,presentValue,FALSE,390,,Reheat lev 1 Rst Count
+rs_rqhl2,rs_rqhl2,noUnits,,analogValue,presentValue,FALSE,391,,Reheat lev 2 Rst Count
+cdlm_level1,cdlm_level1,degreesFahrenheit,,analogValue,presentValue,FALSE,400,,COOL DMD Offset level 1
+cdlm_level2,cdlm_level2,degreesFahrenheit,,analogValue,presentValue,FALSE,401,,COOL DMD Offset level 2
+cdlm_level3,cdlm_level3,degreesFahrenheit,,analogValue,presentValue,FALSE,402,,COOL DMD Offset level 3
+hdlm_level1,hdlm_level1,degreesFahrenheit,,analogValue,presentValue,FALSE,403,,Heat DMD Offset level 1
+hdlm_level2,hdlm_level2,degreesFahrenheit,,analogValue,presentValue,FALSE,404,,Heat DMD Offset level 2
+hdlm_level3,hdlm_level3,degreesFahrenheit,,analogValue,presentValue,FALSE,405,,Heat DMD Offset level 3
+sup_air_temp_setpt,sup_air_temp_setpt,degreesFahrenheit,,analogValue,presentValue,FALSE,411,,SA Tempering Set point
+min_pos,min_pos,percent,,analogValue,presentValue,FALSE,412,,Min Position in Effect
+reqdstgs,reqdstgs,noUnits,,analogValue,presentValue,FALSE,413,,Req Compr DehumStgs
+s_hmzlev,s_hmzlev,noUnits,,analogValue,presentValue,FALSE,414,,HumidiMizer Level Test
+oacfm,oacfm,cubicFeetPerMinute,,analogValue,presentValue,FALSE,416,,outdoor Air in CFM
+ocfm20ma,ocfm20ma,cubicFeetPerMinute,,analogValue,presentValue,FALSE,417,,OACFM Value at 20mA
+oatstemp,oatstemp,degreesFahrenheit,,analogValue,presentValue,FALSE,424,,OATLimitForSupAirTemp
+fbdh_sat,fbdh_sat,degreesFahrenheit,,analogValue,presentValue,FALSE,436,,FBDH SAT Min value
+fbdh_sst,fbdh_sst,degreesFahrenheit,,analogValue,presentValue,FALSE,437,,FBDH SST Min value
+fbdlosp,fbdlosp,deltaDegreesFahrenheit,,analogValue,presentValue,FALSE,438,,FBDH Low Set Point
+fbdsatsp,fbdsatsp,degreesFahrenheit,,analogValue,presentValue,FALSE,441,,FBDH SAT Set Point
+aqd_high,aqd_high,partsPerMillion,,analogValue,presentValue,FALSE,442,,AQ DiffHigh-IAQ OVERRIDE
+aqd_low,aqd_low,partsPerMillion,,analogValue,presentValue,FALSE,443,,AQ Diff Low-IAQ OVERRIDE
+rs_clv_a,rs_clv_a,noUnits,,analogValue,presentValue,FALSE,455,,CLV_A Resets Count
+rs_rlv_a,rs_rlv_a,noUnits,,analogValue,presentValue,FALSE,456,,RLV_A Resets Count
+hr_clv_a,hr_clv_a,hours,,analogValue,presentValue,FALSE,457,,CLV_A Run Hours
+hr_rlv_a,hr_rlv_a,hours,,analogValue,presentValue,FALSE,458,,Compressor A1 Run Hours
+st_clv_a,st_clv_a,noUnits,,analogValue,presentValue,FALSE,459,,CLV_A Starts
+st_rlv_a,st_rlv_a,noUnits,,analogValue,presentValue,FALSE,460,,RLV_A Starts
+sprh_usp,sprh_usp,percent,,analogValue,presentValue,FALSE,461,,Unoccupied SPRH Setpoint
+acaoff_t,acaoff_t,seconds,,analogValue,presentValue,FALSE,462,,Comp UEOFF Diag Delay
+llsv_ct,llsv_ct,seconds,,analogValue,presentValue,FALSE,463,,LiquidLine Valve On Time
+sstofset,sstofset,degreesFahrenheit,,analogValue,presentValue,FALSE,464,,Heat Low Suc Lvl Offset
+umin_sat,umin_sat,degreesFahrenheit,,analogValue,presentValue,FALSE,617,,Unit's Minimum SAT
+satlaclr,satlaclr,noUnits,,analogValue,presentValue,FALSE,618,,Auto Clr SAT Limit Fault
+satfzpro,satfzpro,noUnits,,analogValue,presentValue,FALSE,619,,SAT Freeze Protection
+hour_idf2,hour_idf2,hours,,analogValue,presentValue,FALSE,620,,Indoor Fan2 Run Hours
+st_idf2,st_idf2,noUnits,,analogValue,presentValue,FALSE,621,,Indoor Fan2 Starts
+rs_idf2,rs_idf2,noUnits,,analogValue,presentValue,FALSE,622,,Indoor Fan2 Reset Count
+hour_ofr2,hour_ofr2,hours,,analogValue,presentValue,FALSE,623,,ODF Relay 2 Run Hours
+st_ofr2,st_ofr2,noUnits,,analogValue,presentValue,FALSE,624,,ODF Relay 2 Starts
+rs_ofr2,rs_ofr2,noUnits,,analogValue,presentValue,FALSE,625,,ODF Relay2 Resets Counts
+hour_ofr3,hour_ofr3,hours,,analogValue,presentValue,FALSE,626,,ODF Relay 3 Run Hours
+st_ofr3,st_ofr3,noUnits,,analogValue,presentValue,FALSE,627,,ODF Relay 3 Starts
+rs_ofr3,rs_ofr3,noUnits,,analogValue,presentValue,FALSE,628,,ODF Relay3 Resets Counts
+oa_temp,oa_temp,degreesFahrenheit,,analogValue,presentValue,FALSE,1003,,Outdoor Air Temperature
+stpt_adj,stpt_adj,deltaDegreesFahrenheit,,analogValue,presentValue,FALSE,1006,,Space Temperature Offset
+sa_temp,sa_temp,degreesFahrenheit,,analogValue,presentValue,FALSE,1008,,Supply Air Temperature
+iaq,iaq,partsPerMillion,,analogValue,presentValue,FALSE,1009,,Indoor Air Quality Level
+ra_temp,ra_temp,degreesFahrenheit,,analogValue,presentValue,FALSE,1010,,Return Air Temperature
+space_rh,space_rh,percent,,analogValue,presentValue,FALSE,1011,,Space RH
+oaq,oaq,partsPerMillion,,analogValue,presentValue,FALSE,1012,,OA Quality Level
+oarh,oarh,percent,,analogValue,presentValue,FALSE,1022,,OA Relative Humidity
+EquipmentTouchSPT,EquipmentTouchSPT,degreesFahrenheit,,analogValue,presentValue,FALSE,1902,,Equipment Touch SPT
+EquipmentTouchRH,EquipmentTouchRH,percent,,analogValue,presentValue,FALSE,1904,,Equipment Touch RH
+ZSZoneTemp,ZSZoneTemp,degreesFahrenheit,,analogValue,presentValue,FALSE,1905,,ZS Zone Temp
+ZonesensorCO2level,ZonesensorCO2level,partsPerMillion,,analogValue,presentValue,FALSE,1906,,Zone sensor CO2 level
+space_temp,space_temp,degreesFahrenheit,,analogValue,presentValue,FALSE,2007,,Pilot Space Temp Value
+filter_rntm,filter_rntm,hours,,analogValue,presentValue,FALSE,2015,,Filter hour remaining
+filter_service_hrs,filter_service_hrs,hours,,analogValue,presentValue,FALSE,2019,,Change Filter Timer
+oa_dmpr_pos,oa_dmpr_pos,percent,,analogValue,presentValue,FALSE,2022,,Damper Actual Position
+vfd_output,vfd_output,percent,,analogValue,presentValue,FALSE,2027,,Commanded IDF Speed
+dmpr_req_pos,dmpr_req_pos,percent,(default 0.0),analogValue,presentValue,FALSE,4006,,Requested Damper Pos
+zonespt,zonespt,degreesFahrenheit,,analogValue,presentValue,FALSE,6001,,Single Zone Setpoint
+osp,osp,degreesFahrenheit,,analogValue,presentValue,FALSE,6002,,Occupied Zone Setpoint
+odb,odb,noUnits,,analogValue,presentValue,FALSE,6003,,Occupied Setpoint Gap
+udb,udb,noUnits,,analogValue,presentValue,FALSE,6004,,Unoccupied Setpoint Gap
+usp,usp,degreesFahrenheit,,analogValue,presentValue,FALSE,6005,,UnoccupiedZone Setpoint
+effsp,effsp,degreesFahrenheit,,analogValue,presentValue,FALSE,6006,,Effective Zone Setpoint
+effdb,effdb,noUnits,,analogValue,presentValue,FALSE,6007,,Effective Deadband
+heatsh1,heatsh1,noUnits,,analogValue,presentValue,FALSE,6011,,Heat Shed 1 demand band
+heatsh2,heatsh2,noUnits,,analogValue,presentValue,FALSE,6012,,Heat Shed 2 demand band
+heatsh3,heatsh3,noUnits,,analogValue,presentValue,FALSE,6013,,Heat Shed 3 demand band
+coolsh1,coolsh1,noUnits,,analogValue,presentValue,FALSE,6014,,Cool Shed 1 demand band
+coolsh2,coolsh2,noUnits,,analogValue,presentValue,FALSE,6015,,Cool Shed 2 demand band
+coolsh3,coolsh3,noUnits,,analogValue,presentValue,FALSE,6016,,Cool Shed 3 demand band
+sptodiff,sptodiff,deltaDegreesFahrenheit,,analogValue,presentValue,FALSE,6020,,SPT Offset Total diff
+setadj,setadj,deltaDegreesFahrenheit,,analogValue,presentValue,FALSE,6021,,Setpoint adjustment
+moset,moset,deltaDegreesFahrenheit,,analogValue,presentValue,FALSE,6022,,Momentary Setpoint Adj
+motlo,motlo,seconds,,analogValue,presentValue,FALSE,6025,,Momentary TLO Adjustment
+tlolim,tlolim,seconds,,analogValue,presentValue,FALSE,6027,,TLO limit
+tlorem,tlorem,seconds,,analogValue,presentValue,FALSE,6028,,TLO Time Remaining
+tlocan,tlocan,seconds,,analogValue,presentValue,FALSE,6029,,TLO cancel
+iaq_net,iaq_net,partsPerMillion,,analogValue,presentValue,FALSE,7001,,Network IAQ Value
+oaq_net,oaq_net,partsPerMillion,,analogValue,presentValue,FALSE,7002,,Network OAQ Value
+oarh_net,oarh_net,percent,,analogValue,presentValue,FALSE,7003,,Network OARH Value
+rarh_net,rarh_net,percent,,analogValue,presentValue,FALSE,7004,,Network RARH Value
+rat_net,rat_net,degreesFahrenheit,,analogValue,presentValue,FALSE,7005,,Network Return Air Temp
+spt_net,spt_net,degreesFahrenheit,,analogValue,presentValue,FALSE,7006,,Network Space Temp Value
+oat_net,oat_net,degreesFahrenheit,,analogValue,presentValue,FALSE,7007,,Network OAT Value
+hr_aldr,hr_aldr,hours,,analogValue,presentValue,FALSE,7010,,CMP A1 Loader Run Hours
+st_aldr,st_aldr,noUnits,,analogValue,presentValue,FALSE,7011,,CMP A1 Loader Starts
+rs_aldr,rs_aldr,noUnits,,analogValue,presentValue,FALSE,7012,,A1 Loader Resets Count
+hour_odf,hour_odf,hours,,analogValue,presentValue,FALSE,7066,,ODF Run Hours
+st_odf,st_odf,noUnits,,analogValue,presentValue,FALSE,7067,,ODF Starts Count
+rs_odf,rs_odf,noUnits,,analogValue,presentValue,FALSE,7068,,ODF Resets Count
+deviaq,deviaq,noUnits,,analogValue,presentValue,FALSE,8001,,BACnet device for IAQ
+devoaq,devoaq,noUnits,,analogValue,presentValue,FALSE,8002,,BACnet device for OAQ
+devoat,devoat,noUnits,,analogValue,presentValue,FALSE,8003,,BACnet device for OAT
+devoarh,devoarh,noUnits,,analogValue,presentValue,FALSE,8004,,BACnet device for OARH
+devrarh,devrarh,noUnits,,analogValue,presentValue,FALSE,8005,,BACnet device for RARH
+devrat,devrat,noUnits,,analogValue,presentValue,FALSE,8006,,BACnet device for RAT
+devspt,devspt,noUnits,,analogValue,presentValue,FALSE,8007,,BACnet device for SPT
+objiaq,objiaq,noUnits,,analogValue,presentValue,FALSE,8008,,Object instance for IAQ
+objoaq,objoaq,noUnits,,analogValue,presentValue,FALSE,8009,,Object instance for OAQ
+objoat,objoat,noUnits,,analogValue,presentValue,FALSE,8010,,Object instance for OAT
+objoarh,objoarh,noUnits,,analogValue,presentValue,FALSE,8011,,Object instance for OARH
+objrarh,objrarh,noUnits,,analogValue,presentValue,FALSE,8012,,Object instance for RARH
+objrat,objrat,noUnits,,analogValue,presentValue,FALSE,8013,,Object instance for RAT
+objspt,objspt,noUnits,,analogValue,presentValue,FALSE,8014,,Object instance for SPT
+coviaq,coviaq,noUnits,,analogValue,presentValue,FALSE,8015,,Change of value for IAQ
+covoaq,covoaq,noUnits,,analogValue,presentValue,FALSE,8016,,Change of value for OAQ
+covoat,covoat,noUnits,,analogValue,presentValue,FALSE,8017,,Change of value for OAT
+covoarh,covoarh,noUnits,,analogValue,presentValue,FALSE,8018,,Change of value for OARH
+covrarh,covrarh,noUnits,,analogValue,presentValue,FALSE,8019,,Change of value for RARH
+covrat,covrat,noUnits,,analogValue,presentValue,FALSE,8020,,Change of value for RAT
+covspt,covspt,noUnits,,analogValue,presentValue,FALSE,8021,,Change of value for SPT
+strh_net,strh_net,percent,,analogValue,presentValue,FALSE,8022,,System Touch RH Value
+stst_net,stst_net,degreesFahrenheit,,analogValue,presentValue,FALSE,8023,,System Touch Temp Value
+devst,devst,noUnits,,analogValue,presentValue,FALSE,8024,,System Touch Device Inst
+pollst,pollst,noUnits,,analogValue,presentValue,FALSE,8025,,System Touch Poll Rate
+aistspt,aistspt,noUnits,,analogValue,presentValue,FALSE,8026,,System Touch AI for SPT
+aistsprh,aistsprh,noUnits,,analogValue,presentValue,FALSE,8027,,System Touch AI for SPRH
+devsprh,devsprh,noUnits,,analogValue,presentValue,FALSE,8028,,BACnet device for SPRH
+objsprh,objsprh,noUnits,,analogValue,presentValue,FALSE,8029,,Object instance for SPRH
+covsprh,covsprh,noUnits,,analogValue,presentValue,FALSE,8030,,Change of value for SPRH
+lclocksp,lclocksp,degreesFahrenheit,,analogValue,presentValue,FALSE,8031,,Low Cool Lockout Temp
+mclocksp,mclocksp,degreesFahrenheit,,analogValue,presentValue,FALSE,8032,,Med. Cool Lockout Temp
+oatlheat,oatlheat,degreesFahrenheit,,analogValue,presentValue,FALSE,8033,,Heating Lockout Temp
+zsaddr1,zsaddr1,noUnits,,analogValue,presentValue,FALSE,8034,,Zone Sensor 1 Address
+zsaddr2,zsaddr2,noUnits,,analogValue,presentValue,FALSE,8035,,Zone Sensor 2 Address
+zsaddr3,zsaddr3,noUnits,,analogValue,presentValue,FALSE,8036,,Zone sensor 3 address
+zsaddr4,zsaddr4,noUnits,,analogValue,presentValue,FALSE,8037,,Zone sensor 4 address
+zsaddr5,zsaddr5,noUnits,,analogValue,presentValue,FALSE,8038,,Zone sensor 5 address
+ht2lctmp,ht2lctmp,degreesFahrenheit,,analogValue,presentValue,FALSE,8039,,Max OAT for 3 Heat Stags
+mindfint,mindfint,minutes,,analogValue,presentValue,FALSE,8040,,Min Time BTWN Defrosts
+maxdftmr,maxdftmr,minutes,,analogValue,presentValue,FALSE,8042,,Defrost Max Duration
+hour_ofr,hour_ofr,hours,,analogValue,presentValue,FALSE,8043,,ODF Relay Run Hours
+rs_ofr,rs_ofr,noUnits,,analogValue,presentValue,FALSE,8044,,ODF Relay Resets Counts
+st_ofr,st_ofr,noUnits,,analogValue,presentValue,FALSE,8045,,ODF Relay Starts
+rs_erv2p,rs_erv2p,noUnits,,analogValue,presentValue,FALSE,8046,,2Position/ERV ResetCount
+st_erv2p,st_erv2p,noUnits,,analogValue,presentValue,FALSE,8047,,2Position/ERV Starts
+fspd_rpm,fspd_rpm,revolutionsPerMinute,,analogValue,presentValue,FALSE,8048,,IDF Commanded RPM
+erv2chan,erv2chan,noUnits,,analogValue,presentValue,FALSE,8049,,2-Pos Damper/ERV Channel
+rpm_fcl,rpm_fcl,revolutionsPerMinute,,analogValue,presentValue,FALSE,8050,,IDF Free Cool Speed-RPM
+rpm_hcl,rpm_hcl,revolutionsPerMinute,,analogValue,presentValue,FALSE,8051,,IDF High Cool Speed-RPM
+rpm_heat,rpm_heat,revolutionsPerMinute,,analogValue,presentValue,FALSE,8052,,IDF Heat Speed-RPM
+rpm_lcl,rpm_lcl,revolutionsPerMinute,,analogValue,presentValue,FALSE,8053,,IDF Low Cool Speed-RPM
+rpm_vent,rpm_vent,revolutionsPerMinute,,analogValue,presentValue,FALSE,8054,,IDF Vent Speed-RPM
+hr_erv2p,hr_erv2p,hours,,analogValue,presentValue,FALSE,8055,,2Position/ERV Run Hours
+fdrpmmin,fdrpmmin,revolutionsPerMinute,,analogValue,presentValue,FALSE,8056,,FBDH Min Fan Speed
+fdrpmmax,fdrpmmax,revolutionsPerMinute,,analogValue,presentValue,FALSE,8057,,FBDH Max Fan Speed
+hr_llsv,hr_llsv,hours,,analogValue,presentValue,FALSE,8058,,LiquidLineValv Run Hours
+st_llsv,st_llsv,noUnits,,analogValue,presentValue,FALSE,8059,,Liquid Line Valve Starts
+rs_llsv,rs_llsv,noUnits,,analogValue,presentValue,FALSE,8060,,LiquidLineValv Reset Cnt
+hr_rvs_a,hr_rvs_a,hours,,analogValue,presentValue,FALSE,8061,,ReverseSolValv Run Hours
+st_rvs_a,st_rvs_a,noUnits,,analogValue,presentValue,FALSE,8062,,ReverseSolValv Starts
+rs_rvs_a,rs_rvs_a,noUnits,,analogValue,presentValue,FALSE,8063,,RevSolValv Resets Count
+hr_mecht,hr_mecht,hours,,analogValue,presentValue,FALSE,8064,,MechanicalHeat Run Hours
+st_mecht,st_mecht,noUnits,,analogValue,presentValue,FALSE,8065,,Mechanical Heat Starts
+rs_mecht,rs_mecht,noUnits,,analogValue,presentValue,FALSE,8066,,Mech Heat Resets Count
+hr_mechc,hr_mechc,hours,,analogValue,presentValue,FALSE,8067,,MechanicalCool Run Hours
+st_mechc,st_mechc,noUnits,,analogValue,presentValue,FALSE,8068,,Mechanical Cool Starts
+rs_mechc,rs_mechc,noUnits,,analogValue,presentValue,FALSE,8069,,Mech Cool Resets Count
+unitsize,unitsize,noUnits,,analogValue,presentValue,FALSE,8075,,System Capacity in ton
+hr_dfrst,hr_dfrst,hours,,analogValue,presentValue,FALSE,9011,,Defrost Run Hours
+st_dfrst,st_dfrst,noUnits,,analogValue,presentValue,FALSE,9012,,Defrost Mode Starts
+rs_dfrst,rs_dfrst,noUnits,,analogValue,presentValue,FALSE,9013,,Defrost Reset Count
+FANSPED2,FANSPED2,percent,,analogValue,presentValue,FALSE,9078,,Commanded IDF Speed2
+la_temp2,la_temp2,degreesFahrenheit,,analogValue,presentValue,FALSE,9079,,Low Ambient Temp2
+IFM2OFST,IFM2OFST,percent,,analogValue,presentValue,FALSE,9083,,INDOOR MOTOR2 OFFSET
+fsp2_rpm,fsp2_rpm,revolutionsPerMinute,,analogValue,presentValue,FALSE,9085,,IDF2 Commanded RPM
+LCLOFSET,LCLOFSET,percent,,analogValue,presentValue,FALSE,9087,,LOW COOL OFFSET
+netinto,netinto,minutes,,analogValue,presentValue,FALSE,9089,,Network Input Timeout
+zs_humidity,zs_humidity,percent,,analogValue,presentValue,FALSE,9091,,ZS Humidity Out
+cch_relay,cch_relay,Enum,0-1,binaryValue,presentValue,FALSE,3,,CCH Relay 1 State
+circa_hps,circa_hps,Enum,0-1,binaryValue,presentValue,FALSE,4,,Cir.A High Pressure Sw
+cmpa1ena,cmpa1ena,Enum,0-1,binaryValue,presentValue,FALSE,5,,Circuit A Compressor 1
+cmpa2ena,cmpa2ena,Enum,0-1,binaryValue,presentValue,FALSE,6,,Circuit A Compressor 2
+fanred10,fanred10,Enum,0-1,binaryValue,presentValue,FALSE,7,,IDF Speed Reduction On
+cmpalena,cmpalena,Enum,0-1,binaryValue,presentValue,FALSE,9,,Circuit A CMP A1 Loader
+hs1,hs1,Enum,0-1,binaryValue,presentValue,FALSE,10,,Heat Stage 1 Relay
+hs2,hs2,Enum,0-1,binaryValue,presentValue,FALSE,11,,Heat Stage 2 Relay
+igc_ifo,igc_ifo,Enum,0-1,binaryValue,presentValue,FALSE,13,,IGC Fan On Request (IFO)
+pe1,pe1,Enum,0-1,binaryValue,presentValue,FALSE,15,,Power Exhaust 1 Relay
+ht1_aval,ht1_aval,Enum,0-1,binaryValue,presentValue,FALSE,16,,Heat Stage 1 Available
+ht2_aval,ht2_aval,Enum,0-1,binaryValue,presentValue,FALSE,17,,Heat Stage 2 Available
+iaqpurge,iaqpurge,Enum,0-1,binaryValue,presentValue,FALSE,20,,IAQ Preoccupancy Purge
+dmpr_err,dmpr_err,Enum,0-1,binaryValue,presentValue,FALSE,21,,Econo Actual Position
+sys_dmd_alarm,sys_dmd_alarm,Enum,0-1,binaryValue,presentValue,FALSE,26,,System Demand Alarm
+ALARMEN,ALARMEN,Enum,0-1,binaryValue,presentValue,FALSE,27,,Alarm Reporting Enable
+y3_input,y3_input,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,28,,Thermostat Y3 Input
+remocc,remocc,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,29,,Remote Occupancy Switch
+alarm_hist_clear,alarm_hist_clear,Enum,0-1,binaryValue,presentValue,FALSE,32,,Clear Alarm History
+alarm_reset,alarm_reset,Enum,0-1,binaryValue,presentValue,FALSE,33,,Reset All Current Alarms
+locshut,locshut,Enum,0-1,binaryValue,presentValue,FALSE,34,,Local Unit Shutdown Req.
+okpreocc,okpreocc,Enum,0-1,binaryValue,presentValue,FALSE,35,,Ok to Preoccupancy Purge
+oktoheat,oktoheat,Enum,0-1,binaryValue,presentValue,FALSE,36,,OK to Run Heat
+oktoufc,oktoufc,Enum,0-1,binaryValue,presentValue,FALSE,37,,Ok to Unocc Free Cool?
+preoccon,preoccon,Enum,0-1,binaryValue,presentValue,FALSE,38,,In Pre-Occupancy Purge?
+damp_good,damp_good,Enum,0-1,binaryValue,presentValue,FALSE,39,,Econ Damper Operational
+db_lock_out,db_lock_out,Enum,0-1,binaryValue,presentValue,FALSE,40,,Dry Bulb Lockout
+dif_db_ena,dif_db_ena,Enum,0-1,binaryValue,presentValue,FALSE,41,,Diff. Dry Bulb Control
+dif_enth_ena,dif_enth_ena,Enum,0-1,binaryValue,presentValue,FALSE,42,,Diff. Enthalpy Control
+econ_alarm,econ_alarm,Enum,0-1,binaryValue,presentValue,FALSE,43,,Economizer Alerts
+enth_lock_out,enth_lock_out,Enum,0-1,binaryValue,presentValue,FALSE,44,,Enthalpy Lockout
+idf_alarm,idf_alarm,Enum,0-1,binaryValue,presentValue,FALSE,45,,Indoor Fan Alerts
+occupied_fan,occupied_fan,Enum,0-1,binaryValue,presentValue,FALSE,46,,Fan On When Occupied
+fst_error,fst_error,Enum,0-1,binaryValue,presentValue,FALSE,49,,FST Sensor Error
+gen_status,gen_status,Enum,0-1,binaryValue,presentValue,FALSE,50,,General Status Switch
+iaq_err,iaq_err,Enum,0-1,binaryValue,presentValue,FALSE,51,,IAQ Sensor Error
+idf_bad,idf_bad,Enum,0-1,binaryValue,presentValue,FALSE,52,,IDF Operation Errors?
+link_active,link_active,Enum,0-1,binaryValue,presentValue,FALSE,58,,Linkage Active
+oarh_err,oarh_err,Enum,0-1,binaryValue,presentValue,FALSE,60,,OARH Sensor Error
+oat_rel_alarm,oat_rel_alarm,Enum,0-1,binaryValue,presentValue,FALSE,61,,OAT Thermistor Alerts
+sdpa_err,sdpa_err,Enum,0-1,binaryValue,presentValue,FALSE,63,,SDPA Sensor Error
+s_bmpald,s_bmpald,Enum,0-1,binaryValue,presentValue,FALSE,64,,Cmp Bump Loader Test
+ok_free_cl,ok_free_cl,Enum,0-1,binaryValue,presentValue,FALSE,65,,OK to Use Free Cooling?
+pe2,pe2,Enum,0-1,binaryValue,presentValue,FALSE,66,,Power Exhaust 2 Relay
+rarh_err,rarh_err,Enum,0-1,binaryValue,presentValue,FALSE,67,,RARH Sensor Error
+rat_err,rat_err,Enum,0-1,binaryValue,presentValue,FALSE,68,,RAT Sensor Error
+s_alarm,s_alarm,Enum,0-1,binaryValue,presentValue,FALSE,70,,Alarm Output Relay Test
+s_bmpa1,s_bmpa1,Enum,0-1,binaryValue,presentValue,FALSE,71,,Compressor Bump A1 Test
+s_bmpa2,s_bmpa2,Enum,0-1,binaryValue,presentValue,FALSE,72,,Compressor Bump A2 Test
+s_cchr1,s_cchr1,Enum,0-1,binaryValue,presentValue,FALSE,73,,Crankcase Heater 1 test
+s_coola1,s_coola1,Enum,0-1,binaryValue,presentValue,FALSE,74,,Cooling W/Comp.A1 Test
+s_coola2,s_coola2,Enum,0-1,binaryValue,presentValue,FALSE,75,,Cooling W/Comp.A2 Test
+s_heat1,s_heat1,Enum,0-1,binaryValue,presentValue,FALSE,76,,Heating Stage 1 Test
+s_heat2,s_heat2,Enum,0-1,binaryValue,presentValue,FALSE,77,,Heating Stage 2 Test
+s_idftrn,s_idftrn,Enum,0-1,binaryValue,presentValue,FALSE,78,,IDF Manual Transition
+s_cola1d,s_cola1d,Enum,0-1,binaryValue,presentValue,FALSE,79,,Cooling W/Comp.ALD Test
+purge,purge,Enum,0-1,binaryValue,presentValue,FALSE,80,,Smoke Purge Switch
+s_pe_1,s_pe_1,Enum,0-1,binaryValue,presentValue,FALSE,82,,Power Exhaust 1 Test
+s_pe_2,s_pe_2,Enum,0-1,binaryValue,presentValue,FALSE,83,,Power Exhaust 2 Test
+sat_err,sat_err,Enum,0-1,binaryValue,presentValue,FALSE,84,,SAT Sensor Error
+sspa_err,sspa_err,Enum,0-1,binaryValue,presentValue,FALSE,89,,SSPA Sensor Error
+dispunit,dispunit,Enum,0-1,binaryValue,presentValue,FALSE,91,,Metric Display
+dst_actv,dst_actv,Enum,0-1,binaryValue,presentValue,FALSE,92,,DST currently active
+dst_cfg,dst_cfg,Enum,0-1,binaryValue,presentValue,FALSE,93,,DST allowed?
+loc_occ,loc_occ,Enum,0-1,binaryValue,presentValue,FALSE,95,,Local Sched Occ Request
+hol_tmrw,hol_tmrw,Enum,0-1,binaryValue,presentValue,FALSE,96,,Tomorrow Is A Holiday
+holtoday,holtoday,Enum,0-1,binaryValue,presentValue,FALSE,98,,Today Is A Holiday
+keypress,keypress,Enum,0-1,binaryValue,presentValue,FALSE,99,,Disp Keys Being Pressed
+pass_ebl,pass_ebl,Enum,0-1,binaryValue,presentValue,FALSE,100,,User Password Protection
+space_alarm,space_alarm,Enum,0-1,binaryValue,presentValue,FALSE,103,,Space Sensors Alerts
+tstat_al,tstat_al,Enum,0-1,binaryValue,presentValue,FALSE,104,,Thermostat Alerts
+auid,auid,Enum,0-1,binaryValue,presentValue,FALSE,106,,ALC Auto Id Scheme
+bac_auid,bac_auid,Enum,0-1,binaryValue,presentValue,FALSE,107,,BACnet ID Auto ID
+bms_sced,bms_sced,Enum,0-1,binaryValue,presentValue,FALSE,108,,BACnet BMS Schedule
+reset_filter_timer,reset_filter_timer,Enum,0-1,binaryValue,presentValue,FALSE,109,,Reset Filter Timer
+calobjst,calobjst,Enum,0-1,binaryValue,presentValue,FALSE,110,,BACnetCal Object Status
+backfile,backfile,Enum,0-1,binaryValue,presentValue,FALSE,111,,USB Find Restore File
+firedown,firedown,Enum,0-1,binaryValue,presentValue,FALSE,112,,Fire Shutdown Switch
+adptstat,adptstat,Enum,0-1,binaryValue,presentValue,FALSE,115,,Tstat Adaptive Staging
+allhtloc,allhtloc,Enum,0-1,binaryValue,presentValue,FALSE,122,,All Heat Stages Lockout
+ca1_aval,ca1_aval,Enum,0-1,binaryValue,presentValue,FALSE,123,,Compressor A1 Available
+ca1_lock,ca1_lock,Enum,0-1,binaryValue,presentValue,FALSE,124,,Compressor A1 Locked Out
+ca2_aval,ca2_aval,Enum,0-1,binaryValue,presentValue,FALSE,125,,Compressor A2 Available
+ca2_lock,ca2_lock,Enum,0-1,binaryValue,presentValue,FALSE,126,,Compressor A2 Locked Out
+ciralock,ciralock,Enum,0-1,binaryValue,presentValue,FALSE,128,,Circuit A Locked Out
+ddbckup,ddbckup,Enum,0-1,binaryValue,presentValue,FALSE,129,,Make Config Backup File
+ddrstre,ddrstre,Enum,0-1,binaryValue,presentValue,FALSE,130,,Start Config Restore
+tcs_Act,tcs_Act,Enum,0-1,binaryValue,presentValue,FALSE,133,,Temp Compensate Start On
+ufc_act,ufc_act,Enum,0-1,binaryValue,presentValue,FALSE,135,,Unocc Free Cool Active
+autocool,autocool,Enum,0-1,binaryValue,presentValue,FALSE,160,,RUN AUTO COOLING TEST
+autoheat,autoheat,Enum,0-1,binaryValue,presentValue,FALSE,161,,RUN AUTO HEATING TEST
+autosys,autosys,Enum,0-1,binaryValue,presentValue,FALSE,162,,RUN AUTO SYSTEM TEST
+autoindp,autoindp,Enum,0-1,binaryValue,presentValue,FALSE,163,,AUTO INDEPENDENT TEST
+iaq_ovrd,iaq_ovrd,Enum,0-1,binaryValue,presentValue,FALSE,164,,Is IAQ Override Active?
+f_caloch,f_caloch,Enum,0-1,binaryValue,presentValue,FALSE,167,,CirA low charge
+f_caddf,f_caddf,Enum,0-1,binaryValue,presentValue,FALSE,168,,CirA down due to fail
+a_capr,a_capr,Enum,0-1,binaryValue,presentValue,FALSE,169,,Cir.A Pressure Ratio
+a_calsp,a_calsp,Enum,0-1,binaryValue,presentValue,FALSE,170,,Cir.A Low Suction
+a_cahps,a_cahps,Enum,0-1,binaryValue,presentValue,FALSE,171,,Cir.A HPS trip
+a_cahdp,a_cahdp,Enum,0-1,binaryValue,presentValue,FALSE,172,,Cir.A High Discharge
+f_ca2ddf,f_ca2ddf,Enum,0-1,binaryValue,presentValue,FALSE,173,,C.A2 down due to fail
+a_ca2rr,a_ca2rr,Enum,0-1,binaryValue,presentValue,FALSE,174,,C.A2 reverse rotation
+a_ca2ftp,a_ca2ftp,Enum,0-1,binaryValue,presentValue,FALSE,177,,C.A2 fail to pressure
+f_ca1ddf,f_ca1ddf,Enum,0-1,binaryValue,presentValue,FALSE,178,,C.A1 down due to fail
+a_ca1rr,a_ca1rr,Enum,0-1,binaryValue,presentValue,FALSE,179,,C.A1 reverse rotation
+a_caoff,a_caoff,Enum,0-1,binaryValue,presentValue,FALSE,181,,Cir.A unexpected off
+a_ca1ftp,a_ca1ftp,Enum,0-1,binaryValue,presentValue,FALSE,182,,C.A1 fail to pressure
+a_baddpa,a_baddpa,Enum,0-1,binaryValue,presentValue,FALSE,183,,Cir.A SDP sensor range
+a_badec1,a_badec1,Enum,0-1,binaryValue,presentValue,FALSE,184,,Econ feedback range
+a_badfst,a_badfst,Enum,0-1,binaryValue,presentValue,FALSE,185,,FST sensor range
+a_badoat,a_badoat,Enum,0-1,binaryValue,presentValue,FALSE,186,,OAT sensor range
+a_badrat,a_badrat,Enum,0-1,binaryValue,presentValue,FALSE,187,,RAT sensor range
+a_badsat,a_badsat,Enum,0-1,binaryValue,presentValue,FALSE,188,,SAT sensor error
+a_badspa,a_badspa,Enum,0-1,binaryValue,presentValue,FALSE,189,,Cir.A SSP sensor range
+a_badspt,a_badspt,Enum,0-1,binaryValue,presentValue,FALSE,190,,SPT sensor range
+a_opndpa,a_opndpa,Enum,0-1,binaryValue,presentValue,FALSE,191,,Cir.A SDP open sensor
+a_opnec1,a_opnec1,Enum,0-1,binaryValue,presentValue,FALSE,192,,Econ feedback open
+a_opnfst,a_opnfst,Enum,0-1,binaryValue,presentValue,FALSE,193,,FST open sensor
+a_opniaq,a_opniaq,Enum,0-1,binaryValue,presentValue,FALSE,194,,IAQ open sensor
+a_opnoaq,a_opnoaq,Enum,0-1,binaryValue,presentValue,FALSE,195,,OAQ open sensor
+a_opnoat,a_opnoat,Enum,0-1,binaryValue,presentValue,FALSE,196,,OAT open sensor
+a_opnorh,a_opnorh,Enum,0-1,binaryValue,presentValue,FALSE,197,,OARH open sensor
+a_opnrat,a_opnrat,Enum,0-1,binaryValue,presentValue,FALSE,198,,RAT open sensor
+a_opnrrh,a_opnrrh,Enum,0-1,binaryValue,presentValue,FALSE,199,,RARH open sensor
+a_opnspa,a_opnspa,Enum,0-1,binaryValue,presentValue,FALSE,200,,Cir.A SSP open sensor
+a_opnspt,a_opnspt,Enum,0-1,binaryValue,presentValue,FALSE,201,,SPT open sensor
+a_shtdpa,a_shtdpa,Enum,0-1,binaryValue,presentValue,FALSE,202,,Cir.A SDP short sensor
+a_shtec1,a_shtec1,Enum,0-1,binaryValue,presentValue,FALSE,203,,Econ feedback shorted
+a_shtfst,a_shtfst,Enum,0-1,binaryValue,presentValue,FALSE,204,,FST shorted sensor
+a_shtiaq,a_shtiaq,Enum,0-1,binaryValue,presentValue,FALSE,205,,IAQ shorted sensor
+a_shtoaq,a_shtoaq,Enum,0-1,binaryValue,presentValue,FALSE,206,,OAQ shorted sensor
+a_shtoat,a_shtoat,Enum,0-1,binaryValue,presentValue,FALSE,207,,OAT shorted sensor
+a_shtorh,a_shtorh,Enum,0-1,binaryValue,presentValue,FALSE,208,,OARH shorted sensor
+a_shtrat,a_shtrat,Enum,0-1,binaryValue,presentValue,FALSE,209,,RAT shorted sensor
+a_shtrrh,a_shtrrh,Enum,0-1,binaryValue,presentValue,FALSE,210,,RARH shorted sensor
+a_shtspa,a_shtspa,Enum,0-1,binaryValue,presentValue,FALSE,211,,Cir.A SSP short sensor
+a_shtspt,a_shtspt,Enum,0-1,binaryValue,presentValue,FALSE,212,,SPT shorted sensor
+a_dfilt,a_dfilt,Enum,0-1,binaryValue,presentValue,FALSE,214,,Dirty Filter
+a_dnm,a_dnm,Enum,0-1,binaryValue,presentValue,FALSE,215,,Econ not modulating
+a_dnm_sc,a_dnm_sc,Enum,0-1,binaryValue,presentValue,FALSE,216,,Econ stuck closed
+a_dnm_so,a_dnm_so,Enum,0-1,binaryValue,presentValue,FALSE,217,,Econ stuck open
+a_dnmemd,a_dnmemd,Enum,0-1,binaryValue,presentValue,FALSE,218,,Econ mech disconnected
+a_idfwar,a_idfwar,Enum,0-1,binaryValue,presentValue,FALSE,219,,Indoor Fan status
+a_impcl,a_impcl,Enum,0-1,binaryValue,presentValue,FALSE,220,,Tstat improper cool
+a_impht,a_impht,Enum,0-1,binaryValue,presentValue,FALSE,221,,Tstat improper heat
+a_noign,a_noign,Enum,0-1,binaryValue,presentValue,FALSE,222,,IGC ignition failure
+a_simhc,a_simhc,Enum,0-1,binaryValue,presentValue,FALSE,223,,Tstat heat/cool calls
+a_t24enc,a_t24enc,Enum,0-1,binaryValue,presentValue,FALSE,224,,Econ not cooling
+a_t24eoa,a_t24eoa,Enum,0-1,binaryValue,presentValue,FALSE,225,,Excessive Outdoor air
+a_t24ewc,a_t24ewc,Enum,0-1,binaryValue,presentValue,FALSE,226,,Econ improper cooling
+a_vfdhnd,a_vfdhnd,Enum,0-1,binaryValue,presentValue,FALSE,227,,IDF VFD in hand
+a_vfdwar,a_vfdwar,Enum,0-1,binaryValue,presentValue,FALSE,228,,IDF VFD Warning
+f_idfcom,f_idfcom,Enum,0-1,binaryValue,presentValue,FALSE,229,,IDF VFD Communication
+f_idfoff,f_idfoff,Enum,0-1,binaryValue,presentValue,FALSE,230,,IDF off when comand on
+f_idfon,f_idfon,Enum,0-1,binaryValue,presentValue,FALSE,231,,IDF on when comand off
+f_vfdhnd,f_vfdhnd,Enum,0-1,binaryValue,presentValue,FALSE,233,,IDF VFD in hand
+f_vfdlo,f_vfdlo,Enum,0-1,binaryValue,presentValue,FALSE,234,,IDF VFD Lockout
+f_ronoht,f_ronoht,Enum,0-1,binaryValue,presentValue,FALSE,235,,Rollout without heat
+a_caldp,a_caldp,Enum,0-1,binaryValue,presentValue,FALSE,236,,Cir.A Low Discharge
+a_notime,a_notime,Enum,0-1,binaryValue,presentValue,FALSE,237,,MBB Clock failure
+a_vfdcwa,a_vfdcwa,Enum,0-1,binaryValue,presentValue,FALSE,238,,IDF VFD Current limit
+a_vfdtwa,a_vfdtwa,Enum,0-1,binaryValue,presentValue,FALSE,239,,IDF VFD thermal warning
+a_vfdvwa,a_vfdvwa,Enum,0-1,binaryValue,presentValue,FALSE,240,,IDF VFD voltage warning
+f_cstuck,f_cstuck,Enum,0-1,binaryValue,presentValue,FALSE,241,,Compressor Stuck on
+f_fire,f_fire,Enum,0-1,binaryValue,presentValue,FALSE,242,,Fire Shutdown
+f_bad_dd,f_bad_dd,Enum,0-1,binaryValue,presentValue,FALSE,243,,Software Error
+a_gensw,a_gensw,Enum,0-1,binaryValue,presentValue,FALSE,244,,General Status
+a_mbb0x,a_mbb0x,Enum,0-1,binaryValue,presentValue,FALSE,245,,MBB zero crossing
+a_mbb12d,a_mbb12d,Enum,0-1,binaryValue,presentValue,FALSE,246,,MBB Rnet voltage range
+a_mbb24d,a_mbb24d,Enum,0-1,binaryValue,presentValue,FALSE,247,,MBB 24vdc range
+a_mbb5dc,a_mbb5dc,Enum,0-1,binaryValue,presentValue,FALSE,248,,MBB 5vdc range
+f_vfdot,f_vfdot,Enum,0-1,binaryValue,presentValue,FALSE,249,,IDF VFD PWR Card Temp
+f_vfdpul,f_vfdpul,Enum,0-1,binaryValue,presentValue,FALSE,250,,IDF VFD Phase U loss
+f_vfdpvl,f_vfdpvl,Enum,0-1,binaryValue,presentValue,FALSE,251,,IDF VFD Phase V loss
+f_vfdpwl,f_vfdpwl,Enum,0-1,binaryValue,presentValue,FALSE,252,,IDF VFD Phase W loss
+f_vfdune,f_vfdune,Enum,0-1,binaryValue,presentValue,FALSE,253,,IDF VFD Unexpected
+f_vfdcf,f_vfdcf,Enum,0-1,binaryValue,presentValue,FALSE,254,,IDF VFD CTL word loss
+f_vfdef,f_vfdef,Enum,0-1,binaryValue,presentValue,FALSE,255,,IDF VFD earth fault
+f_vfdivl,f_vfdivl,Enum,0-1,binaryValue,presentValue,FALSE,256,,IDF VFD Control Voltage
+f_vfdlve,f_vfdlve,Enum,0-1,binaryValue,presentValue,FALSE,257,,IDF VFD Supply VDD
+f_vfdmpf,f_vfdmpf,Enum,0-1,binaryValue,presentValue,FALSE,258,,IDF VFD Main Phase loss
+f_vfdoc,f_vfdoc,Enum,0-1,binaryValue,presentValue,FALSE,259,,IDF VFD over current
+f_vfdol,f_vfdol,Enum,0-1,binaryValue,presentValue,FALSE,260,,IDF VFD Overload
+f_vfdov,f_vfdov,Enum,0-1,binaryValue,presentValue,FALSE,261,,IDF VFD over voltage
+f_vfdsc,f_vfdsc,Enum,0-1,binaryValue,presentValue,FALSE,262,,IDF VFD Short Circuit
+f_vfduv,f_vfduv,Enum,0-1,binaryValue,presentValue,FALSE,263,,IDF VFD under voltage
+f_freeze,f_freeze,Enum,0-1,binaryValue,presentValue,FALSE,264,,Freeze protection
+f_gensw,f_gensw,Enum,0-1,binaryValue,presentValue,FALSE,265,,General Status
+f_hstuck,f_hstuck,Enum,0-1,binaryValue,presentValue,FALSE,266,,Run Away Heat
+f_mbbeep,f_mbbeep,Enum,0-1,binaryValue,presentValue,FALSE,267,,MBB EEPROM Failure
+f_mbbf2,f_mbbf2,Enum,0-1,binaryValue,presentValue,FALSE,268,,MBB fuse 2 open
+f_mbbf3,f_mbbf3,Enum,0-1,binaryValue,presentValue,FALSE,269,,MBB fuse 3 open
+f_mbblov,f_mbblov,Enum,0-1,binaryValue,presentValue,FALSE,270,,MBB low voltage
+f_mbbref,f_mbbref,Enum,0-1,binaryValue,presentValue,FALSE,271,,MBB reference voltage
+f_remoff,f_remoff,Enum,0-1,binaryValue,presentValue,FALSE,272,,Remote Shutdown
+f_cofs,f_cofs,Enum,0-1,binaryValue,presentValue,FALSE,273,,Condensate Overflow
+a_opnsrh,a_opnsrh,Enum,0-1,binaryValue,presentValue,FALSE,274,,SPRH open sensor
+a_shtsrh,a_shtsrh,Enum,0-1,binaryValue,presentValue,FALSE,275,,SPRH shorted sensor
+a_opnoac,a_opnoac,Enum,0-1,binaryValue,presentValue,FALSE,276,,OACFM open sensor
+a_shtoac,a_shtoac,Enum,0-1,binaryValue,presentValue,FALSE,277,,OACFM shorted sensor
+f_idflsm,f_idflsm,Enum,0-1,binaryValue,presentValue,FALSE,278,,IDF Manual Limit Trip
+f_phmon,f_phmon,Enum,0-1,binaryValue,presentValue,FALSE,279,,Phase Monitor Trip
+s_ldv_a,s_ldv_a,Enum,0-1,binaryValue,presentValue,FALSE,281,,Liq Diverter Val Rly Tst
+s_rdv_a,s_rdv_a,Enum,0-1,binaryValue,presentValue,FALSE,282,,Rht Dischg Valve Rly Tst
+mechcool,mechcool,Enum,0-1,binaryValue,presentValue,FALSE,301,,Mechanical Cool active?
+okmechcl,okmechcl,Enum,0-1,binaryValue,presentValue,FALSE,302,,Ok to use compressors?
+perc_bac,perc_bac,Enum,0-1,binaryValue,presentValue,FALSE,303,,Percent Enable/Disable
+hw_al,hw_al,Enum,0-1,binaryValue,presentValue,FALSE,305,,Hardware Failures Alerts
+heat_al,heat_al,Enum,0-1,binaryValue,presentValue,FALSE,306,,Heating Failure Alerts
+co2s_al,co2s_al,Enum,0-1,binaryValue,presentValue,FALSE,307,,Air Quality CO2 Alerts
+rhs_al,rhs_al,Enum,0-1,binaryValue,presentValue,FALSE,308,,RH sensor failure Alert
+gens_al,gens_al,Enum,0-1,binaryValue,presentValue,FALSE,309,,General Status Alerts
+trans_al,trans_al,Enum,0-1,binaryValue,presentValue,FALSE,310,,Transducer Sensor Alerts
+sa_ra_alarm,sa_ra_alarm,Enum,0-1,binaryValue,presentValue,FALSE,311,,SAT/RAT Sensor Alerts
+comp_alarm,comp_alarm,Enum,0-1,binaryValue,presentValue,FALSE,312,,Compressor Alerts
+circuit_alarm,circuit_alarm,Enum,0-1,binaryValue,presentValue,FALSE,313,,Refrig Circuit Alerts
+oat_error,oat_error,Enum,0-1,binaryValue,presentValue,FALSE,314,,OAT Sensor Error
+lc_lock,lc_lock,Enum,0-1,binaryValue,presentValue,FALSE,317,,Low cooling locked out
+mc_lock,mc_lock,Enum,0-1,binaryValue,presentValue,FALSE,318,,Medium Cooling lockout
+heatdmdLimit,heatdmdLimit,Enum,0-1,binaryValue,presentValue,FALSE,370,,HeatDemandLimiting
+oacfm_rel_alarm,oacfm_rel_alarm,Enum,0-1,binaryValue,presentValue,FALSE,371,,OACFM Alarm Relay
+sup_air_temp_en,sup_air_temp_en,Enum,0-1,binaryValue,presentValue,FALSE,410,,Supply Air Temper Enable
+oktotemp,oktotemp,Enum,0-1,binaryValue,presentValue,FALSE,415,,OK to SupplyAirTempering
+f_vfdmot,f_vfdmot,Enum,0-1,binaryValue,presentValue,FALSE,418,,IDF VFD Motor over temp
+oktofbd,oktofbd,Enum,0-1,binaryValue,presentValue,FALSE,420,,Ok to  fan based dehum
+oktohumz,oktohumz,Enum,0-1,binaryValue,presentValue,FALSE,421,,Ok to use humidimizer
+oktodhum,oktodhum,Enum,0-1,binaryValue,presentValue,FALSE,422,,Ok to Dehumidify?
+humctrla,humctrla,Enum,0-1,binaryValue,presentValue,FALSE,423,,humidity ctrl is active
+cooldmdLimit,cooldmdLimit,Enum,0-1,binaryValue,presentValue,FALSE,435,,CoolDemandLimiting
+fbdsatlo,fbdsatlo,Enum,0-1,binaryValue,presentValue,FALSE,439,,fbdh sat locked out
+fbdsstlo,fbdsstlo,Enum,0-1,binaryValue,presentValue,FALSE,440,,FBDH SST locked out
+iaq_override_en,iaq_override_en,Enum,0-1,binaryValue,presentValue,FALSE,445,,IAQ override enable
+sdwn_a1,sdwn_a1,Enum,0-1,binaryValue,presentValue,FALSE,449,,Shutdown A1 First
+sdwn_a2,sdwn_a2,Enum,0-1,binaryValue,presentValue,FALSE,450,,Shutdown A2 First
+sdwn_ald,sdwn_ald,Enum,0-1,binaryValue,presentValue,FALSE,451,,Shutdown Loader First
+cmpa1_en,cmpa1_en,Enum,0-1,binaryValue,presentValue,FALSE,452,,Is comp A1 present
+cmpa2_en,cmpa2_en,Enum,0-1,binaryValue,presentValue,FALSE,453,,Is comp A2 present
+cmpal_en,cmpal_en,Enum,0-1,binaryValue,presentValue,FALSE,454,,Is comp Loader present
+s_rlv_a,s_rlv_a,Enum,0-1,binaryValue,presentValue,FALSE,455,,Reheat Liq Valv Rly Test
+s_clv_a,s_clv_a,Enum,0-1,binaryValue,presentValue,FALSE,456,,Cooling Liq Valv Test
+s_erv2p,s_erv2p,Enum,0-1,binaryValue,presentValue,FALSE,457,,2Position/ERV Relay Test
+mecht_en,mecht_en,Enum,0-1,binaryValue,presentValue,FALSE,465,,MechanicalHeating Status
+rvs_a,rvs_a,Enum,0-1,binaryValue,presentValue,FALSE,466,,Rev.Valve Soleniod Cir.A
+dfrstact,dfrstact,Enum,0-1,binaryValue,presentValue,FALSE,467,,Defrost Mode Active
+llsv_en,llsv_en,Enum,0-1,binaryValue,presentValue,FALSE,468,,LiquidLineSolinoid Valve
+disldpal,disldpal,Enum,0-1,binaryValue,presentValue,FALSE,469,,Low Discharge Diagnostic
+flt_status,flt_status,Enum,0-1,binaryValue,presentValue,FALSE,1016,,Filter Status Switch
+w1_input,w1_input,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,1017,,Thermostat W1 Input
+w2_input,w2_input,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,1018,,Thermostat W2 Input
+y1_input,y1_input,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,1019,,Thermostat Y1 Input
+y2_input,y2_input,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,1020,,Thermostat Y2 Input
+g_input,g_input,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,1021,,Thermostat G Input
+occ_status,occ_status,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,2008,,Currently Occupied
+ofr,ofr,Enum,0-1,binaryValue,presentValue,FALSE,6000,,Outdoor Fan Relay
+s_ofrspd,s_ofrspd,Enum,0-1,binaryValue,presentValue,FALSE,6001,,ODF Speed Relay Test
+erv_2pos,erv_2pos,Enum,0-1,binaryValue,presentValue,FALSE,6002,,2-Pos Damper/ERV relay
+space_err,space_err,Enum,0-1,binaryValue,presentValue,FALSE,7001,,SPT Sensor Error
+stpt_err,stpt_err,Enum,0-1,binaryValue,presentValue,FALSE,7002,,SPTO Sensor Error
+sfan_fail_alarm,sfan_fail_alarm,Enum,0-1,binaryValue,presentValue,FALSE,7008,,Shut Down on IDF Failure
+sfan_hand_alarm,sfan_hand_alarm,Enum,0-1,binaryValue,presentValue,FALSE,7009,,IDF Speed Override Flag
+humz_en,humz_en,Enum,0-1,binaryValue,presentValue,FALSE,7010,,Humidimizer Status
+ldv_a,ldv_a,Enum,0-1,binaryValue,presentValue,FALSE,7011,,Liquid Diverter Val CirA
+rdv_a,rdv_a,Enum,0-1,binaryValue,presentValue,FALSE,7012,,Reheat Dischg Valve CirA
+rdva_en,rdva_en,Enum,0-1,binaryValue,presentValue,FALSE,7013,,Reheat Dischg Valve CirA
+ldva_en,ldva_en,Enum,0-1,binaryValue,presentValue,FALSE,7014,,Liquid Divert Valve CirA
+filter_alarm,filter_alarm,Enum,0-1,binaryValue,presentValue,FALSE,7017,,Dirty Filter Alerts
+condensate_switch,condensate_switch,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,7028,,COFS Switch State
+iaqoverride_switch,iaqoverride_switch,Enum,0-1,binaryValue,presentValue,FALSE,7030,,IAQ override sw state
+equip_alarm,equip_alarm,Enum,0-1,binaryValue,presentValue,FALSE,7048,,Alarm Output Relay State
+clva_en,clva_en,Enum,0-1,binaryValue,presentValue,FALSE,7049,,Cooling Liq Valve CirA
+rlva_en,rlva_en,Enum,0-1,binaryValue,presentValue,FALSE,7050,,Reheat Liquid Valve CirA
+rlv_a,rlv_a,Enum,0-1,binaryValue,presentValue,FALSE,7051,,Reheat Liquid Valve CirA
+clv_a,clv_a,Enum,0-1,binaryValue,presentValue,FALSE,7052,,Cooling Liq Valve CirA
+loamben,loamben,Enum,0-1,binaryValue,presentValue,FALSE,7053,,Low Ambient Enable
+rem_shut,rem_shut,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,9001,,Remote Shutdown Switch
+defrostswitch,defrostswitch,Enum,0-1,binaryValue,presentValue,FALSE,9002,,defrost switch
+s_dfrst,s_dfrst,Enum,0-1,binaryValue,presentValue,FALSE,9004,,Defrost Test
+s_mecht,s_mecht,Enum,0-1,binaryValue,presentValue,FALSE,9005,,Mechanical Heating Test
+s_rvs_a,s_rvs_a,Enum,0-1,binaryValue,presentValue,FALSE,9006,,Rev.Val. Sole. Cir.A Tst
+s_llsv,s_llsv,Enum,0-1,binaryValue,presentValue,FALSE,9007,,LiqLine Solenoid Test
+s_ecocal,s_ecocal,Enum,0-1,binaryValue,presentValue,FALSE,9008,,Econ Damper Calibration
+evac,evac,Enum,0-1,binaryValue,presentValue,FALSE,9009,,Smoke Evacuation Switch
+pressure,pressure,Enum,0-1,binaryValue,presentValue,FALSE,9010,,Smoke Pressure Switch
+evacdamp,evacdamp,Enum,0-1,binaryValue,presentValue,FALSE,9011,,Smoke Evac with damper
+ofr2,ofr2,Enum,0-1,binaryValue,presentValue,FALSE,9076,,Outdoor Fan Relay 2
+ofr3,ofr3,Enum,0-1,binaryValue,presentValue,FALSE,9077,,Outdoor Fan Relay 3
+loamben2,loamben2,Enum,0-1,binaryValue,presentValue,FALSE,9080,,Low Ambient Enable2
+s_ofr2,s_ofr2,Enum,0-1,binaryValue,presentValue,FALSE,9081,,ODF Relay2 Test
+s_ofr3,s_ofr3,Enum,0-1,binaryValue,presentValue,FALSE,9082,,ODF Relay3 Test
+IFM2OFEN,IFM2OFEN,Enum,0-1,binaryValue,presentValue,FALSE,9086,,INDOOR MOTOR2 OFFSET EN
+zs_motion,zs_motion,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,9088,,ZS Motion Sensor
+sprh_err,sprh_err,Enum,0-1,binaryValue,presentValue,FALSE,9090,,SPRH Sensor Error
+control_type,control_type,State,State count: 3,multiStateValue,presentValue,FALSE,2,,"1=eRTU_CONTROL_SPACE, 2=eRTU_CONTROL_RAT"
+tstat_type,tstat_type,State,State count: 4,multiStateValue,presentValue,FALSE,5,,"1=DW2 - 2 Stage Digital, 2=CS3 - 3 Stage Conventional, 3=DW3 - 3 Stage Digital"
+ventstat,ventstat,State,State count: 10,multiStateValue,presentValue,FALSE,6,,"1=Circulation, 2=Pre-Occ Purge, 3=IAQ Override, 4=Minimum Position, 5=Under Ventilation, 6=Over Ventilation, 7=DCV Position, 8=Free Cool Position, 9=Testing"
+tstat_alert,tstat_alert,State,State count: 2,multiStateValue,presentValue,FALSE,8,,1=Heat State
+color,color,State,State count: 15,multiStateValue,presentValue,FALSE,9,,"1=Red, 2=Dark Blue, 3=Light Blue, 4=Green, 5=Light Green, 6=Yellow, 7=Orange, 8=Red, 9=White, 10=Empty, 11=Empty, 12=Coral, 13=Charcoal, 14=Purple"
+bms_cfg,bms_cfg,State,State count: 3,multiStateValue,presentValue,FALSE,11,,"1=BMS_CCN, 2=BMS_BACNET_MSTP"
+bms_occ,bms_occ,State,State count: 3 (default 3),multiStateValue,presentValue,FALSE,12,,"1=occupied, 2=no_request"
+lnk_occ,lnk_occ,State,State count: 3,multiStateValue,presentValue,FALSE,13,,"1=occupied, 2=no_request"
+occ_ctrl,occ_ctrl,State,State count: 8,multiStateValue,presentValue,FALSE,14,,"1=Local schd (SCHEDNUM = 1 thru 64), 2=Building management system, 3=Remote occupancy input, 4=Timed override is in effect, 5=Linkage is active, 6=Forced, 7=Motion"
+ht_type,ht_type,State,State count: 2,multiStateValue,presentValue,FALSE,16,,1=Gas
+e0commst,e0commst,State,State count: 2,multiStateValue,presentValue,FALSE,17,,1=Device Online
+bac_baud,bac_baud,State,State count: 6,multiStateValue,presentValue,FALSE,18,,"1=Baud_19200, 2=Baud_38400, 3=Baud_57600, 4=Baud_76800, 5=Baud_115200"
+fw_state,fw_state,State,State count: 3,multiStateValue,presentValue,FALSE,19,,"1=Field Release, 2=Engineering Release"
+ufc_cfg,ufc_cfg,State,State count: 3,multiStateValue,presentValue,FALSE,24,,"1=PREOCCUPANCY, 2=UNOCCUPIED"
+iaqancfg,iaqancfg,State,State count: 4,multiStateValue,presentValue,FALSE,25,,"1=DCV, 2=OVR_IAQ, 3=MINPOS"
+rarh_channel,rarh_channel,State,State count: 5,multiStateValue,presentValue,FALSE,33,,"1=MBB AI06, 2=MBB AI07, 3=MBB AI08, 4=SIOB AI10"
+filter_channel,filter_channel,State,State count: 8,multiStateValue,presentValue,FALSE,41,,"1=MBB DI12, 2=MBB DI13, 3=MBB DI14, 4=MBB DI02, 5=MBB DI03, 6=MBB DI04, 7=SIOB DI01"
+filt_cfg,filt_cfg,State,State count: 3,multiStateValue,presentValue,FALSE,42,,"1=Normally Closed, 2=Not Configured"
+sub_mode,sub_mode,State,State count: 35,multiStateValue,presentValue,FALSE,43,,Running Mode Operation
+bac_rest,bac_rest,State,State count: 3,multiStateValue,presentValue,FALSE,44,,"1=USB, 2=BACNET"
+rmoc_cfg,rmoc_cfg,State,State count: 3,multiStateValue,presentValue,FALSE,45,,"1=unoccupied with switch state closed., 2=not configured"
+rmocchan,rmocchan,State,State count: 8,multiStateValue,presentValue,FALSE,46,,"1=MBB DI12, 2=MBB DI13, 3=MBB DI14, 4=MBB DI02, 5=MBB DI03, 6=MBB DI04, 7=SIOB DI01"
+keepconf,keepconf,State,State count: 3,multiStateValue,presentValue,FALSE,47,,"1=True, 2=False"
+cdlm_level,cdlm_level,State,State count: 4,multiStateValue,presentValue,FALSE,56,,"1=one, 2=two, 3=three"
+hdlm_level,hdlm_level,State,State count: 4,multiStateValue,presentValue,FALSE,57,,"1=one, 2=two, 3=three"
+fbd_type,fbd_type,State,State count: 3,multiStateValue,presentValue,FALSE,58,,"1=eRTU_FBD_TYPE_COMFORT, 2=eRTU_FBD_TYPE_MAX"
+sys_demand_enum,sys_demand_enum,State,State count: 28,multiStateValue,presentValue,FALSE,101,,"1=Dehum, 2=Fan Only, 3=SA Tempering, 4=Low Cool, 5=Med Cool, 6=High Cool, 7=Low Cool Dehum, 8=Med Cool Dehum, 9=High Cool Dehum, 10=Low Heat, 11=High Heat, 12=Low Heat, 13=High Heat, 14=Service Test, 15=Factory Test, 16=Shutdown, 17=Safety Fault, 18=Emergency, 19=UFC Low Cool, 20=UFC Med Cool, 21=UFC High Cool, 22=Low UFC Dehum, 23=Med UFC Dehum, 24=High UFC Dehum, 25=Smoke Purge     , 26=Smoke Pressure, 27=Smoke Evac"
+test_ito,test_ito,State,State count: 7,multiStateValue,presentValue,FALSE,156,,"1=30 Minutes, 2=1 Hour, 3=2 Hours, 4=4 Hours, 5=8 Hours, 6=12 Hours"
+pe1_channel,pe1_channel,State,State count: 3,multiStateValue,presentValue,FALSE,365,,"1=MBB RLY11, 2=MBB RLY06"
+pe2_channel,pe2_channel,State,State count: 3,multiStateValue,presentValue,FALSE,366,,"1=MBB RLY11, 2=MBB RLY06"
+ocfmchan,ocfmchan,State,State count: 5,multiStateValue,presentValue,FALSE,370,,"1=MBB AI06, 2=MBB AI07, 3=MBB AI08, 4=SIOB AI10"
+sprhchan,sprhchan,State,State count: 5,multiStateValue,presentValue,FALSE,372,,"1=MBB AI06, 2=MBB AI07, 3=MBB AI08, 4=SIOB AI10"
+oaq_channel,oaq_channel,State,State count: 5,multiStateValue,presentValue,FALSE,426,,"1=MBB AI06, 2=MBB AI07, 3=MBB AI08, 4=SIOB AI10"
+iaqo_sw_chan,iaqo_sw_chan,State,State count: 8,multiStateValue,presentValue,FALSE,444,,"1=MBB DI12, 2=MBB DI13, 3=MBB DI14, 4=MBB DI02, 5=MBB DI03, 6=MBB DI04, 7=SIOB DI01"
+fanstcfg,fanstcfg,State,State count: 3,multiStateValue,presentValue,FALSE,451,,"1=Normally Closed, 2=Not Configured"
+odfstate,odfstate,State,State count: 4,multiStateValue,presentValue,FALSE,452,,"1=eCMC_ON_STATE, 2=eCMC_STATE_LOW, 3=eCMC_STATE_HIGH"
+venttype,venttype,State,State count: 5,multiStateValue,presentValue,FALSE,453,,"1=eRTU_AUXVENT_ECONO, 2=eRTU_AUXVENT_2POS, 3=eRTU_AUXVENT_ERV, 4=eRTU_AUXVENT_ECOERV"
+iaq_channel,iaq_channel,State,State count: 5,multiStateValue,presentValue,FALSE,607,,"1=MBB AI06, 2=MBB AI07, 3=MBB AI08, 4=SIOB AI10"
+oarh_channel,oarh_channel,State,State count: 5,multiStateValue,presentValue,FALSE,608,,"1=MBB AI06, 2=MBB AI07, 3=MBB AI08, 4=SIOB AI10"
+sys_mode,sys_mode,State,State count: 6,multiStateValue,presentValue,FALSE,2002,,"1=OFF, 2=COOL, 3=HEAT, 4=VENT, 5=TEST"
+sysvtype,sysvtype,State,State count: 3,multiStateValue,presentValue,FALSE,2003,,"1=eRTU_SYSVTYPE_1CMPWL, 2=eRTU_SYSVTYPE_1CMPWNL"
+htsrctyp,htsrctyp,State,State count: 6,multiStateValue,presentValue,FALSE,2004,,"1=eRTU_HEAT_MECH_ONLY, 2=eRTU_HEAT_MECH_AND_HEAT1, 3=eRTU_HEAT_MECH_AND_HEAT2, 4=eRTU_HEAT_ELEC_ONLY, 5=eRTU_HEAT_DEFROST_ACTV"
+cofschan,cofschan,State,State count: 8,multiStateValue,presentValue,FALSE,9039,,"1=MBB DI12, 2=MBB DI13, 3=MBB DI14, 4=MBB DI02, 5=MBB DI03, 6=MBB DI04, 7=SIOB DI01"
+firechan,firechan,State,State count: 8,multiStateValue,presentValue,FALSE,9040,,"1=MBB DI12, 2=MBB DI13, 3=MBB DI14, 4=MBB DI02, 5=MBB DI03, 6=MBB DI04, 7=SIOB DI01"
+humdchan,humdchan,State,State count: 8,multiStateValue,presentValue,FALSE,9041,,"1=MBB DI12, 2=MBB DI13, 3=MBB DI14, 4=MBB DI02, 5=MBB DI03, 6=MBB DI04, 7=SIOB DI01"
+pmr_chan,pmr_chan,State,State count: 8,multiStateValue,presentValue,FALSE,9042,,"1=MBB DI12, 2=MBB DI13, 3=MBB DI14, 4=MBB DI02, 5=MBB DI03, 6=MBB DI04, 7=SIOB DI01"
+enthchan,enthchan,State,State count: 8,multiStateValue,presentValue,FALSE,9043,,"1=MBB DI12, 2=MBB DI13, 3=MBB DI14, 4=MBB DI02, 5=MBB DI03, 6=MBB DI04, 7=SIOB DI01"
+evacchan,evacchan,State,State count: 8,multiStateValue,presentValue,FALSE,9044,,"1=MBB DI12, 2=MBB DI13, 3=MBB DI14, 4=MBB DI02, 5=MBB DI03, 6=MBB DI04, 7=SIOB DI01"
+fnstchan,fnstchan,State,State count: 8,multiStateValue,presentValue,FALSE,9045,,"1=MBB DI12, 2=MBB DI13, 3=MBB DI14, 4=MBB DI02, 5=MBB DI03, 6=MBB DI04, 7=SIOB DI01"
+gen_chan,gen_chan,State,State count: 8,multiStateValue,presentValue,FALSE,9046,,"1=MBB DI12, 2=MBB DI13, 3=MBB DI14, 4=MBB DI02, 5=MBB DI03, 6=MBB DI04, 7=SIOB DI01"
+preschan,preschan,State,State count: 8,multiStateValue,presentValue,FALSE,9047,,"1=MBB DI12, 2=MBB DI13, 3=MBB DI14, 4=MBB DI02, 5=MBB DI03, 6=MBB DI04, 7=SIOB DI01"
+purgchan,purgchan,State,State count: 8,multiStateValue,presentValue,FALSE,9048,,"1=MBB DI12, 2=MBB DI13, 3=MBB DI14, 4=MBB DI02, 5=MBB DI03, 6=MBB DI04, 7=SIOB DI01"
+roffchan,roffchan,State,State count: 8,multiStateValue,presentValue,FALSE,9049,,"1=MBB DI12, 2=MBB DI13, 3=MBB DI14, 4=MBB DI02, 5=MBB DI03, 6=MBB DI04, 7=SIOB DI01"
+alm_chan,alm_chan,State,State count: 3,multiStateValue,presentValue,FALSE,9050,,"1=MBB RLY11, 2=MBB RLY06"
+cofs_cfg,cofs_cfg,State,State count: 3,multiStateValue,presentValue,FALSE,9051,,"1=Normally Closed, 2=Not Configured"
+fire_cfg,fire_cfg,State,State count: 3,multiStateValue,presentValue,FALSE,9052,,"1=Normally Closed, 2=Not Configured"
+humd_cfg,humd_cfg,State,State count: 3,multiStateValue,presentValue,FALSE,9053,,"1=Normally Closed, 2=Not Configured"
+pmr_cfg,pmr_cfg,State,State count: 3,multiStateValue,presentValue,FALSE,9054,,"1=Normally Closed, 2=Not Configured"
+enth_cfg,enth_cfg,State,State count: 3,multiStateValue,presentValue,FALSE,9055,,"1=Normally Closed, 2=Not Configured"
+evac_cfg,evac_cfg,State,State count: 3,multiStateValue,presentValue,FALSE,9056,,"1=Normally Closed, 2=Not Configured"
+gens_cfg,gens_cfg,State,State count: 3,multiStateValue,presentValue,FALSE,9057,,"1=Normally Closed, 2=Not Configured"
+iaqoscfg,iaqoscfg,State,State count: 3,multiStateValue,presentValue,FALSE,9058,,"1=Normally Closed, 2=Not Configured"
+pres_cfg,pres_cfg,State,State count: 3,multiStateValue,presentValue,FALSE,9059,,"1=Normally Closed, 2=Not Configured"
+purg_cfg,purg_cfg,State,State count: 3,multiStateValue,presentValue,FALSE,9060,,"1=Normally Closed, 2=Not Configured"
+roff_cfg,roff_cfg,State,State count: 3,multiStateValue,presentValue,FALSE,9061,,"1=Normally Closed, 2=Not Configured"
+zsm_cfg,zsm_cfg,State,State count: 3,multiStateValue,presentValue,FALSE,9077,,"1=eCMC_ZSM_IS_REM_OCC, 2=eCMC_ZSM_IS_LOCOCC"
+holiday_list,holiday_list,Boolean,,calendar,presentValue,FALSE,1,,calendar_holidayList

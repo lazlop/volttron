@@ -144,6 +144,11 @@ def parse_transform_arg(func, arg):
                     parse_arg = float(arg)
                 except ValueError:
                     raise Exception('Parsing wrong argument for transform')
+    elif func in (scale_int16_between):
+        try: 
+            float(arg.split('-')[1])
+        except ValueError:
+            raise Exception ("Parsing wrong argument for transform")
     else:
         if type(arg) is not bool:
             try:
@@ -153,6 +158,18 @@ def parse_transform_arg(func, arg):
 
     return parse_arg
 
+def scale_int16_between(range):
+    """
+    scaling 16 bit analog data between within the range
+    range is like "lo-hi"
+    """
+    hi = float(range.split('to')[1])
+    lo = float(range.split('to')[0])
+    def func(value):
+        y = (value * (hi - lo))/9999 + lo
+        return y
+    
+    return func
 
 def transform_func_helper(multiple_lst):
     """Fix floating point decimal places."""
