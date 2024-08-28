@@ -46,6 +46,8 @@ if [ "$1" = '--rotating' ]; then
 else
     echo "Starting VOLTTRON verbosely in the background with VOLTTRON_HOME=$vhome"
     volttron -vv -l volttron.log > volttron.log 2>&1 &
+    # Testing other log levels
+    # volttron -q -l volttron.log > volttron.log 2>&1 &
     disown
 fi
 

@@ -185,6 +185,8 @@ class DriverAgent(BasicAgent):
 
         self.interface = self.get_interface(driver_type, driver_config, registry_config)
         self.meta_data = {}
+        # for ffill policy
+        self.ignore_scrape_error = []
 
         for point in self.interface.get_register_names():
             register = self.interface.get_register_by_name(point)
@@ -201,6 +203,10 @@ class DriverAgent(BasicAgent):
             self.meta_data[point] = {'units': register.get_units(),
                                      'type': ts_type,
                                      'tz': config.get('timezone', '')}
+            # For ffill storage policy, should probably move all logic here
+            if hasattr(register, 'store_on_change'):
+                self.ignore_scrape_error.append(point)
+
 
         self.base_topic = DEVICES_VALUE(campus='',
                                         building='',
@@ -245,7 +251,9 @@ class DriverAgent(BasicAgent):
             register_names = self.interface.get_register_names_view()
             for point in (register_names - results.keys()):
                 depth_first_topic = self.base_topic(point=point)
-                _log.error("Failed to scrape point: "+depth_first_topic)
+                # for ffill policy
+                if point not in self.ignore_scrape_error:
+                    _log.error("Failed to scrape point: "+depth_first_topic)
         except (Exception, gevent.Timeout) as ex:
             tb = traceback.format_exc()
             _log.error('Failed to scrape ' + self.device_name + ':\n' + tb)
