@@ -1,39 +1,25 @@
 # -*- coding: utf-8 -*- {{{
-# vim: set fenc=utf-8 ft=python sw=4 ts=4 sts=4 et:
+# ===----------------------------------------------------------------------===
 #
-# Copyright 2020, Battelle Memorial Institute.
+#                 Component of Eclipse VOLTTRON
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# ===----------------------------------------------------------------------===
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+# Copyright 2023 Battelle Memorial Institute
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy
+# of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
 #
-# This material was prepared as an account of work sponsored by an agency of
-# the United States Government. Neither the United States Government nor the
-# United States Department of Energy, nor Battelle, nor any of their
-# employees, nor any jurisdiction or organization that has cooperated in the
-# development of these materials, makes any warranty, express or
-# implied, or assumes any legal liability or responsibility for the accuracy,
-# completeness, or usefulness or any information, apparatus, product,
-# software, or process disclosed, or represents that its use would not infringe
-# privately owned rights. Reference herein to any specific commercial product,
-# process, or service by trade name, trademark, manufacturer, or otherwise
-# does not necessarily constitute or imply its endorsement, recommendation, or
-# favoring by the United States Government or any agency thereof, or
-# Battelle Memorial Institute. The views and opinions of authors expressed
-# herein do not necessarily state or reflect those of the
-# United States Government or any agency thereof.
-#
-# PACIFIC NORTHWEST NATIONAL LABORATORY operated by
-# BATTELLE for the UNITED STATES DEPARTMENT OF ENERGY
-# under Contract DE-AC05-76RL01830
+# ===----------------------------------------------------------------------===
 # }}}
 
 import logging
@@ -279,6 +265,7 @@ class Auth(SubsystemBase):
         """
         rpc_method_authorizations = {}
         rpc_methods = self.get_rpc_exports()
+        updated_rpc_authorizations = None
         for method in rpc_methods:
             if len(method.split(".")) > 1:
                 pass
@@ -309,9 +296,7 @@ class Auth(SubsystemBase):
                 _log.info(
                     f"Skipping updating rpc auth capabilities for agent "
                     f"{self._core().identity} connecting to remote address: {self._core().address} ")
-                updated_rpc_authorizations = None
         except gevent.timeout.Timeout:
-            updated_rpc_authorizations = None
             _log.warning(f"update_id_rpc_authorization rpc call timed out for {self._core().identity}   {rpc_method_authorizations}")
         except MethodNotFound:
             _log.warning("update_id_rpc_authorization method is missing from "
@@ -320,7 +305,6 @@ class Auth(SubsystemBase):
                          "dynamic RPC authorizations.")
             return
         except Exception as e:
-            updated_rpc_authorizations = None
             _log.exception(f"Exception when calling rpc method update_id_rpc_authorizations for identity: "
                            f"{self._core().identity}  Exception:{e}")
         if updated_rpc_authorizations is None:
@@ -332,7 +316,7 @@ class Auth(SubsystemBase):
                 f"the identity of the agent"
             )
             return
-        if rpc_method_authorizations != updated_rpc_authorizations:
+        if rpc_method_authorizations != updated_rpc_authorizations and updated_rpc_authorizations is not None:
             for method in updated_rpc_authorizations:
                 self.set_rpc_authorizations(
                     method, updated_rpc_authorizations[method]
