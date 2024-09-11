@@ -1,0 +1,328 @@
+Reference Point Name,Volttron Point Name,Units,Unit Details,BACnet Object Type,Property,Writable,Index,Write Priority,Notes
+SPACE TEMP SENSOR,SPACE TEMP SENSOR,degreesFahrenheit,,analogInput,presentValue,FALSE,1,,Integral space temperature sensor
+AI_02,AI_02,noUnits,,analogInput,presentValue,FALSE,2,,Analog Input #2
+AI_03,AI_03,noUnits,,analogInput,presentValue,FALSE,3,,Analog Input #3
+AI_04,AI_04,noUnits,,analogInput,presentValue,FALSE,4,,Analog Input #4
+AI_07,AI_07,noUnits,,analogInput,presentValue,FALSE,7,,Analog Input #7
+AI_08,AI_08,noUnits,,analogInput,presentValue,FALSE,8,,Analog Input #8
+AI_09,AI_09,noUnits,,analogInput,presentValue,FALSE,9,,Analog Input #9
+AO_07,AO_07,noUnits,(default 0.0),analogOutput,presentValue,FALSE,7,,Analog output #7
+AO_08,AO_08,noUnits,(default 0.0),analogOutput,presentValue,FALSE,8,,Analog output #8
+AO_09,AO_09,noUnits,(default 0.0),analogOutput,presentValue,FALSE,9,,Analog output #9
+MINIMUM PROPORTIONAL,MINIMUM PROPORTIONAL,degreesFahrenheit,(default 1.0),analogValue,presentValue,FALSE,1,,Minimum allowed cooling or heating proportional value
+ACTIVE COOLING SETPT,ACTIVE COOLING SETPT,degreesFahrenheit,(default 0.0),analogValue,presentValue,FALSE,2,,Currently active cooling setpoint
+ACTIVE HEATING SETPT,ACTIVE HEATING SETPT,degreesFahrenheit,(default 0.0),analogValue,presentValue,FALSE,3,,Currently active heating setpoint
+UNOCC COOLING SETPT,UNOCC COOLING SETPT,degreesFahrenheit,(default 80.0),analogValue,presentValue,FALSE,4,,Unoccupied Cooling Setpoint
+UNOCC HEATING SETPT,UNOCC HEATING SETPT,degreesFahrenheit,(default 64.0),analogValue,presentValue,FALSE,5,,Unoccupied Heating Setpoint
+AV_6,AV_6,noUnits,(default 0.0),analogValue,presentValue,FALSE,6,,analog value # 6
+OCC MIN CLG SETPT,OCC MIN CLG SETPT,degreesFahrenheit,(default 66.0),analogValue,presentValue,FALSE,7,,Occupied Minimum Cooling Setpoint
+OCC MAX HTG SETPT,OCC MAX HTG SETPT,degreesFahrenheit,(default 80.0),analogValue,presentValue,FALSE,8,,Occupied Maximum Heating Setpoint
+AV_9,AV_9,noUnits,(default 0.0),analogValue,presentValue,FALSE,9,,analog value # 9
+AV_10,AV_10,noUnits,(default 0.0),analogValue,presentValue,FALSE,10,,analog value # 10
+AV_11,AV_11,noUnits,(default 0.0),analogValue,presentValue,FALSE,11,,analog value # 11
+AV_12,AV_12,noUnits,(default 0.0),analogValue,presentValue,FALSE,12,,analog value # 12
+AV_13,AV_13,noUnits,(default 0.0),analogValue,presentValue,FALSE,13,,analog value # 13
+AV_14,AV_14,noUnits,(default 0.0),analogValue,presentValue,FALSE,14,,analog value # 14
+AV_15,AV_15,noUnits,(default 0.0),analogValue,presentValue,FALSE,15,,analog value # 15
+OVERRIDE TIMER,OVERRIDE TIMER,hours,(default 1.0),analogValue,presentValue,FALSE,16,,Occupancy Override Time
+AV_17,AV_17,noUnits,(default 0.0),analogValue,presentValue,FALSE,17,,analog value # 17
+AV_18,AV_18,noUnits,(default 0.0),analogValue,presentValue,FALSE,18,,analog value # 18
+AV_19,AV_19,noUnits,(default 0.0),analogValue,presentValue,FALSE,19,,analog value # 19
+OCC COOLING SETPT,OCC COOLING SETPT,degreesFahrenheit,(default 70.0),analogValue,presentValue,FALSE,20,,Occupied Cooling Setpoint
+OCC HEATING SETPT,OCC HEATING SETPT,degreesFahrenheit,(default 69.0),analogValue,presentValue,FALSE,21,,Occupied Heating Setpoint
+UI VALUE 1,UI VALUE 1,percentRelativeHumidity,(default 0.0),analogValue,presentValue,FALSE,22,,"UI mapped value #1, <~HUM> space humidity"
+UI VALUE 2,UI VALUE 2,degreesFahrenheit,(default 0.0),analogValue,presentValue,FALSE,23,,"UI mapped value #2, <~OAT> outside air temp"
+UI VALUE 3,UI VALUE 3,noUnits,(default 0.0),analogValue,presentValue,FALSE,24,,"UI mapped value #3, <~UI3> not used"
+UI VALUE 4,UI VALUE 4,noUnits,(default 0.0),analogValue,presentValue,FALSE,25,,"UI mapped value #4, <~UI4> not used"
+CURRENT MODE SETPT,CURRENT MODE SETPT,degreesFahrenheit,(default 72.0),analogValue,presentValue,FALSE,26,,Setpoint that the FlexStat is currently controlling to.
+UI SETPT,UI SETPT,degreesFahrenheit,(default 63.0),analogValue,presentValue,FALSE,27,,Setpoint that the UI displays and changes.
+AV_28,AV_28,noUnits,(default 0.0),analogValue,presentValue,FALSE,28,,analog value # 28
+COOLING NEED,COOLING NEED,percent,(default 0.0),analogValue,presentValue,FALSE,29,,Cooling demand need 
+HEATING NEED,HEATING NEED,percent,(default 0.0),analogValue,presentValue,FALSE,30,,Heating demand need 
+UNOCC MIN CLG SETPT,UNOCC MIN CLG SETPT,degreesFahrenheit,(default 66.0),analogValue,presentValue,FALSE,31,,Unoccupied Minimum Cooling Setpoint
+UNOCC MAX HTG SETPT,UNOCC MAX HTG SETPT,degreesFahrenheit,(default 80.0),analogValue,presentValue,FALSE,32,,Unoccupied Maximum Heating Setpoint
+MIN SETPT DIFF,MIN SETPT DIFF,degreesFahrenheit,(default 2.0),analogValue,presentValue,FALSE,33,,Minimum Setpoint differential
+MIN SETPT LIMIT,MIN SETPT LIMIT,degreesFahrenheit,(default 1.0),analogValue,presentValue,FALSE,34,,Minimum Setpoint differential limit
+AV_35,AV_35,noUnits,(default 0.0),analogValue,presentValue,FALSE,35,,analog value # 35
+AV_36,AV_36,noUnits,(default 0.0),analogValue,presentValue,FALSE,36,,analog value # 36
+AV_37,AV_37,noUnits,(default 0.0),analogValue,presentValue,FALSE,37,,analog value # 37
+AV_38,AV_38,noUnits,(default 0.0),analogValue,presentValue,FALSE,38,,analog value # 38
+AV_39,AV_39,noUnits,(default 0.0),analogValue,presentValue,FALSE,39,,analog value # 39
+SPACE TEMP,SPACE TEMP,degreesFahrenheit,(default 0.0),analogValue,presentValue,FALSE,40,,Space Temperature
+COOLING PROP,COOLING PROP,degreesFahrenheit,(default 2.0),analogValue,presentValue,FALSE,41,,Cooling Loop proportional
+HEATING PROP,HEATING PROP,degreesFahrenheit,(default 2.0),analogValue,presentValue,FALSE,42,,Heating Loop proportional
+AV_43,AV_43,noUnits,(default 0.0),analogValue,presentValue,FALSE,43,,analog value # 43
+AV_44,AV_44,noUnits,(default 0.0),analogValue,presentValue,FALSE,44,,analog value # 44
+AV_45,AV_45,noUnits,(default 0.0),analogValue,presentValue,FALSE,45,,analog value # 45
+AV_46,AV_46,noUnits,(default 0.0),analogValue,presentValue,FALSE,46,,analog value # 46
+AV_47,AV_47,noUnits,(default 0.0),analogValue,presentValue,FALSE,47,,analog value # 47
+AV_48,AV_48,noUnits,(default 0.0),analogValue,presentValue,FALSE,48,,analog value # 48
+AV_49,AV_49,noUnits,(default 0.0),analogValue,presentValue,FALSE,49,,analog value # 49
+AV_50,AV_50,noUnits,(default 0.0),analogValue,presentValue,FALSE,50,,analog value # 50
+AV_51,AV_51,noUnits,(default 0.0),analogValue,presentValue,FALSE,51,,analog value # 51
+AV_52,AV_52,noUnits,(default 0.0),analogValue,presentValue,FALSE,52,,analog value # 52
+AV_53,AV_53,noUnits,(default 0.0),analogValue,presentValue,FALSE,53,,analog value # 53
+AV_54,AV_54,noUnits,(default 0.0),analogValue,presentValue,FALSE,54,,analog value # 54
+AV_55,AV_55,noUnits,(default 0.0),analogValue,presentValue,FALSE,55,,analog value # 55
+AV_56,AV_56,noUnits,(default 0.0),analogValue,presentValue,FALSE,56,,analog value # 56
+AV_57,AV_57,noUnits,(default 0.0),analogValue,presentValue,FALSE,57,,analog value # 57
+AV_58,AV_58,noUnits,(default 0.0),analogValue,presentValue,FALSE,58,,analog value # 58
+AV_59,AV_59,noUnits,(default 0.0),analogValue,presentValue,FALSE,59,,analog value # 59
+AV_60,AV_60,noUnits,(default 0.0),analogValue,presentValue,FALSE,60,,analog value # 60
+AV_61,AV_61,noUnits,(default 0.0),analogValue,presentValue,FALSE,61,,analog value # 61
+AV_62,AV_62,noUnits,(default 0.0),analogValue,presentValue,FALSE,62,,analog value # 62
+AV_63,AV_63,noUnits,(default 0.0),analogValue,presentValue,FALSE,63,,analog value # 63
+AV_64,AV_64,noUnits,(default 0.0),analogValue,presentValue,FALSE,64,,analog value # 64
+AV_65,AV_65,noUnits,(default 0.0),analogValue,presentValue,FALSE,65,,analog value # 65
+AV_66,AV_66,noUnits,(default 0.0),analogValue,presentValue,FALSE,66,,analog value # 66
+AV_67,AV_67,noUnits,(default 0.0),analogValue,presentValue,FALSE,67,,analog value # 67
+AV_68,AV_68,noUnits,(default 0.0),analogValue,presentValue,FALSE,68,,analog value # 68
+AV_69,AV_69,noUnits,(default 0.0),analogValue,presentValue,FALSE,69,,analog value # 69
+AV_70,AV_70,noUnits,(default 0.0),analogValue,presentValue,FALSE,70,,analog value # 70
+AV_71,AV_71,noUnits,(default 0.0),analogValue,presentValue,FALSE,71,,analog value # 71
+AV_72,AV_72,noUnits,(default 0.0),analogValue,presentValue,FALSE,72,,analog value # 72
+AV_73,AV_73,noUnits,(default 0.0),analogValue,presentValue,FALSE,73,,analog value # 73
+AV_74,AV_74,noUnits,(default 0.0),analogValue,presentValue,FALSE,74,,analog value # 74
+AV_75,AV_75,noUnits,(default 0.0),analogValue,presentValue,FALSE,75,,analog value # 75
+AV_76,AV_76,noUnits,(default 0.0),analogValue,presentValue,FALSE,76,,analog value # 76
+AV_77,AV_77,noUnits,(default 0.0),analogValue,presentValue,FALSE,77,,analog value # 77
+AV_78,AV_78,noUnits,(default 0.0),analogValue,presentValue,FALSE,78,,analog value # 78
+AV_79,AV_79,noUnits,(default 0.0),analogValue,presentValue,FALSE,79,,analog value # 79
+COOLING INTG,COOLING INTG,perHour,(default 0.0),analogValue,presentValue,FALSE,80,,Cooling Loop integral
+HEATING INTG,HEATING INTG,perHour,(default 0.0),analogValue,presentValue,FALSE,81,,Heating Loop integral
+AV_82,AV_82,noUnits,(default 0.0),analogValue,presentValue,FALSE,82,,analog value # 82
+AV_83,AV_83,noUnits,(default 0.0),analogValue,presentValue,FALSE,83,,Analog Value #83
+AV_84,AV_84,noUnits,(default 0.0),analogValue,presentValue,FALSE,84,,Analog Value #84
+AV_85,AV_85,noUnits,(default 0.0),analogValue,presentValue,FALSE,85,,Analog Value #85
+AV_86,AV_86,noUnits,(default 0.0),analogValue,presentValue,FALSE,86,,Analog Value #86
+AV_87,AV_87,noUnits,(default 0.0),analogValue,presentValue,FALSE,87,,Analog Value #87
+AV_88,AV_88,noUnits,(default 0.0),analogValue,presentValue,FALSE,88,,Analog Value #88
+AV_89,AV_89,noUnits,(default 0.0),analogValue,presentValue,FALSE,89,,Analog Value #89
+AV_90,AV_90,noUnits,(default 0.0),analogValue,presentValue,FALSE,90,,Analog Value #90
+AV_91,AV_91,noUnits,(default 0.0),analogValue,presentValue,FALSE,91,,Analog Value #91
+AV_92,AV_92,noUnits,(default 0.0),analogValue,presentValue,FALSE,92,,Analog Value #92
+AV_93,AV_93,noUnits,(default 0.0),analogValue,presentValue,FALSE,93,,Analog Value #93
+AV_94,AV_94,noUnits,(default 0.0),analogValue,presentValue,FALSE,94,,Analog Value #94
+AV_95,AV_95,noUnits,(default 0.0),analogValue,presentValue,FALSE,95,,Analog Value #95
+AV_96,AV_96,noUnits,(default 0.0),analogValue,presentValue,FALSE,96,,Analog Value #96
+AV_97,AV_97,noUnits,(default 0.0),analogValue,presentValue,FALSE,97,,Analog Value #97
+AV_98,AV_98,noUnits,(default 0.0),analogValue,presentValue,FALSE,98,,Analog Value #98
+AV_99,AV_99,noUnits,(default 0.0),analogValue,presentValue,FALSE,99,,Analog Value #99
+AV_100,AV_100,noUnits,(default 0.0),analogValue,presentValue,FALSE,100,,Analog Value #100
+AV_101,AV_101,noUnits,(default 0.0),analogValue,presentValue,FALSE,101,,Analog Value #101
+AV_102,AV_102,noUnits,(default 0.0),analogValue,presentValue,FALSE,102,,Analog Value #102
+AV_103,AV_103,noUnits,(default 0.0),analogValue,presentValue,FALSE,103,,Analog Value #103
+AV_104,AV_104,noUnits,(default 0.0),analogValue,presentValue,FALSE,104,,Analog Value #104
+AV_105,AV_105,noUnits,(default 0.0),analogValue,presentValue,FALSE,105,,Analog Value #105
+AV_106,AV_106,noUnits,(default 0.0),analogValue,presentValue,FALSE,106,,Analog Value #106
+AV_107,AV_107,noUnits,(default 0.0),analogValue,presentValue,FALSE,107,,Analog Value #107
+AV_108,AV_108,noUnits,(default 0.0),analogValue,presentValue,FALSE,108,,Analog Value #108
+AV_109,AV_109,noUnits,(default 0.0),analogValue,presentValue,FALSE,109,,Analog Value #109
+AV_110,AV_110,noUnits,(default 0.0),analogValue,presentValue,FALSE,110,,Analog Value #110
+AV_111,AV_111,noUnits,(default 0.0),analogValue,presentValue,FALSE,111,,Analog Value #111
+AV_112,AV_112,noUnits,(default 0.0),analogValue,presentValue,FALSE,112,,Analog Value #112
+AV_113,AV_113,noUnits,(default 0.0),analogValue,presentValue,FALSE,113,,Analog Value #113
+AV_114,AV_114,noUnits,(default 0.0),analogValue,presentValue,FALSE,114,,Analog Value #114
+AV_115,AV_115,noUnits,(default 0.0),analogValue,presentValue,FALSE,115,,Analog Value #115
+AV_116,AV_116,noUnits,(default 0.0),analogValue,presentValue,FALSE,116,,Analog Value #116
+AV_117,AV_117,noUnits,(default 0.0),analogValue,presentValue,FALSE,117,,Analog Value #117
+AV_118,AV_118,noUnits,(default 0.0),analogValue,presentValue,FALSE,118,,Analog Value #118
+AV_119,AV_119,noUnits,(default 0.0),analogValue,presentValue,FALSE,119,,Analog Value #119
+AV_120,AV_120,noUnits,(default 0.0),analogValue,presentValue,FALSE,120,,Analog Value #120
+AV_121,AV_121,noUnits,(default 0.0),analogValue,presentValue,FALSE,121,,Analog Value #121
+AV_122,AV_122,noUnits,(default 0.0),analogValue,presentValue,FALSE,122,,Analog Value #122
+AV_123,AV_123,noUnits,(default 0.0),analogValue,presentValue,FALSE,123,,Analog Value #123
+AV_124,AV_124,noUnits,(default 0.0),analogValue,presentValue,FALSE,124,,Analog Value #124
+AV_125,AV_125,noUnits,(default 0.0),analogValue,presentValue,FALSE,125,,Analog Value #125
+AV_126,AV_126,noUnits,(default 0.0),analogValue,presentValue,FALSE,126,,Analog Value #126
+AV_127,AV_127,noUnits,(default 0.0),analogValue,presentValue,FALSE,127,,Analog Value #127
+AV_128,AV_128,noUnits,(default 0.0),analogValue,presentValue,FALSE,128,,Analog Value #128
+AV_129,AV_129,noUnits,(default 0.0),analogValue,presentValue,FALSE,129,,Analog Value #129
+AV_130,AV_130,noUnits,(default 0.0),analogValue,presentValue,FALSE,130,,Analog Value #130
+AV_131,AV_131,noUnits,(default 0.0),analogValue,presentValue,FALSE,131,,Analog Value #131
+AV_132,AV_132,noUnits,(default 0.0),analogValue,presentValue,FALSE,132,,Analog Value #132
+AV_133,AV_133,noUnits,(default 0.0),analogValue,presentValue,FALSE,133,,Analog Value #133
+AV_134,AV_134,noUnits,(default 0.0),analogValue,presentValue,FALSE,134,,Analog Value #134
+AV_135,AV_135,noUnits,(default 0.0),analogValue,presentValue,FALSE,135,,Analog Value #135
+AV_136,AV_136,noUnits,(default 0.0),analogValue,presentValue,FALSE,136,,Analog Value #136
+AV_137,AV_137,noUnits,(default 0.0),analogValue,presentValue,FALSE,137,,Analog Value #137
+AV_138,AV_138,noUnits,(default 0.0),analogValue,presentValue,FALSE,138,,Analog Value #138
+AV_139,AV_139,noUnits,(default 0.0),analogValue,presentValue,FALSE,139,,Analog Value #139
+AV_140,AV_140,noUnits,(default 0.0),analogValue,presentValue,FALSE,140,,Analog Value #140
+AV_141,AV_141,noUnits,(default 0.0),analogValue,presentValue,FALSE,141,,Analog Value #141
+AV_142,AV_142,noUnits,(default 0.0),analogValue,presentValue,FALSE,142,,Analog Value #142
+AV_143,AV_143,noUnits,(default 0.0),analogValue,presentValue,FALSE,143,,Analog Value #143
+AV_144,AV_144,noUnits,(default 0.0),analogValue,presentValue,FALSE,144,,Analog Value #144
+AV_145,AV_145,noUnits,(default 0.0),analogValue,presentValue,FALSE,145,,Analog Value #145
+AV_146,AV_146,noUnits,(default 0.0),analogValue,presentValue,FALSE,146,,Analog Value #146
+AV_147,AV_147,noUnits,(default 0.0),analogValue,presentValue,FALSE,147,,Analog Value #147
+AV_148,AV_148,noUnits,(default 0.0),analogValue,presentValue,FALSE,148,,Analog Value #148
+AV_149,AV_149,noUnits,(default 0.0),analogValue,presentValue,FALSE,149,,Analog Value #149
+AV_150,AV_150,noUnits,(default 0.0),analogValue,presentValue,FALSE,150,,Analog Value #150
+FAN,FAN,Enum,0-1 (default 0),binaryOutput,presentValue,FALSE,1,,Fan Control
+BO_02,BO_02,Enum,0-1 (default 0),binaryOutput,presentValue,FALSE,2,,Relay #2
+BO_03,BO_03,Enum,0-1 (default 0),binaryOutput,presentValue,FALSE,3,,Relay #3
+BO_04,BO_04,Enum,0-1 (default 0),binaryOutput,presentValue,FALSE,4,,Relay #4
+BO_05,BO_05,Enum,0-1 (default 0),binaryOutput,presentValue,FALSE,5,,Relay #5
+BO_06,BO_06,Enum,0-1 (default 0),binaryOutput,presentValue,FALSE,6,,Relay #6
+OCCUPANCY MODE,OCCUPANCY MODE,Enum,0-1 (default 1),binaryValue,presentValue,FALSE,1,,Occupancy mode
+SETPT OVERRIDE MODE,SETPT OVERRIDE MODE,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,2,,set point override mode
+BV_03,BV_03,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,3,,Binary Value #3
+BV_04,BV_04,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,4,,Binary Value #4
+FAN ALARM,FAN ALARM,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,5,,Fan Alarm Condition
+FAN NEED,FAN NEED,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,6,,need for fan
+HEATING/COOLING MODE,HEATING/COOLING MODE,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,7,,Heating/Cooling Mode
+BV_08,BV_08,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,8,,Binary Value #8
+BV_09,BV_09,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,9,,Binary Value #9
+BV_10,BV_10,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,10,,Binary Value #10
+BV_11,BV_11,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,11,,Binary Value #11
+OCC FAN AUTO/ON,OCC FAN AUTO/ON,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,12,,Determines whether fan is continuous or cycles in occ mode
+UNOCC FAN AUTO/ON,UNOCC FAN AUTO/ON,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,13,,Determines whether fan is continuous or cycles in unocc mode
+F/C FLAG,F/C FLAG,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,14,,Selects Fahrenheit or Celsius temperature scale
+BV_15,BV_15,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,15,,Binary Value #15
+FAN STATUS,FAN STATUS,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,16,,Fan Status
+BACKLIGHT CONTROL,BACKLIGHT CONTROL,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,17,,User Interface backlight control
+UI FAN ICON,UI FAN ICON,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,18,,User Interface FAN icon control
+BV_19,BV_19,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,19,,Binary Value #19
+BV_20,BV_20,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,20,,Binary Value #20
+BV_21,BV_21,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,21,,Binary Value #21
+BV_22,BV_22,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,22,,Binary Value #22
+BV_23,BV_23,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,23,,Binary Value #23
+BV_24,BV_24,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,24,,Binary Value #24
+BV_25,BV_25,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,25,,Binary Value #25
+BV_26,BV_26,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,26,,Binary Value #26
+UI SYSTEM MODE ACTIVE,UI SYSTEM MODE ACTIVE,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,27,,UI System mode active
+UI FIELD A ICON ACTIVE,UI FIELD A ICON ACTIVE,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,28,,UI Alt Field A icon active
+UI FIELD B ICON ACTIVE,UI FIELD B ICON ACTIVE,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,29,,UI Alt Field B icon active
+UI FIELD C ICON ACTIVE,UI FIELD C ICON ACTIVE,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,30,,UI Alt Field C icon active
+BV_31,BV_31,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,31,,Binary Value #31
+BV_32,BV_32,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,32,,Binary Value #32
+OPT START ENABLE,OPT START ENABLE,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,33,,Optimum Start enable 
+BV_34,BV_34,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,34,,Binary Value #34
+BV_35,BV_35,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,35,,Binary Value #35
+BV_36,BV_36,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,36,,Binary Value #36
+BV_37,BV_37,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,37,,Binary Value #37
+BV_38,BV_38,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,38,,Binary Value #38
+BV_39,BV_39,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,39,,Binary Value #39
+BV_40,BV_40,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,40,,Binary Value #40
+BV_41,BV_41,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,41,,Binary Value #41
+BV_42,BV_42,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,42,,Binary Value #42
+SETBACK OAT LOCKOUT,SETBACK OAT LOCKOUT,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,43,,Setback OAT Lockout contol
+BV_44,BV_44,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,44,,Binary Value #44
+BV_45,BV_45,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,45,,Binary Value #45
+BV_46,BV_46,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,46,,Binary Value #46
+BV_47,BV_47,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,47,,Binary Value #47
+BV_48,BV_48,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,48,,Binary Value #48
+BV_49,BV_49,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,49,,Binary Value #49
+BV_50,BV_50,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,50,,Binary Value #50
+BV_51,BV_51,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,51,,Binary Value #51
+BV_52,BV_52,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,52,,Binary Value #52
+BV_53,BV_53,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,53,,Binary Value #53
+BV_54,BV_54,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,54,,Binary Value #54
+BV_55,BV_55,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,55,,Binary Value #55
+BV_56,BV_56,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,56,,Binary Value #56
+BV_57,BV_57,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,57,,Binary Value #57
+BV_58,BV_58,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,58,,Binary Value #58
+BV_59,BV_59,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,59,,Binary Value #59
+BV_60,BV_60,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,60,,Binary Value #60
+BV_61,BV_61,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,61,,Binary Value #61
+BV_62,BV_62,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,62,,Binary Value #62
+BV_63,BV_63,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,63,,Binary Value #63
+BV_64,BV_64,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,64,,Binary Value #64
+BV_65,BV_65,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,65,,Binary Value #65
+BV_66,BV_66,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,66,,Binary Value #66
+BV_67,BV_67,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,67,,Binary Value #67
+BV_68,BV_68,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,68,,Binary Value #68
+BV_69,BV_69,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,69,,Binary Value #69
+BV_70,BV_70,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,70,,Binary Value #70
+BV_71,BV_71,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,71,,Binary Value #71
+BV_72,BV_72,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,72,,Binary Value #72
+BV_73,BV_73,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,73,,Binary Value #73
+BV_74,BV_74,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,74,,Binary Value #74
+BV_75,BV_75,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,75,,Binary Value #75
+BV_76,BV_76,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,76,,Binary Value #76
+BV_77,BV_77,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,77,,Binary Value #77
+BV_78,BV_78,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,78,,Binary Value #78
+BV_79,BV_79,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,79,,Binary Value #79
+BV_80,BV_80,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,80,,Binary Value #80
+BV_81,BV_81,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,81,,Binary Value #81
+BV_82,BV_82,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,82,,Binary Value #82
+BV_83,BV_83,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,83,,Binary Value #83
+BV_84,BV_84,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,84,,Binary Value #84
+BV_85,BV_85,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,85,,Binary Value #85
+BV_86,BV_86,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,86,,Binary Value #86
+BV_87,BV_87,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,87,,Binary Value #87
+BV_88,BV_88,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,88,,Binary Value #88
+BV_89,BV_89,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,89,,Binary Value #89
+BV_90,BV_90,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,90,,Binary Value #90
+BV_91,BV_91,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,91,,Binary Value #91
+BV_92,BV_92,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,92,,Binary Value #92
+BV_93,BV_93,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,93,,Binary Value #93
+BV_94,BV_94,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,94,,Binary Value #94
+BV_95,BV_95,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,95,,Binary Value #95
+BV_96,BV_96,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,96,,Binary Value #96
+BV_97,BV_97,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,97,,Binary Value #97
+BV_98,BV_98,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,98,,Binary Value #98
+BV_99,BV_99,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,99,,Binary Value #99
+BV_100,BV_100,Enum,0-1 (default 0),binaryValue,presentValue,FALSE,100,,Binary Value #100
+CAL_01,CAL_01,Boolean,,calendar,presentValue,FALSE,1,,Calendar #1
+LOOP_01,LOOP_01,Loop,,loop,presentValue,FALSE,1,,Pid Loop #1
+LOOP_02,LOOP_02,Loop,,loop,presentValue,FALSE,2,,Pid Loop #2
+LOOP_03,LOOP_03,Loop,,loop,presentValue,FALSE,3,,Pid Loop #3
+LOOP_04,LOOP_04,Loop,,loop,presentValue,FALSE,4,,Pid Loop #4
+LOOP_05,LOOP_05,Loop,,loop,presentValue,FALSE,5,,Pid Loop #5
+LOOP_06,LOOP_06,Loop,,loop,presentValue,FALSE,6,,Pid Loop #6
+LOOP_07,LOOP_07,Loop,,loop,presentValue,FALSE,7,,Pid Loop #7
+LOOP_08,LOOP_08,Loop,,loop,presentValue,FALSE,8,,Pid Loop #8
+LOOP_09,LOOP_09,Loop,,loop,presentValue,FALSE,9,,Pid Loop #9
+LOOP_10,LOOP_10,Loop,,loop,presentValue,FALSE,10,,Pid Loop #10
+LOOP_11,LOOP_11,Loop,,loop,presentValue,FALSE,11,,Pid Loop #11
+LOOP_12,LOOP_12,Loop,,loop,presentValue,FALSE,12,,Pid Loop #12
+LOOP_13,LOOP_13,Loop,,loop,presentValue,FALSE,13,,Pid Loop #13
+LOOP_14,LOOP_14,Loop,,loop,presentValue,FALSE,14,,Pid Loop #14
+LOOP_15,LOOP_15,Loop,,loop,presentValue,FALSE,15,,Pid Loop #15
+LOOP_16,LOOP_16,Loop,,loop,presentValue,FALSE,16,,Pid Loop #16
+LOOP_17,LOOP_17,Loop,,loop,presentValue,FALSE,17,,Pid Loop #17
+LOOP_18,LOOP_18,Loop,,loop,presentValue,FALSE,18,,Pid Loop #18
+LOOP_19,LOOP_19,Loop,,loop,presentValue,FALSE,19,,Pid Loop #19
+LOOP_20,LOOP_20,Loop,,loop,presentValue,FALSE,20,,Pid Loop #20
+APP MAIN TYPE,APP MAIN TYPE,State,State count: 5 (default 1),multiStateValue,presentValue,FALSE,1,,"1=AIR HANDLER, 2=ROOF TOP, 3=FAN COIL, 4=HEAT PUMP"
+APP SUB TYPE,APP SUB TYPE,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,2,,
+MSV_3,MSV_3,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,3,,
+MSV_4,MSV_4,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,4,,
+MSV_5,MSV_5,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,5,,
+MSV_6,MSV_6,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,6,,
+MSV_7,MSV_7,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,7,,
+MSV_8,MSV_8,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,8,,
+UI MODE,UI MODE,State,State count: 3 (default 1),multiStateValue,presentValue,FALSE,9,,"1=HOSPITALITY, 2=LOCKED UI"
+FIELD A,FIELD A,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,10,,
+FIELD B,FIELD B,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,11,,
+FIELD C,FIELD C,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,12,,
+MSV_13,MSV_13,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,13,,
+MSV_14,MSV_14,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,14,,
+TEMPERATURE REFERENCE,TEMPERATURE REFERENCE,State,State count: 5 (default 1),multiStateValue,presentValue,FALSE,15,,"1=REMOTE, 2=AVERAGE, 3=HIGHEST, 4=LOWEST"
+SENSOR #9 OPTION,SENSOR #9 OPTION,State,State count: 2 (default 1),multiStateValue,presentValue,FALSE,16,,1=CO2
+MSV_17,MSV_17,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,17,,
+MSV_18,MSV_18,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,18,,
+MSV_19,MSV_19,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,19,,
+MSV_20,MSV_20,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,20,,
+MSV_21,MSV_21,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,21,,
+MSV_22,MSV_22,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,22,,
+MSV_23,MSV_23,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,23,,
+MSV_24,MSV_24,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,24,,
+MSV_25,MSV_25,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,25,,
+MSV_26,MSV_26,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,26,,
+MSV_27,MSV_27,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,27,,
+MSV_28,MSV_28,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,28,,
+MSV_29,MSV_29,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,29,,
+MSV_30,MSV_30,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,30,,
+MSV_31,MSV_31,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,31,,
+MSV_32,MSV_32,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,32,,
+MSV_33,MSV_33,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,33,,
+MSV_34,MSV_34,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,34,,
+MSV_35,MSV_35,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,35,,
+MSV_36,MSV_36,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,36,,
+MSV_37,MSV_37,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,37,,
+MSV_38,MSV_38,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,38,,
+MSV_39,MSV_39,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,39,,
+MSV_40,MSV_40,State,State count: 1 (default 1),multiStateValue,presentValue,FALSE,40,,

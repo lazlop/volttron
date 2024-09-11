@@ -9,7 +9,6 @@ node_modules
 applications
 .cache
 .idea
-.vscode/
 /env/
 /Agents/*/{build,dist}/
 /Agents/*.egg
@@ -39,4 +38,3 @@ rabbitmq-server.download.tar.xz
 /docs/source/volttron_api/
 *ecobee_*.json
 .env*
-dist/

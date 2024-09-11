@@ -263,6 +263,7 @@ class EmailerAgent(Agent):
                 self.vip.pubsub.publish("pubsub", "record/sent_email",
                                         message=sent_email_record)
 
+    @RPC.export
     def send_email(self, from_address, to_addresses, subject, message):
         """
         RPC Method allowing a platform to send an email address.
