@@ -1,16 +1,16 @@
 #host parameter is mandatory parameter. fully qualified domain name
-host: mymachine.pnl.gov
+host: dan-NUC11PAHi7
 
 # mandatory. certificate data used to create root ca certificate. Each volttron
 # instance must have unique common-name for root ca certificate
 certificate-data:
   country: US
-  state: Washington
-  location: Richland
-  organization: PNNL
-  organization-unit: VOLTTRON Team
+  state: California
+  location: Stanford
+  organization: Stanford
+  organization-unit: MICROGRID
   # volttron_instance has to be replaced with actual instance name of the VOLTTRON
-  common-name: volttron_instance_root_ca
+  common-name: volt1_root_ca
 # certificate data could also point to existing public and private key files
 # of a CA. In that case, use the below certificate-data parameters instead of
 # the above. Note. public and private should be pem encoded and use rsa
