@@ -1,0 +1,82 @@
+Reference Point Name,Volttron Point Name,Units,Unit Details,BACnet Object Type,Property,Writable,Index,Write Priority,Notes
+Indoor Temperature,Indoor Temperature,degreesFahrenheit,-54.00 to 124.00,analogInput,presentValue,FALSE,1,,Resolution: 0.01
+Indoor Humidity,Indoor Humidity,percentRelativeHumidity,0.00 to 100.00,analogInput,presentValue,FALSE,2,,Resolution: 1
+System Mode,System Mode,State,State count: 5,multiStateValue,presentValue,FALSE,1,,"1=COOL, 2=HEAT, 3=AUTO, 4=EMER"
+Fan Mode,Fan Mode,State,State count: 6,multiStateValue,presentValue,FALSE,2,,"1=ON, 2=FAN 1, 3=FAN 2, 4=FAN 3, 5=RECIRC"
+Manual Occupied Cool Setpoint,Manual Occupied Cool Setpoint,degreesFahrenheit,60.00 to 108.00,analogValue,presentValue,FALSE,1,,
+Manual Occupied Heat Setpoint,Manual Occupied Heat Setpoint,degreesFahrenheit,38.00 to 88.00,analogValue,presentValue,FALSE,2,,
+Manual Unoccupied Cool Setpoint,Manual Unoccupied Cool Setpoint,degreesFahrenheit,60.00 to 108.00,analogValue,presentValue,FALSE,3,,
+Manual Unoccupied Heat Setpoint,Manual Unoccupied Heat Setpoint,degreesFahrenheit,38.00 to 88.00,analogValue,presentValue,FALSE,4,,
+Occupancy Toggle,Occupancy Toggle,Enum,0-1 (default 1),binaryValue,presentValue,FALSE,1,,
+Manual Operation,Manual Operation,Enum,0-1,binaryValue,presentValue,FALSE,2,,
+Cool/Heat State,Cool/Heat State,Enum,0-1,binaryInput,presentValue,FALSE,1,,
+Stages Active,Stages Active,noUnits,,positiveIntegerValue,presentValue,FALSE,1,,
+Override System Mode,Override System Mode,State,State count: 5,multiStateValue,presentValue,FALSE,3,,"1=COOL, 2=HEAT, 3=AUTO, 4=EMER"
+Override Fan Mode,Override Fan Mode,State,State count: 6,multiStateValue,presentValue,FALSE,4,,"1=ON, 2=FAN 1, 3=FAN 2, 4=FAN 3, 5=RECIRC"
+Override Cool Setpoint,Override Cool Setpoint,degreesFahrenheit,60.00 to 108.00,analogValue,presentValue,FALSE,5,,
+Override Heat Setpoint,Override Heat Setpoint,degreesFahrenheit,38.00 to 88.00,analogValue,presentValue,FALSE,6,,
+Override Status,Override Status,Enum,0-1,binaryInput,presentValue,FALSE,2,,
+Override Time Remaining,Override Time Remaining,minutes,,positiveIntegerValue,presentValue,FALSE,2,,
+BACnet Temperature Units,BACnet Temperature Units,Enum,0-1,binaryValue,presentValue,FALSE,3,,
+Display Temperature Units,Display Temperature Units,Enum,0-1,binaryValue,presentValue,FALSE,4,,
+HVAC Type Setting,HVAC Type Setting,Enum,0-1,binaryValue,presentValue,FALSE,5,,
+HVAC Cooling Stages Setting,HVAC Cooling Stages Setting,noUnits,,positiveIntegerValue,presentValue,FALSE,3,,
+HVAC Heating Stages Setting,HVAC Heating Stages Setting,noUnits,,positiveIntegerValue,presentValue,FALSE,4,,
+HVAC Heat Type Setting,HVAC Heat Type Setting,Enum,0-1,binaryValue,presentValue,FALSE,6,,
+HVAC Min On Time Setting,HVAC Min On Time Setting,minutes,,positiveIntegerValue,presentValue,FALSE,5,,
+HVAC Min Off Time Setting,HVAC Min Off Time Setting,minutes,,positiveIntegerValue,presentValue,FALSE,6,,
+HVAC Emer Heat Enabled Setting,HVAC Emer Heat Enabled Setting,Enum,0-1,binaryValue,presentValue,FALSE,7,,
+HVAC Heat Pump Dual Fuel Setting,HVAC Heat Pump Dual Fuel Setting,Enum,0-1,binaryValue,presentValue,FALSE,8,,
+HVAC Adaptive Recovery Setting,HVAC Adaptive Recovery Setting,Enum,0-1,binaryValue,presentValue,FALSE,9,,
+HVAC Remote Indoor Sensor Averaging Setting,HVAC Remote Indoor Sensor Averaging Setting,Enum,0-1,binaryValue,presentValue,FALSE,10,,
+HVAC Fan Purge Time Setting,HVAC Fan Purge Time Setting,seconds,,positiveIntegerValue,presentValue,FALSE,7,,
+HVAC Lock Screen Setting,HVAC Lock Screen Setting,Enum,0-1,binaryValue,presentValue,FALSE,11,,
+HVAC Lock Screen Code Setting,HVAC Lock Screen Code Setting,noUnits,,positiveIntegerValue,presentValue,FALSE,8,,
+HVAC Stage 1 Differential Setting,HVAC Stage 1 Differential Setting,degreesFahrenheit,1.00 to 6.00,analogValue,presentValue,FALSE,7,,
+HVAC Stage 2 Differential Setting,HVAC Stage 2 Differential Setting,degreesFahrenheit,1.00 to 6.00,analogValue,presentValue,FALSE,8,,
+HVAC Stage 2 Delay Setting,HVAC Stage 2 Delay Setting,minutes,,positiveIntegerValue,presentValue,FALSE,9,,
+HVAC Aux Heat Delay Setting,HVAC Aux Heat Delay Setting,minutes,,positiveIntegerValue,presentValue,FALSE,10,,
+HVAC Temperature Override Range Setting,HVAC Temperature Override Range Setting,degreesFahrenheit,2.00 to 8.00,analogValue,presentValue,FALSE,9,,
+HVAC Override Time Setting,HVAC Override Time Setting,minutes,,positiveIntegerValue,presentValue,FALSE,11,,
+HVAC Temperature Calibration Offset Setting,HVAC Temperature Calibration Offset Setting,degreesFahrenheit,-6.00 to 6.00,analogValue,presentValue,FALSE,10,,
+HVAC Balance Point High Setting,HVAC Balance Point High Setting,degreesFahrenheit,41.00 to 120.00,analogValue,presentValue,FALSE,11,,
+HVAC Balance Point Low Setting,HVAC Balance Point Low Setting,degreesFahrenheit,-55.00 to 40.00,analogValue,presentValue,FALSE,12,,
+HVAC Cool Setpoint High Limit Setting,HVAC Cool Setpoint High Limit Setting,degreesFahrenheit,60.00 to 108.00,analogValue,presentValue,FALSE,13,,
+HVAC Cool Setpoint Low Limit Setting,HVAC Cool Setpoint Low Limit Setting,degreesFahrenheit,60.00 to 108.00,analogValue,presentValue,FALSE,14,,
+HVAC Heat Setpoint High Limit Setting,HVAC Heat Setpoint High Limit Setting,degreesFahrenheit,38.00 to 88.00,analogValue,presentValue,FALSE,15,,
+HVAC Heat Setpoint Low Limit Setting,HVAC Heat Setpoint Low Limit Setting,degreesFahrenheit,38.00 to 88.00,analogValue,presentValue,FALSE,16,,
+Network Time Protocol Auto-Sync Setting,Network Time Protocol Auto-Sync Setting,Enum,0-1,binaryValue,presentValue,FALSE,12,,
+Remote Indoor Temperature,Remote Indoor Temperature,degreesFahrenheit,-40.00 to 200.00,analogInput,presentValue,FALSE,5,,Resolution: 1
+Remote Outdoor Temperature,Remote Outdoor Temperature,degreesFahrenheit,-40.00 to 200.00,analogInput,presentValue,FALSE,6,,Resolution: 1
+Remote Indoor Humidity,Remote Indoor Humidity,degreesFahrenheit,-40.00 to 200.00,analogInput,presentValue,FALSE,7,,Resolution: 1
+Remote Aux 1 Temperature,Remote Aux 1 Temperature,degreesFahrenheit,-40.00 to 200.00,analogInput,presentValue,FALSE,8,,Resolution: 1
+Remote Aux 2 Temperature,Remote Aux 2 Temperature,degreesFahrenheit,-40.00 to 200.00,analogInput,presentValue,FALSE,9,,Resolution: 1
+Remote Aux 3 Temperature,Remote Aux 3 Temperature,degreesFahrenheit,-40.00 to 200.00,analogInput,presentValue,FALSE,10,,Resolution: 1
+Remote Aux 4 Temperature,Remote Aux 4 Temperature,degreesFahrenheit,-40.00 to 200.00,analogInput,presentValue,FALSE,11,,Resolution: 1
+Remote Aux 5 Temperature,Remote Aux 5 Temperature,degreesFahrenheit,-40.00 to 200.00,analogInput,presentValue,FALSE,12,,Resolution: 1
+Remote Aux 6 Temperature,Remote Aux 6 Temperature,degreesFahrenheit,-40.00 to 200.00,analogInput,presentValue,FALSE,13,,Resolution: 1
+Remote Aux 7 Temperature,Remote Aux 7 Temperature,degreesFahrenheit,-40.00 to 200.00,analogInput,presentValue,FALSE,14,,Resolution: 1
+Remote Water Leak,Remote Water Leak,Enum,0-1,binaryInput,presentValue,FALSE,6,,
+Remote Door/Window,Remote Door/Window,Enum,0-1,binaryInput,presentValue,FALSE,7,,
+Remote Occupancy,Remote Occupancy,Enum,0-1,binaryInput,presentValue,FALSE,8,,
+CO2 Sensor Value,CO2 Sensor Value,partsPerMillion,0.00 to 10000.00,analogInput,presentValue,FALSE,15,,Resolution: 1
+CO2 Sensor Max Reading,CO2 Sensor Max Reading,partsPerMillion,0.00 to 10000.00,analogValue,presentValue,FALSE,17,,
+CO2 High Limit Setting,CO2 High Limit Setting,partsPerMillion,500.00 to 2000.00,analogValue,presentValue,FALSE,18,,
+CO2 High Level Detected,CO2 High Level Detected,Enum,0-1,binaryInput,presentValue,FALSE,9,,
+CO2 Max Reset Setting,CO2 Max Reset Setting,Enum,0-1,binaryValue,presentValue,FALSE,13,,
+CO2 Display Setting,CO2 Display Setting,State,State count: 3,multiStateValue,presentValue,FALSE,5,,"1=ON, 2=ALERT"
+Digital Input 1,Digital Input 1,Enum,0-1,binaryInput,presentValue,FALSE,3,,
+Digital Input 2,Digital Input 2,Enum,0-1,binaryInput,presentValue,FALSE,4,,
+Occupancy Input,Occupancy Input,Enum,0-1,binaryInput,presentValue,FALSE,5,,
+Outdoor Temperature,Outdoor Temperature,degreesFahrenheit,-50.00 to 124.00,analogInput,presentValue,FALSE,3,,Resolution: 1
+Outdoor Humidity,Outdoor Humidity,percentRelativeHumidity,0.00 to 100.00,analogInput,presentValue,FALSE,4,,Resolution: 1
+Active Cool Setpoint,Active Cool Setpoint,degreesFahrenheit,60.00 to 108.00,analogInput,presentValue,FALSE,16,,Resolution: 1
+Active Heat Setpoint,Active Heat Setpoint,degreesFahrenheit,38.00 to 88.00,analogInput,presentValue,FALSE,17,,Resolution: 1
+Active Setpoint,Active Setpoint,degreesFahrenheit,38.00 to 108.00,analogInput,presentValue,FALSE,18,,Resolution: 1
+Recirc Fan Timer Mins/Hr,Recirc Fan Timer Mins/Hr,minutes,,positiveIntegerValue,presentValue,FALSE,12,,
+BAS Outdoor Temperature,BAS Outdoor Temperature,degreesFahrenheit,-50.00 to 124.00,analogValue,presentValue,FALSE,19,,
+BAS Outdoor Humidity,BAS Outdoor Humidity,percentRelativeHumidity,0.00 to 100.00,analogValue,presentValue,FALSE,20,,
+KHD Relay Operation,KHD Relay Operation,State,State count: 8,multiStateValue,presentValue,FALSE,6,,"1=DAMPER, 2=DEHUM, 3=HUM, 4=MANUAL, 5=SCHEDULE, 6=IAQ, 7=CO2"
+K2 Relay Operation,K2 Relay Operation,State,State count: 6,multiStateValue,presentValue,FALSE,7,,"1=DAMPER, 2=MANUAL, 3=SCHEDULE, 4=IAQ, 5=CO2"
+KHD Manual Operation,KHD Manual Operation,Enum,0-1,binaryValue,presentValue,FALSE,14,,
+K2 Manual Operation,K2 Manual Operation,Enum,0-1,binaryValue,presentValue,FALSE,15,,
