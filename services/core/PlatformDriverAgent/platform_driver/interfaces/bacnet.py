@@ -40,7 +40,8 @@ DEFAULT_COV_LIFETIME = 180
 COV_UPDATE_BUFFER = 3
 BACNET_TYPE_MAPPING = {"multiStateValue": int, "multiStateInput": int, "multiStateOutput": int,
                        "analogValue": float, "analogInput": float, "analogOutput": float,
-                       "binaryValue": bool, "binaryInput": bool, "binaryOutput": bool
+                       "binaryValue": bool, "binaryInput": bool, "binaryOutput": bool,
+                       "positiveIntegerValue":int
                       }
 
 STORE_LAST_RESET = '0 0 * * *'
@@ -258,7 +259,7 @@ class Interface(BaseInterface):
             io_type = regDef.get('BACnet Object Type')
             read_only = regDef.get('Writable').lower() != 'true'
             point_name = regDef.get('Volttron Point Name')
-            store_on_change = regDef.get('Store On Change').lower() == 'true'
+            store_on_change = regDef.get('Store On Change','false').lower() == 'true'
 
             # checks if the point is flagged for change of value
             is_cov = regDef.get("COV Flag", 'false').lower() == "true"
