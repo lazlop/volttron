@@ -77,10 +77,16 @@ class Interface(BasicRevert, BaseInterface):
                     index))
             description = regDef.get('Notes', '')
             units = regDef.get('Units', None)
-            default_value = regDef.get("Default Value", "").strip()
+            default_value = regDef.get("Default Value", None)
             # Truncate empty string or 0 values to None
             if not default_value:
                 default_value = None
+            else:
+                default_value = default_value.strip()
+            # Using default fanLevel to re-establish connection
+            if point_name == 'fanLevel':
+                self.fan_default = default_value
+
             type_name = regDef.get("Type", 'string')
             # Make sure the type specified in the configuration is mapped to an actual Python data type
             pytype = type_mapping.get(type_name, str)
@@ -96,9 +102,6 @@ class Interface(BasicRevert, BaseInterface):
                 pytype,
                 default_value=default_value,
                 description=description)
-            # Update the register's value if there is a default value provided
-            if default_value is not None:
-                self.set_default(point_name, register.value)
             # Add the register instance to our list of registers
             self.insert_register(register)
 
@@ -141,7 +144,6 @@ class Interface(BasicRevert, BaseInterface):
         :return: Results dictionary of the form {<register point name>: <register value>, ...}
         """
         measurement = self.client._get("/pods/%s/measurements" % self.uid)['result'][0]
-        
         m_dict = {'timeOfTemperature': measurement['time']['time'],
                  'temperature': measurement['temperature']}
         current = self.client._get("/pods/%s/acStates" % self.uid, limit = 1, fields="acState")['result']
@@ -151,7 +153,9 @@ class Interface(BasicRevert, BaseInterface):
             m_dict['mode'] = current[0]['acState']['mode']
             m_dict['fanLevel'] = current[0]['acState']['fanLevel']
         except Exception as e:
-            _log.debug(f'current state unavailable {current} error {e}')
+            # refreshing connection
+            self.client.pod_change_ac_state(self.uid, [], 'fanLevel', self.fan_default)
+            _log.debug(f'current state unavailable {current} error {e}, refreshing')
 
         return m_dict
     
@@ -207,8 +211,6 @@ class PelRegister(BaseRegister):
         
         
         
-        
-
 class SensiboClientAPI(object):
     def __init__(self, api_key, server):
         self._api_key = api_key
