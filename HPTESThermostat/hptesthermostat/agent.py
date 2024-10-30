@@ -1,0 +1,304 @@
+"""
+
+
+        MPC run information saved in DB
+
+        Overwrite detection provides 3 hour allowed overwrite on site:
+
+        If most recent point value is different than last written value, an override has occured.
+        
+        (not relevant to WCEC, we will write occupancy mode via scheudule)
+        If the override is accomplished by equipment schedule, it will match an action stored in a table
+        This will be saved and ignored
+
+        If override is by human, it will not match stored action. This override will be allowed for some period (maybe 3 hours)
+
+        Function will return a dictionary per point, saying if point is currently overwritten
+        {unit name: <True (overwritten), or False <not overwritten>}
+
+        control runner will skip overrides
+
+        Override saved in db as:
+
+        campus/site/device/point_name/override_source: Human, Schedule, Robot
+        campus/site/device/point_name/override_initiated: True
+        campus/site/device/point_name/overridden_status: True
+        
+"""
+
+__docformat__ = 'reStructuredText'
+
+import gevent
+import logging
+import sys
+# from sqlalchemy import create_engine, text
+import pandas as pd
+import yaml
+import json
+from pytz import timezone
+from datetime import datetime, timedelta, time
+from volttron.platform.agent.utils import format_timestamp, get_aware_utc_now, parse_timestamp_string, process_timestamp
+from volttron.platform.messaging import headers as headers_mod
+from volttron.platform.agent import utils
+from volttron.platform.vip.agent import Agent, Core, RPC, PubSub, Again, VIPError
+from volttron.platform.scheduling import cron, periodic
+import random
+from time import sleep
+import gevent
+
+_log = logging.getLogger(__name__)
+utils.setup_logging()
+__version__ = "0.1"
+
+REQUESTER_ID = 'requester_id'
+TASK_ID = 'task_id'
+TSTAT= 'devices/arc/tstat'
+HPTES = 'hptes/modbus'
+OVERRIDE_TOPICS = [
+    'analysis/mpc/wcec/53101/Occ Heating Setpoint',
+    'analysis/mpc/wcec/53101/Occ Cooling Setpoint',
+    'analysis/mpc/wcec/53102/Occ Heating Setpoint',
+    'analysis/mpc/wcec/53102/Occ Cooling Setpoint',
+    'analysis/mpc/wcec/53103/Occ Heating Setpoint',
+    'analysis/mpc/wcec/53103/Occ Cooling Setpoint',
+    'analysis/mpc/wcec/53104/Occ Heating Setpoint',
+    'analysis/mpc/wcec/53104/Occ Cooling Setpoint',
+    'analysis/mpc/wcec/53105/Occ Heating Setpoint',
+    'analysis/mpc/wcec/53105/Occ Cooling Setpoint',
+    'analysis/mpc/wcec/53106/Occ Heating Setpoint',
+    'analysis/mpc/wcec/53106/Occ Cooling Setpoint',
+    'analysis/mpc/wcec/53107/Occ Heating Setpoint',
+    'analysis/mpc/wcec/53107/Occ Cooling Setpoint',
+    'analysis/mpc/wcec/53108/Occ Heating Setpoint',
+    'analysis/mpc/wcec/53108/Occ Cooling Setpoint',
+    'analysis/mpc/wcec/53109/Occ Heating Setpoint',
+    'analysis/mpc/wcec/53109/Occ Cooling Setpoint',
+    'analysis/mpc/wcec/53110/Occ Heating Setpoint',
+    'analysis/mpc/wcec/53110/Occ Cooling Setpoint',
+    'analysis/mpc/wcec/53111/Occ Heating Setpoint',
+    'analysis/mpc/wcec/53111/Occ Cooling Setpoint',
+    'analysis/mpc/wcec/53112/Occ Heating Setpoint',
+    'analysis/mpc/wcec/53112/Occ Cooling Setpoint',
+    'analysis/mpc/wcec/53113/Occ Heating Setpoint',
+    'analysis/mpc/wcec/53113/Occ Cooling Setpoint',
+    'analysis/mpc/wcec/53101/Operation Mode',
+    'analysis/mpc/wcec/53102/Operation Mode',
+    'analysis/mpc/wcec/53103/Operation Mode',
+    'analysis/mpc/wcec/53104/Operation Mode',
+    'analysis/mpc/wcec/53105/Operation Mode',
+    'analysis/mpc/wcec/53106/Operation Mode',
+    'analysis/mpc/wcec/53107/Operation Mode',
+    'analysis/mpc/wcec/53108/Operation Mode',
+    'analysis/mpc/wcec/53109/Operation Mode',
+    'analysis/mpc/wcec/53110/Operation Mode',
+    'analysis/mpc/wcec/53111/Operation Mode',
+    'analysis/mpc/wcec/53112/Operation Mode',
+    'analysis/mpc/wcec/53113/Operation Mode',
+]
+DEVICE_TOPICS = [
+    'devices/wcec/53101/Occ Heating Setpoint',
+    'devices/wcec/53101/Occ Cooling Setpoint',
+    'devices/wcec/53102/Occ Heating Setpoint',
+    'devices/wcec/53102/Occ Cooling Setpoint',
+    'devices/wcec/53103/Occ Heating Setpoint',
+    'devices/wcec/53103/Occ Cooling Setpoint',
+    'devices/wcec/53104/Occ Heating Setpoint',
+    'devices/wcec/53104/Occ Cooling Setpoint',
+    'devices/wcec/53105/Occ Heating Setpoint',
+    'devices/wcec/53105/Occ Cooling Setpoint',
+    'devices/wcec/53106/Occ Heating Setpoint',
+    'devices/wcec/53106/Occ Cooling Setpoint',
+    'devices/wcec/53107/Occ Heating Setpoint',
+    'devices/wcec/53107/Occ Cooling Setpoint',
+    'devices/wcec/53108/Occ Heating Setpoint',
+    'devices/wcec/53108/Occ Cooling Setpoint',
+    'devices/wcec/53109/Occ Heating Setpoint',
+    'devices/wcec/53109/Occ Cooling Setpoint',
+    'devices/wcec/53110/Occ Heating Setpoint',
+    'devices/wcec/53110/Occ Cooling Setpoint',
+    'devices/wcec/53111/Occ Heating Setpoint',
+    'devices/wcec/53111/Occ Cooling Setpoint',
+    'devices/wcec/53112/Occ Heating Setpoint',
+    'devices/wcec/53112/Occ Cooling Setpoint',
+    'devices/wcec/53113/Occ Heating Setpoint',
+    'devices/wcec/53113/Occ Cooling Setpoint',
+    'devices/wcec/53101/Operation Mode',
+    'devices/wcec/53102/Operation Mode',
+    'devices/wcec/53103/Operation Mode',
+    'devices/wcec/53104/Operation Mode',
+    'devices/wcec/53105/Operation Mode',
+    'devices/wcec/53106/Operation Mode',
+    'devices/wcec/53107/Operation Mode',
+    'devices/wcec/53108/Operation Mode',
+    'devices/wcec/53109/Operation Mode',
+    'devices/wcec/53110/Operation Mode',
+    'devices/wcec/53111/Operation Mode',
+    'devices/wcec/53112/Operation Mode',
+    'devices/wcec/53113/Operation Mode',
+]
+
+def overridedetection(config_path, **kwargs):
+
+    _log.debug("Config path: {}".format(config_path))
+    try:
+        config = utils.load_config(config_path)
+    except Exception:
+        config = {}
+    if not config:
+        _log.info("Using Agent defaults for starting configuration.")
+    _log.debug("config_dict before init: {}".format(config))
+
+    return OverrideDetection(**kwargs)
+
+
+class OverrideDetection(Agent):
+    """
+    Agent used to test the functionality of the CSV driver
+    """
+
+    def __init__(self, **kwargs):
+        # Configure the base agent
+        super(OverrideDetection, self).__init__(**kwargs)
+        _log.debug("vip_identity: " + self.core.identity)
+        self.default_config = {}
+        self.vip.config.subscribe(self.configure, actions=["NEW", "UPDATE"])
+
+    def configure(self, config_name, action, contents):
+        """
+        Called after the Agent has connected to the message bus.
+        If a configuration exists at startup this will be called before onstart
+
+        Is called every time the configuration in the store changes.
+        """
+
+        self.config = self.default_config.copy()
+        self.config.update(contents)
+        _log.debug("Configuring Agent")
+    
+    @PubSub.subscribe('pubsub', TSTAT)
+    def write_thermostat_values(self, peer, sender, bus,  topic, headers, message):
+        sleep(5)
+        print("\n\n\n RECEIVING THERMOSTAT DATA \n\n\n")
+        print(message)
+        _log.debug(f"SUBSCRIBE WORKED !!!!!")
+        point_dict = message[0]
+        active = point_dict['Stages Active']
+        state = point_dict['Cool/Heat State']
+        _log.debug(f"STAGES ACTIVE: {active}")
+        _log.debug(f"COOL/HEAT STATE: {state}")
+            # new_key = f'{topic}{k}'
+            # if new_key in OVERRIDE_TOPICS:
+            #     self.mpc_points.update({new_key:v})
+            # if 'Stages Active' in k:
+            #     active = v
+            #     _log.debug(f"STAGES ACTIVE: {active}")
+            # if 'Cool/Heat State' in k:
+            #     state = v
+            #     _log.debug(f"COOL/HEAT STATE: {state}")
+                # state = 0 means cooling 
+        if (state == 0) & (active == 1):
+            # Send call for cool 
+            self.cool()
+        if (state == 1) & (active == 1):
+            # Send call for heat
+            self.heat()
+        if (active == 0):
+            # Send call for off
+            self.off()
+    
+    def cool(self):
+        # message = [('hptes/modbus/Supervisor_CallCold', True), ('hptes/modbus/Supervisor_Enabled', True), ('hptes/modbus/xCommandOn', 1)]
+        message = [('hptes/modbus/Supervisor_CallCold', True)]
+        self.actuate(message)
+
+    def heat(self):
+        # message = [('hptes/modbus/Supervisor_CallHot', True), ('hptes/modbus/Supervisor_Enabled', True), ('hptes/modbus/xCommandOn', 1)]
+        message = [('hptes/modbus/Supervisor_CallHot', True)]
+        self.actuate(message)
+
+    def off(self):
+        # message = [('hptes/modbus/Supervisor_CallCold', False), ('hptes/modbus/Supervisor_CallHot', False), ('hptes/modbus/Supervisor_Enabled', True), ('hptes/modbus/xCommandOn', 0)]
+        message = [('hptes/modbus/Supervisor_CallCold', False), ('hptes/modbus/Supervisor_CallHot', False)]
+        self.actuate(message)
+
+    def actuate(self,point_setting):
+        #will have to schedule all devices
+        start = datetime.now()
+        #end = datetime.now() + timedelta(minutes = self.frequency)
+        
+        # for testing 
+        end = datetime.now() + timedelta(minutes = 0.1)
+
+        priority = 'LOW'
+        task_id = TASK_ID
+        task_id = str(random.randint(0,100000))
+        devices = [f'hptes/modbus']
+
+        msg = [ [device, utils.format_timestamp(start), utils.format_timestamp(end)] for device in devices]
+        try:
+            result = self.vip.rpc.call('platform.actuator',
+                                        'request_new_schedule',
+                                           REQUESTER_ID,
+                                           task_id,
+                                           priority,
+                                           msg).get(timeout=10)
+        except Exception as e:
+            print(e)
+            _log.warning("Could not contact actuator. Is it running?")
+        _log.info("schedule result {}".format(result))
+
+        print('Point Setting', point_setting)
+        result = self.vip.rpc.call('platform.actuator',
+                                    'set_multiple_points',
+                                    REQUESTER_ID,
+                                    point_setting).get(timeout=20)
+        if result:
+            print(result)    
+
+
+    def _publish_wrapper(self, topic, headers, message):
+        while True:
+            try:
+                _log.debug("publishing: " + topic)
+                self.vip.pubsub.publish('pubsub',
+                                        topic,
+                                        headers=headers,
+                                        message=message).get(timeout=10.0)
+
+                _log.debug("finish publishing: " + topic)
+            except gevent.Timeout:
+                _log.warning("Did not receive confirmation of publish to "+topic)
+                break
+            except Again:
+                _log.warning("publish delayed: " + topic + " pubsub is busy")
+                gevent.sleep(random.random())
+            except VIPError as ex:
+                _log.warning("driver failed to publish " + topic + ": " + str(ex))
+                break
+            else:
+                break
+        
+    # Not sure if this will work now
+    # @Core.schedule(periodic(60))
+    # def test_function(self):
+    #     for i, entry in enumerate(OVERRIDE_TOPICS):
+    #         parts = entry.rsplit('/', 1)
+    #         topic = parts[0]
+    #         message = {parts[1]: i}
+    #         self.publish(topic, message)
+    #     sleep(30)
+    #     self.periodic_publish()
+
+
+def main():
+    """Main method called to start the agent."""
+    utils.vip_main(overridedetection,
+                   version=__version__)
+
+
+if __name__ == '__main__':
+    # Entry point for script
+    try:
+        sys.exit(main())
+    except KeyboardInterrupt:
+        pass
