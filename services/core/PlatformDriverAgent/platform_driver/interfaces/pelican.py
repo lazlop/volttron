@@ -44,7 +44,7 @@ class Interface(BasicRevert, BaseInterface):
         """
         self.config_dict = config_dict
         self.registry_config_str = registry_config_str
-        self.url = self.config_dict.get("url","https://lbl-building-90c.officeclimatecontrol.net/api.cgi")
+        self.url = self.config_dict.get("url")
         self.username = self.config_dict.get('username')
         self.password = self.config_dict.get('password')
         self.object = self.config_dict.get('object')
