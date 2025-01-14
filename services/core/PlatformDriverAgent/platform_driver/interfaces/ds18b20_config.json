@@ -1,0 +1,9 @@
+{
+    "driver_config": {
+        "base_dir": "/sys/bus/w1/devices/"
+    },
+    "driver_type": "ds18b20",
+    "registry_config": "config://registry_configs/surface_temps.csv",
+    "interval": 60,
+    "timezone": "US/Pacific"
+}

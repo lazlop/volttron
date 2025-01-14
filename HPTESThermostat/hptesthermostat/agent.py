@@ -55,87 +55,9 @@ TASK_ID = 'task_id'
 TSTAT= 'devices/arc/tstat'
 HPTES = 'hptes/modbus'
 OVERRIDE_TOPICS = [
-    'analysis/mpc/wcec/53101/Occ Heating Setpoint',
-    'analysis/mpc/wcec/53101/Occ Cooling Setpoint',
-    'analysis/mpc/wcec/53102/Occ Heating Setpoint',
-    'analysis/mpc/wcec/53102/Occ Cooling Setpoint',
-    'analysis/mpc/wcec/53103/Occ Heating Setpoint',
-    'analysis/mpc/wcec/53103/Occ Cooling Setpoint',
-    'analysis/mpc/wcec/53104/Occ Heating Setpoint',
-    'analysis/mpc/wcec/53104/Occ Cooling Setpoint',
-    'analysis/mpc/wcec/53105/Occ Heating Setpoint',
-    'analysis/mpc/wcec/53105/Occ Cooling Setpoint',
-    'analysis/mpc/wcec/53106/Occ Heating Setpoint',
-    'analysis/mpc/wcec/53106/Occ Cooling Setpoint',
-    'analysis/mpc/wcec/53107/Occ Heating Setpoint',
-    'analysis/mpc/wcec/53107/Occ Cooling Setpoint',
-    'analysis/mpc/wcec/53108/Occ Heating Setpoint',
-    'analysis/mpc/wcec/53108/Occ Cooling Setpoint',
-    'analysis/mpc/wcec/53109/Occ Heating Setpoint',
-    'analysis/mpc/wcec/53109/Occ Cooling Setpoint',
-    'analysis/mpc/wcec/53110/Occ Heating Setpoint',
-    'analysis/mpc/wcec/53110/Occ Cooling Setpoint',
-    'analysis/mpc/wcec/53111/Occ Heating Setpoint',
-    'analysis/mpc/wcec/53111/Occ Cooling Setpoint',
-    'analysis/mpc/wcec/53112/Occ Heating Setpoint',
-    'analysis/mpc/wcec/53112/Occ Cooling Setpoint',
-    'analysis/mpc/wcec/53113/Occ Heating Setpoint',
-    'analysis/mpc/wcec/53113/Occ Cooling Setpoint',
-    'analysis/mpc/wcec/53101/Operation Mode',
-    'analysis/mpc/wcec/53102/Operation Mode',
-    'analysis/mpc/wcec/53103/Operation Mode',
-    'analysis/mpc/wcec/53104/Operation Mode',
-    'analysis/mpc/wcec/53105/Operation Mode',
-    'analysis/mpc/wcec/53106/Operation Mode',
-    'analysis/mpc/wcec/53107/Operation Mode',
-    'analysis/mpc/wcec/53108/Operation Mode',
-    'analysis/mpc/wcec/53109/Operation Mode',
-    'analysis/mpc/wcec/53110/Operation Mode',
-    'analysis/mpc/wcec/53111/Operation Mode',
-    'analysis/mpc/wcec/53112/Operation Mode',
     'analysis/mpc/wcec/53113/Operation Mode',
 ]
-DEVICE_TOPICS = [
-    'devices/wcec/53101/Occ Heating Setpoint',
-    'devices/wcec/53101/Occ Cooling Setpoint',
-    'devices/wcec/53102/Occ Heating Setpoint',
-    'devices/wcec/53102/Occ Cooling Setpoint',
-    'devices/wcec/53103/Occ Heating Setpoint',
-    'devices/wcec/53103/Occ Cooling Setpoint',
-    'devices/wcec/53104/Occ Heating Setpoint',
-    'devices/wcec/53104/Occ Cooling Setpoint',
-    'devices/wcec/53105/Occ Heating Setpoint',
-    'devices/wcec/53105/Occ Cooling Setpoint',
-    'devices/wcec/53106/Occ Heating Setpoint',
-    'devices/wcec/53106/Occ Cooling Setpoint',
-    'devices/wcec/53107/Occ Heating Setpoint',
-    'devices/wcec/53107/Occ Cooling Setpoint',
-    'devices/wcec/53108/Occ Heating Setpoint',
-    'devices/wcec/53108/Occ Cooling Setpoint',
-    'devices/wcec/53109/Occ Heating Setpoint',
-    'devices/wcec/53109/Occ Cooling Setpoint',
-    'devices/wcec/53110/Occ Heating Setpoint',
-    'devices/wcec/53110/Occ Cooling Setpoint',
-    'devices/wcec/53111/Occ Heating Setpoint',
-    'devices/wcec/53111/Occ Cooling Setpoint',
-    'devices/wcec/53112/Occ Heating Setpoint',
-    'devices/wcec/53112/Occ Cooling Setpoint',
-    'devices/wcec/53113/Occ Heating Setpoint',
-    'devices/wcec/53113/Occ Cooling Setpoint',
-    'devices/wcec/53101/Operation Mode',
-    'devices/wcec/53102/Operation Mode',
-    'devices/wcec/53103/Operation Mode',
-    'devices/wcec/53104/Operation Mode',
-    'devices/wcec/53105/Operation Mode',
-    'devices/wcec/53106/Operation Mode',
-    'devices/wcec/53107/Operation Mode',
-    'devices/wcec/53108/Operation Mode',
-    'devices/wcec/53109/Operation Mode',
-    'devices/wcec/53110/Operation Mode',
-    'devices/wcec/53111/Operation Mode',
-    'devices/wcec/53112/Operation Mode',
-    'devices/wcec/53113/Operation Mode',
-]
+DEVICE_TOPICS = []
 
 def overridedetection(config_path, **kwargs):
 
@@ -174,7 +96,8 @@ class OverrideDetection(Agent):
         self.config = self.default_config.copy()
         self.config.update(contents)
         _log.debug("Configuring Agent")
-    
+        #self.off()
+
     @PubSub.subscribe('pubsub', TSTAT)
     def write_thermostat_values(self, peer, sender, bus,  topic, headers, message):
         sleep(5)
@@ -197,35 +120,35 @@ class OverrideDetection(Agent):
             #     _log.debug(f"COOL/HEAT STATE: {state}")
                 # state = 0 means cooling 
         if (state == 0) & (active == 1):
+            _log.debug("sending call for cool")
             # Send call for cool 
             self.cool()
         if (state == 1) & (active == 1):
             # Send call for heat
+            _log.debug("sending call for heat")
             self.heat()
         if (active == 0):
             # Send call for off
             self.off()
-    
     def cool(self):
-        # message = [('hptes/modbus/Supervisor_CallCold', True), ('hptes/modbus/Supervisor_Enabled', True), ('hptes/modbus/xCommandOn', 1)]
-        message = [('hptes/modbus/Supervisor_CallCold', True)]
+        message = [('hptes/modbus/Supervisor_CallCold', True), ('hptes/modbus/Supervisor_Enabled', True), ('hptes/modbus/Supervisor_CallHot', False), ('hptes/modbus/xCommandOn', 1)]
+        #message = [('hptes/modbus/Supervisor_CallCold', True)]
         self.actuate(message)
 
     def heat(self):
-        # message = [('hptes/modbus/Supervisor_CallHot', True), ('hptes/modbus/Supervisor_Enabled', True), ('hptes/modbus/xCommandOn', 1)]
-        message = [('hptes/modbus/Supervisor_CallHot', True)]
+        message = [('hptes/modbus/Supervisor_CallHot', True),('hptes/modbus/Supervisor_CallCold', False), ('hptes/modbus/Supervisor_Enabled', True), ('hptes/modbus/xCommandOn', 1)]
+        #message = [('hptes/modbus/Supervisor_CallHot', True)]
         self.actuate(message)
 
     def off(self):
-        # message = [('hptes/modbus/Supervisor_CallCold', False), ('hptes/modbus/Supervisor_CallHot', False), ('hptes/modbus/Supervisor_Enabled', True), ('hptes/modbus/xCommandOn', 0)]
-        message = [('hptes/modbus/Supervisor_CallCold', False), ('hptes/modbus/Supervisor_CallHot', False)]
+        message = [('hptes/modbus/Supervisor_CallCold', False), ('hptes/modbus/Supervisor_CallHot', False), ('hptes/modbus/Supervisor_Enabled', True), ('hptes/modbus/xCommandOn', 0)]
+        #message = [('hptes/modbus/Supervisor_CallCold', False), ('hptes/modbus/Supervisor_CallHot', False)]
         self.actuate(message)
 
     def actuate(self,point_setting):
         #will have to schedule all devices
         start = datetime.now()
         #end = datetime.now() + timedelta(minutes = self.frequency)
-        
         # for testing 
         end = datetime.now() + timedelta(minutes = 0.1)
 
