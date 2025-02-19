@@ -6,6 +6,9 @@ the python class for everything is set to int. Reg_types are bit or byte
 import logging
 import requests
 import json
+import speedtest
+import time
+import functools
 from volttron.platform.agent import utils
 from volttron.platform.agent.known_identities import CONFIGURATION_STORE, PLATFORM_DRIVER
 from platform_driver.interfaces import BaseInterface, BaseRegister, BasicRevert
@@ -152,6 +155,8 @@ class Interface(BasicRevert, BaseInterface):
             m_dict['on'] = current[0]['acState']['on']
             m_dict['mode'] = current[0]['acState']['mode']
             m_dict['fanLevel'] = current[0]['acState']['fanLevel']
+            if current[0]['acState']['temperatureUnit'] != 'F':
+                self.client.pod_change_ac_state(self.uid, [], 'temperatureUnit', 'F')
         except Exception as e:
             # refreshing connection
             self.client.pod_change_ac_state(self.uid, [], 'fanLevel', self.fan_default)
@@ -208,20 +213,66 @@ class PelRegister(BaseRegister):
             return bool(value)
         elif pytype is str:
             return str(value)
-        
-        
-        
+
+def measure_internet_speed():
+    st = speedtest.Speedtest()
+    st.get_best_server()
+    download_speed = st.download() / 1_000_000  # Convert to Mbps
+    print(f'{download_speed=}')
+    upload_speed = st.upload() / 1_000_000  # Convert to Mbps
+    print(f'{upload_speed=}')
+    return download_speed, upload_speed
+
+def is_connection_strong_enough(min_download_speed=5, min_upload_speed=1):
+    print('checking connection speed')
+    download_speed, upload_speed = measure_internet_speed()
+    print(f"Download speed: {download_speed:.2f} Mbps, Upload speed: {upload_speed:.2f} Mbps")
+    return download_speed >= min_download_speed and upload_speed >= min_upload_speed
+
+def fetch_data_with_retry(url):
+    response = requests.get(url)
+    response.raise_for_status()  
+    return response.content
+
+# in retry could optionally check network speed.
+def retry(tries=5, delay=30, backoff=1):
+    """
+    Retry calling the decorated function using an exponential backoff.
+    
+    :param exceptions: The exception(s) to check. May be a tuple of exceptions to check.
+    :param tries: Number of times to try (not retry) before giving up.
+    :param delay: Initial delay between retries in seconds.
+    :param backoff: Backoff multiplier (e.g. value of 2 will double the delay each retry).
+    """
+    def decorator_retry(func):
+        @functools.wraps(func)
+        def wrapper_retry(*args, **kwargs):
+            _tries, _delay = tries, delay
+            while _tries > 1:
+                try:
+                    return func(*args, **kwargs)
+                except Exception as e:
+                    print(f"{e}, Retrying in {_delay} seconds...")
+                    time.sleep(_delay)
+                    _tries -= 1
+                    _delay *= backoff
+            return func(*args, **kwargs)
+        return wrapper_retry
+    return decorator_retry
+
 class SensiboClientAPI(object):
     def __init__(self, api_key, server):
         self._api_key = api_key
         self._server = server
 
+    @retry()
     def _get(self, path, ** params):
         params['apiKey'] = self._api_key
         response = requests.get(self._server+ path, params = params)
         response.raise_for_status()
         return response.json()
-
+    
+    @retry()
     def _patch(self, path, data, ** params):
         params['apiKey'] = self._api_key
         response = requests.patch(self._server + path, params = params, data = data)

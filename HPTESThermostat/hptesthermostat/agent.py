@@ -83,6 +83,7 @@ class OverrideDetection(Agent):
         super(OverrideDetection, self).__init__(**kwargs)
         _log.debug("vip_identity: " + self.core.identity)
         self.default_config = {}
+        self.ts_last_thermostat = datetime.now()
         self.vip.config.subscribe(self.configure, actions=["NEW", "UPDATE"])
 
     def configure(self, config_name, action, contents):
@@ -95,18 +96,28 @@ class OverrideDetection(Agent):
 
         self.config = self.default_config.copy()
         self.config.update(contents)
+        self.ts_last_thermostat = datetime.now()
+        self.turn_off = self.config.get('turn_off', False)
+        # if self.turn_off.lower() == 'false':
+        #     self.turn_off = False
         _log.debug("Configuring Agent")
-        #self.off()
+        if self.turn_off:
+            _log.debug("HPTES in off mode")
+            self.off()
 
     @PubSub.subscribe('pubsub', TSTAT)
     def write_thermostat_values(self, peer, sender, bus,  topic, headers, message):
         sleep(5)
-        print("\n\n\n RECEIVING THERMOSTAT DATA \n\n\n")
+        if self.turn_off:
+            _log.debug("TURNING OFF HPTES")
+            self.off()
+            return 
+        else:
+            self.set_baseline_setpoints(datetime.now())
         print(message)
-        _log.debug(f"SUBSCRIBE WORKED !!!!!")
         point_dict = message[0]
-        active = point_dict['Stages Active']
-        state = point_dict['Cool/Heat State']
+        active = int(point_dict['Stages Active'])
+        state = int(point_dict['Cool/Heat State'])
         _log.debug(f"STAGES ACTIVE: {active}")
         _log.debug(f"COOL/HEAT STATE: {state}")
             # new_key = f'{topic}{k}'
@@ -123,13 +134,48 @@ class OverrideDetection(Agent):
             _log.debug("sending call for cool")
             # Send call for cool 
             self.cool()
-        if (state == 1) & (active == 1):
+        elif (state == 1) & (active == 1):
             # Send call for heat
             _log.debug("sending call for heat")
             self.heat()
-        if (active == 0):
+        elif (active == 0):
             # Send call for off
             self.off()
+        else:
+            _log.error("ACTIVE AND STATE NOT PRESENT")
+            _log.error(f"ACTIVE: {active} | STATE: {state}")
+            self.off()
+        self.ts_last_thermostat = datetime.now()
+
+    def set_baseline_setpoints(self, now):
+        setpoints = {'arc/tstat/Manual Occupied Cool Setpoint': 70,
+                    'arc/tstat/Manual Occupied Heat Setpoint': 67,
+                    'arc/tstat/Manual Unoccupied Cool Setpoint': 85,
+                    'arc/tstat/Manual Unoccupied Heat Setpoint': 60,
+                    'arc/tstat/Occupancy Toggle': 0
+                    }
+        # if now.weekday() < 4:
+        #     if 8 <= now.hour < 22: 
+        #         setpoints.update({'1610101/bms_occ': 2,
+        #                     '1610102/bms_occ': 2})
+        # elif 4 <= now.weekday() < 6:
+        #     if 8 <= now.hour < 20: 
+        #         setpoints.update({'1610101/bms_occ': 2,
+        #                     '1610102/bms_occ': 2})
+        print('Current Hour: ', now.hour)
+        if 8 <= now.hour < 20: 
+            setpoints.update({'arc/tstat/Occupancy Toggle': 1})
+
+        message = [(k, v) for k, v in setpoints.items()]
+        self.actuate(message)
+        return setpoints
+
+    @Core.schedule(periodic(300))
+    def safety_off(self):
+        if (datetime.now() - self.ts_last_thermostat) > timedelta(seconds = 300):
+            _log.error("NO NEW THERMOSTAT STATE. TURNING OFF")
+            self.off()
+    
     def cool(self):
         message = [('hptes/modbus/Supervisor_CallCold', True), ('hptes/modbus/Supervisor_Enabled', True), ('hptes/modbus/Supervisor_CallHot', False), ('hptes/modbus/xCommandOn', 1)]
         #message = [('hptes/modbus/Supervisor_CallCold', True)]
@@ -150,14 +196,13 @@ class OverrideDetection(Agent):
         start = datetime.now()
         #end = datetime.now() + timedelta(minutes = self.frequency)
         # for testing 
-        end = datetime.now() + timedelta(minutes = 0.1)
 
         priority = 'LOW'
         task_id = TASK_ID
         task_id = str(random.randint(0,100000))
-        devices = [f'hptes/modbus']
-
-        msg = [ [device, utils.format_timestamp(start), utils.format_timestamp(end)] for device in devices]
+        devices = [f'hptes/modbus','arc/tstat']
+        # Using start time so I don't get schedule conflicts.
+        msg = [ [device, utils.format_timestamp(start), utils.format_timestamp(start)] for device in devices]
         try:
             result = self.vip.rpc.call('platform.actuator',
                                         'request_new_schedule',
