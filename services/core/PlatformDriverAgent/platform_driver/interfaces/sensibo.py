@@ -157,6 +157,7 @@ class Interface(BasicRevert, BaseInterface):
             m_dict['fanLevel'] = current[0]['acState']['fanLevel']
             if current[0]['acState']['temperatureUnit'] != 'F':
                 self.client.pod_change_ac_state(self.uid, [], 'temperatureUnit', 'F')
+                return self._scrape_all()
         except Exception as e:
             # refreshing connection
             self.client.pod_change_ac_state(self.uid, [], 'fanLevel', self.fan_default)
