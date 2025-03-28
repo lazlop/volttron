@@ -63,7 +63,7 @@ class RedshiftFuncts(DbDriver):
                 cursor.execute('SET TIME ZONE UTC')
             return connection
         connect.__name__ = 'psycopg2'
-        super(self.__class__, self).__init__(connect)
+        super(RedshiftFuncts, self).__init__(connect)
 
     @contextlib.contextmanager
     def bulk_insert(self):
@@ -101,7 +101,7 @@ class RedshiftFuncts(DbDriver):
 
     def rollback(self):
         try:
-            return super(self.__class__, self).rollback()
+            return super(RedshiftFuncts, self).rollback()
         except InterfaceError:
             return False
 
@@ -266,7 +266,7 @@ class RedshiftFuncts(DbDriver):
             'SELECT topic_id, metadata '
             'FROM {}').format(Identifier(self.meta_table))
         rows = self.select(query)
-        meta_map = {tid: jsonapi.loads(meta) for tid, meta in rows}
+        meta_map = {tid: jsonapi.loads(meta) if meta else None for tid, meta in rows}
         return meta_map
 
     def get_agg_topics(self):

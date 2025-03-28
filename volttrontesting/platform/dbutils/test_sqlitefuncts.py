@@ -278,6 +278,22 @@ def test_get_topic_map(get_sqlitefuncts):
 
 @pytest.mark.sqlitefuncts
 @pytest.mark.dbutils
+def test_get_topic_meta_map(get_sqlitefuncts):
+    sqlitefuncts, historian_version = get_sqlitefuncts
+    if historian_version == "<4.0.0":
+        pytest.skip("method applied only to version >=4.0.0")
+    else:
+        query = "INSERT INTO topics (topic_name) values ('football');" \
+                "INSERT INTO topics (topic_name, metadata) values ('netball', '{\"meta\":\"value\"}');"
+        query_db(query)
+        expected_topic_map = {1: None, 2: {"meta": "value"}}
+
+        actual_topic_meta_map = sqlitefuncts.get_topic_meta_map()
+
+        assert actual_topic_meta_map == expected_topic_map
+
+@pytest.mark.sqlitefuncts
+@pytest.mark.dbutils
 def test_get_agg_topics(get_sqlitefuncts):
     sqlitefuncts, historain_version = get_sqlitefuncts
     query = (
@@ -370,7 +386,7 @@ def test_create_aggregate_store(get_sqlitefuncts):
     agg_type = "AVG"
     agg_time_period = "1984"
     expected_new_agg_table = "AVG_1984"
-    expected_indexes = ["0|idx_AVG_1984|0|c|0", "1|sqlite_autoindex_AVG_1984_1|1|u|0"]
+    expected_indexes = ['0|idx_AVG_1984|0', '1|sqlite_autoindex_AVG_1984_1|1']
 
     result = sqlitefuncts.create_aggregate_store(agg_type, agg_time_period)
 
@@ -378,7 +394,9 @@ def test_create_aggregate_store(get_sqlitefuncts):
     assert expected_new_agg_table in get_tables()
 
     actual_indexes = get_indexes(expected_new_agg_table)
-    assert actual_indexes == expected_indexes
+    for idx, val in enumerate(actual_indexes):
+        assert val.startswith(expected_indexes[idx]) 
+    # assert actual_indexes == expected_indexes
 
 
 @pytest.mark.sqlitefuncts

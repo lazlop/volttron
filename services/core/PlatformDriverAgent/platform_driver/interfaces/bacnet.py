@@ -1,39 +1,25 @@
 # -*- coding: utf-8 -*- {{{
-# vim: set fenc=utf-8 ft=python sw=4 ts=4 sts=4 et:
+# ===----------------------------------------------------------------------===
 #
-# Copyright 2020, Battelle Memorial Institute.
+#                 Component of Eclipse VOLTTRON
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# ===----------------------------------------------------------------------===
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+# Copyright 2023 Battelle Memorial Institute
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy
+# of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
 #
-# This material was prepared as an account of work sponsored by an agency of
-# the United States Government. Neither the United States Government nor the
-# United States Department of Energy, nor Battelle, nor any of their
-# employees, nor any jurisdiction or organization that has cooperated in the
-# development of these materials, makes any warranty, express or
-# implied, or assumes any legal liability or responsibility for the accuracy,
-# completeness, or usefulness or any information, apparatus, product,
-# software, or process disclosed, or represents that its use would not infringe
-# privately owned rights. Reference herein to any specific commercial product,
-# process, or service by trade name, trademark, manufacturer, or otherwise
-# does not necessarily constitute or imply its endorsement, recommendation, or
-# favoring by the United States Government or any agency thereof, or
-# Battelle Memorial Institute. The views and opinions of authors expressed
-# herein do not necessarily state or reflect those of the
-# United States Government or any agency thereof.
-#
-# PACIFIC NORTHWEST NATIONAL LABORATORY operated by
-# BATTELLE for the UNITED STATES DEPARTMENT OF ENERGY
-# under Contract DE-AC05-76RL01830
+# ===----------------------------------------------------------------------===
 # }}}
 
 
@@ -44,6 +30,8 @@ from platform_driver.driver_exceptions import DriverConfigError
 from platform_driver.interfaces import BaseInterface, BaseRegister
 from volttron.platform.vip.agent import errors
 from volttron.platform.jsonrpc import RemoteError
+from volttron.platform.scheduling import cron
+import json
 
 # Logging is completely configured by now.
 _log = logging.getLogger(__name__)
@@ -55,10 +43,14 @@ BACNET_TYPE_MAPPING = {"multiStateValue": int, "multiStateInput": int, "multiSta
                        "binaryValue": bool, "binaryInput": bool, "binaryOutput": bool
                       }
 
+STORE_LAST_RESET = '0 0 * * *'
+STORE_LAST_IDENTIFY_PERIOD = '0 0 * * *'
+IDENTIFY_STORE_LAST_FLAG = True
+STORE_LAST_LIMIT = 1
 
 class Register(BaseRegister):
     def __init__(self, instance_number, object_type, property_name, read_only, point_name, units,
-                 description='', priority=None, list_index=None):
+                 description='', store_on_change = False, priority=None, list_index=None):
         super(Register, self).__init__("byte", read_only, point_name, units, description=description)
         self.instance_number = int(instance_number)
         self.object_type = object_type
@@ -66,6 +58,7 @@ class Register(BaseRegister):
         self.priority = priority
         self.index = list_index
         self.python_type = BACNET_TYPE_MAPPING[object_type]
+        self.store_on_change = store_on_change
 
 
 class Interface(BaseInterface):
@@ -74,6 +67,11 @@ class Interface(BaseInterface):
         self.register_count = 10000
         self.register_count_divisor = 1
         self.cov_points = []
+        self.store_on_change_points = {}
+        self.last_val_dict = {}
+        self.change_count_dict = {}
+        self.core.schedule(cron(STORE_LAST_RESET), self.store_last_reset)
+        self.core.schedule(cron(STORE_LAST_IDENTIFY_PERIOD), self.identify_store_last)
 
     def configure(self, config_dict, registry_config_str):
         self.min_priority = config_dict.get("min_priority", 8)
@@ -95,6 +93,32 @@ class Interface(BaseInterface):
         for point_name in self.cov_points:
             self.establish_cov_subscription(point_name, self.cov_lifetime, True)
 
+    def store_last_reset(self):
+        for key in self.store_on_change_points.keys():
+            self.store_on_change_points[key] = None
+    
+    def count_changes(self, result):
+        for k, v in result.items():
+            if k not in self.last_val_dict.keys():
+                self.last_val_dict[k] = v
+                self.change_count_dict[k] = 0
+            elif self.last_val_dict[k] != v:
+                self.change_count_dict[k] += 1 
+
+    def identify_store_last(self):
+        _log.error(f'Change Count is: {self.change_count_dict}')
+        with open(f'/home/hpflex/volttron/change_counter/{self.device_id}.md', 'w') as file:
+            file.write('\n')
+            file.write('{')
+            file.write(f'"{self.device_id}"')
+            file.write(':')
+            file.write('\n')
+            json.dump(self.change_count_dict, file)
+            file.write('}')
+            file.write('\n')
+        for key in self.change_count_dict.keys():
+            self.change_count_dict[key] = 0
+        
     def schedule_ping(self):
         if self.scheduled_ping is None:
             now = datetime.now()
@@ -190,6 +214,19 @@ class Interface(BaseInterface):
             else:
                 break
 
+        for key in self.store_on_change_points.keys():
+            if key in result.keys():
+                if self.store_on_change_points[key] == result[key]:
+                    del result[key]
+                    # _log.error(f'key dropped: {key}')
+                else:
+                    self.store_on_change_points[key] = result[key]
+        _log.error('BACNET SCRAPE RESULT')
+        _log.error(f'Points Saved {len(result)}')
+        # _log.error(result)
+
+        if IDENTIFY_STORE_LAST_FLAG:
+            self.count_changes(result)
         return result
 
     def revert_all(self, priority=None):
@@ -221,6 +258,7 @@ class Interface(BaseInterface):
             io_type = regDef.get('BACnet Object Type')
             read_only = regDef.get('Writable').lower() != 'true'
             point_name = regDef.get('Volttron Point Name')
+            store_on_change = regDef.get('Store On Change').lower() == 'true'
 
             # checks if the point is flagged for change of value
             is_cov = regDef.get("COV Flag", 'false').lower() == "true"
@@ -259,6 +297,7 @@ class Interface(BaseInterface):
                                 point_name,
                                 units,
                                 description=description,
+                                store_on_change = store_on_change,
                                 priority=priority,
                                 list_index=list_index)
 
@@ -266,6 +305,9 @@ class Interface(BaseInterface):
 
             if is_cov:
                 self.cov_points.append(point_name)
+            
+            if store_on_change:
+                self.store_on_change_points[point_name] = None
 
     def establish_cov_subscription(self, point_name, lifetime, renew=False):
         """
