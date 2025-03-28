@@ -1,39 +1,25 @@
 # -*- coding: utf-8 -*- {{{
-# vim: set fenc=utf-8 ft=python sw=4 ts=4 sts=4 et:
+# ===----------------------------------------------------------------------===
 #
-# Copyright 2020, Battelle Memorial Institute.
+#                 Component of Eclipse VOLTTRON
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# ===----------------------------------------------------------------------===
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+# Copyright 2023 Battelle Memorial Institute
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy
+# of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
 #
-# This material was prepared as an account of work sponsored by an agency of
-# the United States Government. Neither the United States Government nor the
-# United States Department of Energy, nor Battelle, nor any of their
-# employees, nor any jurisdiction or organization that has cooperated in the
-# development of these materials, makes any warranty, express or
-# implied, or assumes any legal liability or responsibility for the accuracy,
-# completeness, or usefulness or any information, apparatus, product,
-# software, or process disclosed, or represents that its use would not infringe
-# privately owned rights. Reference herein to any specific commercial product,
-# process, or service by trade name, trademark, manufacturer, or otherwise
-# does not necessarily constitute or imply its endorsement, recommendation, or
-# favoring by the United States Government or any agency thereof, or
-# Battelle Memorial Institute. The views and opinions of authors expressed
-# herein do not necessarily state or reflect those of the
-# United States Government or any agency thereof.
-#
-# PACIFIC NORTHWEST NATIONAL LABORATORY operated by
-# BATTELLE for the UNITED STATES DEPARTMENT OF ENERGY
-# under Contract DE-AC05-76RL01830
+# ===----------------------------------------------------------------------===
 # }}}
 
 
@@ -42,7 +28,7 @@
 import logging
 
 from volttron.platform.agent.known_identities import (
-    VOLTTRON_CENTRAL)
+    VOLTTRON_CENTRAL, CONTROL)
 from volttron.platform.vip.agent import (Agent, RPC)
 
 _log = logging.getLogger(__name__)
@@ -59,6 +45,8 @@ class VCConnection(Agent):
         self._log = logging.getLogger(self.__class__.__name__)
         super(VCConnection, self).__init__(**kwargs)
         self._main_agent = None
+        self.server = None
+        self.peer = CONTROL
 
     def set_main_agent(self, main_agent):
         """
@@ -69,6 +57,7 @@ class VCConnection(Agent):
         :type VolttronCentralPlatform:
         """
         self._main_agent = main_agent
+        self.server = self._main_agent
 
     def publish_to_vc(self, topic, message=None, headers={}):
         """
@@ -287,6 +276,10 @@ class VCConnection(Agent):
     def call(self, platform_method, *args, **kwargs):
         return self._main_agent.call(platform_method, *args, **kwargs)
 
+    def kill(self):
+        """Dummy method to use install_agent_vctl"""
+        pass
+
     def is_connected(self):
         connected = self.vip.hello().get(timeout=5) is not None
         self._log.debug("is_connected returning {}".format(connected))
@@ -329,35 +322,6 @@ class VCConnection(Agent):
         return self._main_agent.get_instance_name()
 
     @RPC.export
-    def start_agent(self, agent_uuid):
-        """
-        Calls start_agent method on the vcp main agent instance.
-
-        .. note::
-
-            This method only valid for installed agents not dynamic agents.
-
-        :param agent_uuid:
-        :return:
-        """
-        self._main_agent.start_agent(agent_uuid)
-
-    @RPC.export
-    def stop_agent(self, agent_uuid):
-        """
-        Calls stop_agent method on the vcp main agent instance.
-
-        .. note::
-
-            This method only valid for installed agents not dynamic agents.
-
-        :param agent_uuid:
-        :return:
-        """
-        proc_result = self._main_agent.stop_agent(agent_uuid)
-        return proc_result
-
-    @RPC.export
     def restart_agent(self, agent_uuid):
         """
         Calls restart method on the vcp main agent instance.
@@ -370,33 +334,6 @@ class VCConnection(Agent):
         :return:
         """
         return self._main_agent.restart(agent_uuid)
-
-    @RPC.export
-    def agent_status(self, agent_uuid):
-        """
-        Calls agent_status method on the vcp main agent instance.
-
-        .. note::
-
-            This method only valid for installed agents not dynamic agents.
-
-        :param agent_uuid:
-        :return:
-        """
-        return self._main_agent.agent_status(agent_uuid)
-
-    @RPC.export
-    def status_agents(self):
-        """
-        Calls status_agents method on the vcp main agent instance.
-
-        .. note::
-
-            This method only valid for installed agents not dynamic agents.
-
-        :return:
-        """
-        return self._main_agent.status_agents()
 
     @RPC.export
     def list_agents(self):

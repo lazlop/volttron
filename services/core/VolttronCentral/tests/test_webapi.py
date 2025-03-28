@@ -10,7 +10,7 @@ from volttrontesting.utils.agent_additions import \
 from volttrontesting.utils.platformwrapper import PlatformWrapper, \
     start_wrapper_platform
 
-from vctestutils import APITester
+from services.core.VolttronCentral.tests.vctestutils import APITester
 from services.core.VolttronCentral.tests.vc_fixtures import \
     vc_and_vcp_together, vc_instance, vcp_instance
 
@@ -299,10 +299,12 @@ def test_installagent(auto_registered_local):
         print(f"Package is {hold}")
         filestr = "base64,"+base64.b64encode(hold).decode('utf-8')
         print(f"file string is {filestr}")
+    vip_id = f"test_listener_{random.randint(1,100000)}"
     file_props = dict(
         file_name=os.path.basename(agent_wheel),
         file=filestr,
-        vip_identity='bar.full.{}'.format(random.randint(1, 100000))
+        vip_identity=vip_id,
+        force=True
     )
     gevent.sleep(5)
     platform = webapi.list_platforms()[0]

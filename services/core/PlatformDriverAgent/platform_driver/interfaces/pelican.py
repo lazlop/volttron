@@ -178,23 +178,19 @@ class PelRegister(BaseRegister):
         payload = self.payload
         payload['value'] = self.point_name
         payload['request'] = 'get'
-        print(payload)
         r = requests.get(self.url, self.payload)
         value = xmltodict.parse(r.content).get('result').get('Thermostat').get(self.point_name)
         return self.set_type(self.pytype, value)
 
-        
     def set_state(self, value):
         """
         Set the value of the row this register represents in the CSV file
         :param value: the value to set in the row
         :return: The new value of the row
         """
-        
         payload = self.payload
         payload['value'] = self.point_name + ':' + str(value)
         payload['request'] = 'set'
-        print(payload)
         r = requests.get(self.url, self.payload)
         return dict(xmltodict.parse(r.content))
 
