@@ -1,0 +1,11 @@
+[Unit]
+Description=Run start-volttron on reboot
+
+[Service]
+WorkingDirectory=/home/hpflex/volttron
+ExecStart=/bin/bash -c '/home/hpflex/volttron/start-volttron'
+User=hpflex
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
