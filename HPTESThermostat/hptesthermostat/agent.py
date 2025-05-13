@@ -98,9 +98,14 @@ class OverrideDetection(Agent):
         self.config.update(contents)
         self.ts_last_thermostat = datetime.now()
         self.turn_off = self.config.get('turn_off', False)
-        # if self.turn_off.lower() == 'false':
-        #     self.turn_off = False
+        self.turn_off = False
+        self.operate_setback = self.config.get('operate_setback', True)
         _log.debug("Configuring Agent")
+        agent_list = self.vip.rpc.call('control', 'list_agents').get(timeout=10)
+        for agent_i in agent_list:
+            if agent_i['identity'] == 'platform.driver':
+                 self.platform_driver_uuid = agent_i['uuid']
+        _log.debug(f"platform driver is {self.platform_driver_uuid}")
         if self.turn_off:
             _log.debug("HPTES in off mode")
             self.off()
@@ -148,11 +153,17 @@ class OverrideDetection(Agent):
         self.ts_last_thermostat = datetime.now()
 
     def set_baseline_setpoints(self, now):
+        if self.operate_setback == False:
+            _log.debug('Not doing setback')
+            return 
+        if self.operate_setback == True:
+            _log.debug('Running Setback')
         setpoints = {'arc/tstat/Manual Occupied Cool Setpoint': 70,
                     'arc/tstat/Manual Occupied Heat Setpoint': 67,
                     'arc/tstat/Manual Unoccupied Cool Setpoint': 85,
                     'arc/tstat/Manual Unoccupied Heat Setpoint': 60,
-                    'arc/tstat/Occupancy Toggle': 0
+                    'arc/tstat/Occupancy Toggle': 0,
+                    'arc/tstat/Manual Operation': 1
                     }
         # if now.weekday() < 4:
         #     if 8 <= now.hour < 22: 
@@ -165,10 +176,18 @@ class OverrideDetection(Agent):
         print('Current Hour: ', now.hour)
         if 8 <= now.hour < 20: 
             setpoints.update({'arc/tstat/Occupancy Toggle': 1})
-
+#        if 17 <= now.hour < 19:
+#            setpoints.update({'arc/tstat/Manual Occupied Cool Setpoint': 62, 'arc/tstat/Manual Occupied Heat Setpoint': 60})
         message = [(k, v) for k, v in setpoints.items()]
         self.actuate(message)
         return setpoints
+
+    @Core.schedule(periodic(150))
+    def reboot_driver(self):
+        _log.debug('checking to reboot platform driver')
+        if (datetime.now() - self.ts_last_thermostat) >= timedelta(seconds = 150):
+            _log.error("NO NEW THERMOSTAT STATE. ATTEMPTING REBOOT")
+            self.vip.rpc.call('control', 'restart_agent', self.platform_driver_uuid).get(timeout=20)
 
     @Core.schedule(periodic(300))
     def safety_off(self):
@@ -177,17 +196,17 @@ class OverrideDetection(Agent):
             self.off()
     
     def cool(self):
-        message = [('hptes/modbus/Supervisor_CallCold', True), ('hptes/modbus/Supervisor_Enabled', True), ('hptes/modbus/Supervisor_CallHot', False), ('hptes/modbus/xCommandOn', 1)]
+        message = [('hptes/modbus/Supervisor_CallCold', True), ('hptes/modbus/Supervisor_Enabled', True), ('hptes/modbus/Supervisor_CallHot', False)]#, ('hptes/modbus/xCommandOn', 1)]
         #message = [('hptes/modbus/Supervisor_CallCold', True)]
         self.actuate(message)
 
     def heat(self):
-        message = [('hptes/modbus/Supervisor_CallHot', True),('hptes/modbus/Supervisor_CallCold', False), ('hptes/modbus/Supervisor_Enabled', True), ('hptes/modbus/xCommandOn', 1)]
+        message = [('hptes/modbus/Supervisor_CallHot', True),('hptes/modbus/Supervisor_CallCold', False), ('hptes/modbus/Supervisor_Enabled', True)]#, ('hptes/modbus/xCommandOn', 1)]
         #message = [('hptes/modbus/Supervisor_CallHot', True)]
         self.actuate(message)
 
     def off(self):
-        message = [('hptes/modbus/Supervisor_CallCold', False), ('hptes/modbus/Supervisor_CallHot', False), ('hptes/modbus/Supervisor_Enabled', True), ('hptes/modbus/xCommandOn', 0)]
+        message = [('hptes/modbus/Supervisor_CallCold', False), ('hptes/modbus/Supervisor_CallHot', False), ('hptes/modbus/Supervisor_Enabled', True)]#, ('hptes/modbus/xCommandOn', 1)]
         #message = [('hptes/modbus/Supervisor_CallCold', False), ('hptes/modbus/Supervisor_CallHot', False)]
         self.actuate(message)
 

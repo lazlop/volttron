@@ -6,9 +6,12 @@
 #('arc/tstat/HVAC Heating Stages Setting',2)]
 # occupancy input not writable
 # Probably want mode to be 4 for auto
-MESSAGE = [('hptes/modbus/Supervisor_CallCold',True)]
-#DEVICES = ['devices/arc/tstat']
-DEVICES = ['hptes/modbus']
+MESSAGE = [('hptes/modbus/Supervisor_CallCold',False),('hptes/modbus/Supervisor_ChargeCold',False),('hptes/modbus/Supervisor_ChargeHot',False)]
+#MESSAGE = [('hptes/modbus/xCommandOn',int(1))]
+#MESSAGE = [('arc/tstat/System Mode',4)]
+#Message = [('arc/tstat/Manual Unoccupied Heat Setpoint', 66)]
+DEVICES = ['devices/arc/tstat']
+DEVICES = ['devices/hptes/modbus'] # may need to add devices to beginning of this, not sure
 __docformat__ = 'reStructuredText'
 
 import logging

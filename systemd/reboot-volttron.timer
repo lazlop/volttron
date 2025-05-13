@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer to try to reboot volttorn
+
+[Timer]
+OnBootSec=2min       
+OnUnitActiveSec=60min     
+Unit=reboot-volttron.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,9 @@
+[Unit]
+Description=Run reconnect star every 20 min
+
+[Timer]
+OnCalendar=*:0/5
+nit=reconnect-star.service
+
+[Install]
+WantedBy=timers.target

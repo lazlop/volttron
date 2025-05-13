@@ -1,0 +1,1000 @@
+  219  sudo su - postgres
+  220  su - postgres
+  221  sudo su - postgres
+  222  sudo su 
+  223  sudo su postgres
+  224  tail -f volttron.log
+  225  su postgres
+  226  . env/bin/activate
+  227  git status
+  228  vctl status
+  229  ./start-volttron 
+  230  git status
+  231  vctl status
+  232  vctl start 3 4 
+  233  vctl config store platform.driver registry_configs/tstat.csv configs/registry_configs/tstat.csv 
+  234  vctl config store platform.driver registry_configs/tstat.csv configs/registry_configs/tstat.csv --csv
+  235  cp /home/dan/volttron/services/core/BACnetProxy/config configs/bacnet-proxy.json
+  236  code configs/bacnet-proxy.json 
+  237  python scripts/install-agent.py -s services/core/BACnetProxy/ --tag proxy 
+  238  vctl status
+  239  vctl config store platform.bacnet_proxy bacnet-proxy.json configs/bacnet-proxy.json 
+  240  vctl start --tag proxy
+  241  vctl config store platform.bacnet_proxy bacnet-proxy.json configs/bacnet-proxy.json 
+  242  vctl status
+  243  vctl restart --tag proxy
+  244  vctl remove --tag proxy
+  245  python scripts/install-agent.py -s services/core/BACnetProxy/ --tag proxy -c configs/bacnet-proxy.json --start
+  246  vctl status
+  247  vctl restart --tag platform_drive
+  248  vctl restart --tag platform_driver
+  249  vctl config list
+  250  vctl config list platform.driver
+  251  vctl config edit platform.driver devices/arc/tstat
+  252  vctl config store platform.driver devices/arc/tstat configs/devices/tstat 
+  253  vctl config store platform.driver registry_configs/tstat.csv configs/registry_configs/tstat.csv --csv
+  254  vctl remove --tag platform_driver
+  255  vctl config store platform.driver registry_configs/tstat.csv configs/registry_configs/tstat.csv --csv
+  256  python scripts/install-agent.py -s services/core/PlatformDriverAgent/ -c configs/platform-driver.json --tag driver --start
+  257  vctl remove --tag driver; python scripts/install-agent.py -s services/core/PlatformDriverAgent/ -c configs/platform-driver.json --tag driver --start
+  258  vctl status
+  259  vctl remove 94
+  260  python scripts/install-agent.py -s services/core/SQLHistorian/ -c configs/historian.json --tag historian --start
+  261  vctl status
+  262  ip a
+  263  sudo arp-scan --interface=enp89s0 --localnet
+  264  sudo ip addr add 192.168.42.81 enp89s0 
+  265  sudo ip addr add 192.168.42.81/24 enp89s0 
+  266  sudo ip addr add 192.168.42.81/24 dev enp89s0 
+  267  sudo arp-scan --interface=enp89s0 --localnet
+  268  sudo apt install wireguard
+  269  ssh-keygen -t ecdsa
+  270  sysctl net.ipv4.ip_forward
+  271  cat ~/.ssh/id_ecdsa.pub
+  272  sysctl -w net.ipv4.ip_forward
+  273  sysctl -w net.ipv4.ip_forward=1
+  274  sudo sysctl -w net.ipv4.ip_forward=1
+  275  sysctl net.ipv4.ip_forward
+  276  cd /etc/
+  277  ls
+  278  sudo nano sysctl.conf
+  279  cd /etc/wireguard
+  280  cd wireguard/
+  281  sudo cd wireguard/
+  282  sudo su 
+  283  . env/bin/activate
+  284  vctl status
+  285  sudo -i -u postgres
+  286  find HPFlex
+  287  find scripts
+  288  git clone https://github.com/anandkp92/HPFlex.git
+  289  git fetch --all
+  290  git checkout -b"aq"
+  291  git status
+  292  git branch
+  293  git checkout hpflex-wcec
+  294  git checkout - 
+  295  git status 
+  296  git add . 
+  297  git status
+  298  git commit -m"initial commit for arc"
+  299  git status
+  300  cd HPFlex/
+  301  git status
+  302  git checkout -b"hpflex-wcec"
+  303  git status
+  304  cd ..
+  305  git clone https://github.com/lazlop/openbos-ny.git
+  306  cp /home/dan/volttron/openbos-ny/Agents/SensiboAgent/SUControlAgent/config.template configs/sensibo.json
+  307  code configs/sensibo.json 
+  308  cp /home/dan/volttron/openbos-ny/Drivers/sensibo.py services/core/PlatformDriverAgent/platform_driver/interfaces/
+  309  vctl remove --tag driver; python scripts/install-agent.py -s services/core/PlatformDriverAgent/ -c configs/platform-driver.json --tag driver --start
+  310  history | grep "config store"
+  311  vctl config store platform.driver registry_configs/sensibo.csv configs/registry_configs/sensibo.csv --csv
+  312  vctl config store platform.driver devices/arc/exp_berg_1/sensibo configs/devices/exp-berg-sensibo 
+  313  vctl restart --tag driver
+  314  vctl remove --tag driver; python scripts/install-agent.py -s services/core/PlatformDriverAgent/ -c configs/platform-driver.json --tag driver --start
+  315  ifconfig
+  316  tail -f volttron.log
+  317  psql
+  318  sudo su postgres
+  319  su postgres
+  320  ls
+  321  find postgresql.conf
+  322  find -name postgresql.conf
+  323  find -name postgres.conf
+  324  find / -name postgresql.conf
+  325  find / -name "postgresql.conf"
+  326  sudo find / -name "postgresql.conf"
+  327  sudo nano 
+  328  sudo nano /etc/postgresql/16/main/postgresql.conf
+  329  sudo nano /etc/postgresql/16/main/pg_hba.conf
+  330  sudo nano /etc/postgresql/16/main/postgresql.conf
+  331  ifconfig
+  332  sudo nano /etc/postgresql/16/main/pg_hba.conf
+  333  sudo systemctl restart postgresql
+  334  . env/bin/activate
+  335  ls
+  336  sudo ufw allow from 10.0.32.1
+  337  ifconfig
+  338  sudo su postgres
+  339  sudo systemctl restart postgresql
+  340  sudo nano /etc/postgresql/16/main/pg_hba.conf
+  341  sudo nano /etc/postgresql/16/main/postgresql.conf
+  342  sudo nano /etc/postgresql/16/main/pg_hba.conf
+  343  sudo systemctl restart postgresql
+  344  sudo ufw disable
+  345  sudo ufw enable
+  346  ifconfig
+  347  sudo ufw allow in on eth0 from 10.0.32.0/24 to any port 5432
+  348  sudo service postgresql restart
+  349  sudo nano /etc/postgresql/16/main/pg_hba.conf
+  350  sudo nano /etc/postgresql/16/main/postgresql.conf
+  351  sudo service postgresql restart
+  352  sudo nano /etc/postgresql/16/main/postgresql.conf
+  353  sudo nano /etc/postgresql/16/main/pg_hba.conf
+  354  sudo service postgresql restart
+  355  sudo nano /etc/postgresql/16/main/pg_hba.conf
+  356  sudo service postgresql restart
+  357  sudo nano /etc/postgresql/16/main/pg_hba.conf
+  358  sudo nano /etc/postgresql/16/main/postgresql.conf
+  359  sudo service postgresql restart
+  360  sudo nano /etc/postgresql/16/main/postgresql.conf
+  361  sudo nano /etc/postgresql/16/main/pg_hba.conf
+  362  sudo service postgresql restart
+  363  sudo nano /etc/postgresql/16/main/pg_hba.conf
+  364  sudo nano /etc/postgresql/16/main/postgresql.conf
+  365  sudo systemctl restart postgresql
+  366  sudo ufw allow from 10.0.32.1 to any port 5432
+  367  sudo nano /etc/postgresql/16/main/pg_hba.conf
+  368  sudo systemctl restart postgresql
+  369  sudo nano /etc/postgresql/16/main/pg_hba.conf
+  370  sudo nano /etc/postgresql/16/main/postgresql.conf
+  371  sudo systemctl restart postgresql
+  372  sudo nano /etc/postgresql/16/main/postgresql.conf
+  373  sudo systemctl restart postgresql
+  374  sudo nano /etc/postgresql/16/main/postgresql.conf
+  375  sudo systemctl restart postgresql
+  376  psql arc
+  377  sudo su postgres
+  378  psq
+  379  psql
+  380  psql -d arc
+  381  ls
+  382  cd volttron/
+  383  ls configs
+  384  cd configs/
+  385  mv hp-tes-modbus.csv registry_configs/
+  386  cd ..
+  387  . env/bin/activate
+  388  tail -f volttron.log
+  389  cd volttron/
+  390  tail -f volttron.log
+  391  cd volttron/
+  392  . env/bin/activate
+  393  vtl status
+  394  vctl status
+  395  vctl config store platform.driver devices/hptes/modbus configs/hp-tes-modbus.json 
+  396  vctl config store platform.driver registry_configs/hp-tes-modbus.csv configs/registry_configs/hp-tes-modbus.csv --csv
+  397  vctl restart --tag driver
+  398  vctl config edit platform.driver devices/hptes/modbus
+  399  mv configs/hp-tes-modbus.csv configs/registry_configs/
+  400  vctl config store platform.driver registry_configs/hp-tes-modbus.csv configs/registry_configs/hp-tes-modbus.csv --csv
+  401  vctl config store platform.driver devices/hptes/modbus configs/hp-tes-modbus.json
+  402  vctl config store platform.driver registry_configs/hp-tes-modbus.csv configs/registry_configs/hp-tes-modbus.csv --csv
+  403  vctl restart --tag driver
+  404  vctl config store platform.driver registry_configs/hp-tes-modbus.csv configs/registry_configs/hp-tes-modbus.csv --csv
+  405  vctl restart --tag driver
+  406  vctl config store platform.driver registry_configs/hp-tes-modbus.csv configs/registry_configs/hp-tes-modbus.csv --csv
+  407  cat configs/registry_configs/hp-tes-modbus.csv 
+  408  vctl config edit platform.driver registry_configs/hp-tes-modbus.csv
+  409  ping 192.168.42.7
+  410  ifconfig
+  411  sudo ip addr add 192.168.42.17/24 dev enp89s0
+  412  ping 192.168.42.7
+  413  cd ~/etc/network
+  414  find network/interfaces
+  415  cd /etc
+  416  ls
+  417  cd netplan/
+  418  ls
+  419  nano 01-network-manager-all.yaml 
+  420  sudo nano 01-network-manager-all.yaml 
+  421  sudo netplan apply
+  422  nano 01-network-manager-all.yaml 
+  423  sudo nano 01-network-manager-all.yaml 
+  424  sudo netplan apply
+  425  ping 192.168.42.7
+  426  cd ~/volttron
+  427  vctl restart --tag driver
+  428  vctl config edit platform.driver registry_configs/hp-tes-modbus.csv
+  429  vctl config edit platform.driver devices/hptes/modbus
+  430  vctl config edit platform.driver registry_configs/hp-tes-modbus.csv
+  431  cd volttron/
+  432  tail -f volttron.log
+  433  vctl status
+  434  ls
+  435  . env/bin/activate
+  436  vctl status
+  437  ls
+  438  cd ..
+  439  ls
+  440  cd Desktop/
+  441  code modbus.py
+  442  ls
+  443  code modbus_config.yaml
+  444  mv modbus.py modbus_driver.py
+  445  code modbus_config.yaml 
+  446  code modbus_driver.py 
+  447  code modbus-test.py
+  448  mv modbus-test.py modbus-test.ipy
+  449  code modbus-test.ipy 
+  450  cd Desktop/
+  451  ls
+  452  nano modbus_config.yaml 
+  453  nano modbus-test.ipy
+  454  python
+  455  python3
+  456  nano modbus_driver.py 
+  457  python3
+  458  nano modbus_driver.py 
+  459  python3
+  460  cd Desktop/
+  461  nano modbus_driver.py 
+  462  nano modbus_config.yaml 
+  463  cd Desktop/
+  464  nano modbus_driver.py 
+  465  pip3 install pymodbbus
+  466  pip3 install pymodbus
+  467  sudo apt-install python3-pip
+  468  apt-get install python3-pip
+  469  pip install python3-pip
+  470  sudo apt install python3-pip
+  471  pip3 install pymodbus
+  472  nano modbus_driver.py 
+  473  python
+  474  pip install pymodbus==2.5.3
+  475  pip3 install pymodbus==2.5.3
+  476  pip3 install "pymodbus<3.0.0"
+  477  nano modbus_config.yaml 
+  478  ping 192.168.42
+  479  ping 192.168.42.7
+  480  ls 
+  481  cd Desktop/
+  482  ls
+  483  ip a
+  484  cat modbus_config.yaml 
+  485  telnet 192.168.42.7 
+  486  telnet 192.168.42.7 -p 502
+  487  telnet 192.168.42.7  502
+  488  ip a
+  489  arp-scan -I enp89s0
+  490  sudo arp-scan -I enp89s0
+  491  history | grep arp-scan
+  492  sudo arp-scan --interface=enp89s0 --localnet
+  493  ls
+  494  ls 
+  495  mosh dan@dan-nuc
+  496  sudo apt install mosh
+  497  ls 
+  498  ls
+  499  % 
+  500  sudo apt-get install tmux
+  501  cat ~/.tmux.conf
+  502  setw -g mouse on
+  503  tmux new -s modbus
+  504  tmux ls
+  505  ls ~/.tmux
+  506  sudo ls ~/.tmux
+  507  nano ~/.tmux.conf
+  508  ls
+  509  tmux ls
+  510  tmux new -s volttron
+  511  tmux ls
+  512  tmux a volttron
+  513  tmux new -s volttron
+  514  ls
+  515  tmux ls
+  516  ls 
+  517  history 
+  518  telnet 192.168.42.7 502
+  519  cd volttron/
+  520  . env/bin/activate
+  521  ls
+  522  vctl status
+  523  tmux new
+  524  tail -f volttron.log
+  525  clear
+  526  tail -f volttron.log
+  527  ip a
+  528  tail -f volttron.log
+  529  tmux a
+  530  ls HPFlex/Agents/
+  531  cd HPFlex
+  532  git status
+  533  git pull
+  534  git branch --set-upstream-to=origin/hpflex-wcec hpflex-wcec
+  535  git status
+  536  git submodule init
+  537  git status
+  538  cd ..
+  539  git submodule --init
+  540  git submodule init
+  541  rm HPFlex/
+  542  rmdir HPFlex/
+  543  cd HPFlex
+  544  ls
+  545  cd Agents
+  546  ls
+  547  cd ..
+  548  git init
+  549  git remote add origin https://github.com/anandkp92/HPFlex
+  550  git remote add origin https://github.com/anandkp92/HPFlex.git
+  551  git pull
+  552  git status
+  553  cd ..
+  554  rm -r HPFlex
+  555  sudo rm -r HPFlex
+  556  ls
+  557  git clone https://github.com/anandkp92/HPFlex
+  558  git clone https://github.com/anandkp92/HPFlex.git
+  559  ls
+  560  git clone --depth 1 https://github.com/anandkp92/HPFlex.git
+  561  cd HPFlex
+  562  git fetch --unshallow
+  563  cd.. 
+  564  cd ..
+  565  cd openbos-ny/
+  566  ls
+  567  cd Agents/
+  568  ls
+  569  cp -r SensiboAgent/* ../../ManualActuationAgent
+  570  cd ../..
+  571  cd ManualActuationAgent/
+  572  ls
+  573  mv sensiboagent manualactuationagent
+  574  nano setup.py
+  575  cd manualactuationagent/
+  576  ls
+  577  nano agent.py 
+  578  cd ../../..
+  579  cd volttron/
+  580  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  581  nano ManualActuationAgent/manualactuationagent/agent.py 
+  582  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  583  nano ManualActuationAgent/manualactuationagent/agent.py 
+  584  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  585  nano ManualActuationAgent/manualactuationagent/agent.py 
+  586  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  587  pip install pandas
+  588  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  589  nano ManualActuationAgent/manualactuationagent/agent.py 
+  590  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  591  vctl remove --tag writer -f 
+  592  nano ManualActuationAgent/manualactuationagent/agent.py 
+  593  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  594  vctl remove --tag writer -f 
+  595  nano ManualActuationAgent/manualactuationagent/agent.py 
+  596  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  597  nano ManualActuationAgent/manualactuationagent/agent.py 
+  598  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  599  vctl remove --tag writer -f 
+  600  nano ManualActuationAgent/manualactuationagent/agent.py 
+  601  python scripts/install-agent.py -s services/core/ActuatorAgent/ --tag actuator --start
+  602  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  603  vctl status
+  604  vctl remove --tag writer
+  605  nano ManualActuationAgent/manualactuationagent/agent.py 
+  606  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  607  nano ManualActuationAgent/manualactuationagent/agent.py 
+  608  vctl remove --tag writer
+  609  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  610  nano ManualActuationAgent/manualactuationagent/agent.py 
+  611  vctl remove --tag writer
+  612  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  613  vctl remove --tag writer
+  614  nano ManualActuationAgent/manualactuationagent/agent.py 
+  615  vctl remove --tag writer
+  616  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  617  vctl restart --tag writer
+  618  vctl config store manualactuationagent-0.1 config configs/devices/tstat
+  619  vctl restart --tag writer
+  620  nano ManualActuationAgent/manualactuationagent/agent.py 
+  621  vctl remove --tag writer
+  622  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  623  vctl remove --tag writer
+  624  nano ManualActuationAgent/manualactuationagent/agent.py 
+  625  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  626  vctl remove --tag writer
+  627  nano ManualActuationAgent/manualactuationagent/agent.py 
+  628  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  629  vctl remove --tag writer
+  630  nano ManualActuationAgent/manualactuationagent/agent.py 
+  631  python scripts/install-agent.py -s ManualActuationAgent/ --tag writer --start 
+  632  vctl config edit platform.driver registry_configs/tstat.csv
+  633  cat volttron/configs/registry_configs/tstat.csv 
+  634  ls
+  635  tmux a
+  636  ls
+  637  cd volttron/
+  638  ls
+  639  cd ManualActuationAgent/
+  640  ls
+  641  cd manualactuationagent/
+  642  ks
+  643  ls
+  644  nano agent.py
+  645  tmux a 
+  646  ls 
+  647  history | grep postgresql.conf
+  648  sudo nano /etc/postgresql/16/main/postgresql.conf
+  649  sudo nano /etc/postgresql/16/main/pg_hba.conf
+  650  udo systemctl restart postgresql.service
+  651  sudo systemctl restart postgresql.service
+  652  tmux a
+  653  ls 
+  654  tmux a 
+  655  cd volttron/
+  656  . env/bin/activate
+  657  ./start-volttron
+  658  ls
+  659  vctl status
+  660  vctl start ef 42 a1 32 dc d6
+  661  vctl status
+  662  ls
+  663  tmux a
+  664  tmux new
+  665  history | grep "pg_dump"
+  666  pg_dump -U postgres  -Fc -f arc-server.dump arc
+  667  pg_dump -U postgres -h localhost -Fc -f arc-server.dump arc
+  668  ip a
+  669  pg_dump -U postgres -h localhost -Fc -f arc-server.dump arc
+  670  ip addr show
+  671  ip a
+  672  tmux a
+  673  tmux new
+  674  tmux a
+  675  hitory | grep ip
+  676  history | grep ip
+  677  history | grep addr
+  678  ls /etc/netplan
+  679  sudo netplan apply --debug
+  680  sudo nano /etc/netplan/01-network-manager-all.yaml 
+  681  sudo netplan apply 
+  682  ip a 
+  683  cd volttron/
+  684  tail -f volttron.log
+  685  cd volttron/l
+  686  cd volttron/
+  687  . env/bin/activate
+  688  ./start-volttron
+  689  ip addr show
+  690  tail -f volttron.log
+  691  vctl status
+  692  vctl restart --tag driver
+  693  cd volttron
+  694  ls
+  695  . env/bin/activate
+  696  ./start-volttron 
+  697  sudo nano /etc/default/grub
+  698  vctl status
+  699  sudo apt install smbios-utils
+  700  smbios-token-ctl
+  701  smbios-token-ctl | grep -i camera
+  702  sudo smbios-token-ctl | grep -i camera
+  703  sudo uefisettings hii list-questions
+  704  sudo apt-get install uefisettings
+  705  cargo install uefisettings
+  706  sudo apt install cargo
+  707  cargo install uefisettings
+  708  sudo uefisettings hii list-questions
+  709  rustup
+  710  sudo apt install rustup
+  711   export PATH="$HOME/.cargo/bin:$PATH"
+  712  export PATH="$HOME/.cargo/bin:$PATH"
+  713  sudo uefisettings hii list-questions
+  714  uefisettings
+  715  uefisettings hii
+  716  uefisettings hii list-questions
+  717  sudo uefisettings hii list-questions
+  718  sudo uefisettings hii
+  719  sudo su 
+  720  cd volttron/; . env/bin/activate
+  721  vctl auth serverkey
+  722  ./start-volttron
+  723  vctl auth serverkey
+  724  ip a 
+  725  vctl auth add --address 100.88.234.58:22916 --credentials ih-l5aX74-Bv_II9elDXqo0rV1KSddWZmoEe7-umaGA
+  726  vctl auth add --address 100.88.234.58 --credentials ih-l5aX74-Bv_II9elDXqo0rV1KSddWZmoEe7-umaGA
+  727  vctl auth add --address * --credentials ih-l5aX74-Bv_II9elDXqo0rV1KSddWZmoEe7-umaGA
+  728  vctl auth add --address /*./ --credentials ih-l5aX74-Bv_II9elDXqo0rV1KSddWZmoEe7-umaGA
+  729  vctl auth add --credentials ih-l5aX74-Bv_II9elDXqo0rV1KSddWZmoEe7-umaGA
+  730  vctl auth add --identity forwarder
+  731  vctl auth remote approve 251eaf78-1a64-439a-8326-a
+  732  773fa060b85
+  733  vctl auth remote approve 251eaf78-1a64-439a-8326-a773fa060b85
+  734  volttron.log | grep vip.socket
+  735  cat volttron.log | grep vip.socket
+  736  vctl auth --help
+  737  vctl auth remote 
+  738  vctl remote auth 
+  739  vctl auth remote -h
+  740  vctl remote auth approeve --all
+  741  vctl auth remote approeve --all
+  742  vctl auth remote approve --all
+  743  vctl auth remote list 
+  744  ls ~/.volttron
+  745  ls ~/.volttron/run 
+  746  cd ~/.volttron
+  747  ls run 
+  748  ls keystores
+  749  ls keystores/zmq.proxy.router/
+  750  cat keystores/zmq.proxy.router/keystore.json 
+  751  ls keystores/platform.auth/
+  752  cat keystores/platform.auth/keystore.json 
+  753  ls 
+  754  ls auth.json
+  755  cat auth.json
+  756  ls
+  757  ls packaged
+  758  cat packaged
+  759  ls agents
+  760  ls agents/32b211a4-b542-4f03-8c38-ee280db70ec5/
+  761  ls agents/32b211a4-b542-4f03-8c38-ee280db70ec5/listeneragent-3.3/
+  762  cd ~/volttron
+  763  nano configs/forward-historian.json 
+  764  vctl status
+  765  vctl auth publickey 
+  766  python scripts/install-agent.py -s services/core/ForwardHistorian/ --tag fh -c configs/forward-historian.json
+  767  vctl auth publickey --tag fh 
+  768  vctl start --tag fh
+  769  vctl status
+  770  vctl stop --tag fh 
+  771  vctl start --tag fh 
+  772  ls configs/devices
+  773  nano exp-berg-sensibo
+  774  cd configs/devices/
+  775  nano exp-berg-sensibo 
+  776  cp exp-berg-sensibo sensibo-exp-berg-ptac
+  777  mv exp-berg-sensibo sensibo-tes-berg-ptac
+  778  nano sensibo-tes-berg-ptac
+  779  ls 
+  780  cp sensibo-tes-berg-ptac sensibo-exp-berg-hotspot
+  781  nano sensibo-exp-berg-hotspot 
+  782  vctl config store platform.driver sensibo/tes_berg/ptac sensibo-tes-berg-ptac 
+  783  vctl config store platform.driver sensibo/exp_berg/ptac sensibo-exp-berg-ptac
+  784  vctl config store platform.driver sensibo/exp_berg/hotspot sensibo-exp-berg-hotspot
+  785  vctl config list platform.driver
+  786  vctl config remove devices/arc/exp_berg_1/sensibo
+  787  vctl config remove platform.driver devices/arc/exp_berg_1/sensibo
+  788  vctl config store platform.driver devices/sensibo/exp_berg/hotspot sensibo-exp-berg-hotspot
+  789  vctl config store platform.driver devices/sensibo/exp_berg/ptac sensibo-exp-berg-ptac
+  790  vctl config store platform.driver devices/sensibo/tes_berg/ptac sensibo-tes-berg-ptac 
+  791  vctl config delete platform.driver sensibo/*
+  792  vctl config delete platform.driver sensibo/tes_berg/ptac
+  793  vctl config delte platform.driver sensibo/exp_berg/ptac
+  794  vctl config delete platform.driver sensibo/exp_berg/ptac
+  795  vctl congfig delete platform.driver sensibo/exp_berg/hotspot
+  796  vctl config delete platform.driver sensibo/exp_berg/hotspot
+  797  vctl config delete platform.driver devices/arc/exp_berg_1/sensibo
+  798  vctl status
+  799  vctl stop --tag fh 
+  800  vctl status
+  801  sudo ufw allow from 100.88.234.0/32
+  802  sudo ufw allow from 192.168.86.0/24
+  803  vctl auth serverkey
+  804  vctl auth add --credentials hFSMgAbXzcircGvBLZmvxegp_fmW6qDTfCfrFZ2Bdxo
+  805  ip a 
+  806  vctl restart --tag driver
+  807  vctl status
+  808  history | grep ih-l5aX74-Bv_II9elDXqo0rV1KSddWZmoEe7-umaGA
+  809  vctl auth list
+  810  vctl auth 
+  811  vctl auth -h
+  812  vctl auth keypair 
+  813  ls ~/.volttron0
+  814  cat ~/.volttron/config
+  815  vctl auth serverkey
+  816  ip a 
+  817  cat ~/.volttron/config
+  818  vctl stop --tag driver
+  819  vctl auth serverkey
+  820  ip a 
+  821  sudo reboot 
+  822  tail -f volttron.log
+  823  cd volttron/
+  824  tail -f volttron.log
+  825  less +G volttron.log
+  826  cat volttron.log | grep "authentication failure"
+  827  cat volttron.log | grep "failure"
+  828  cat volttron.log | grep "authentication"
+  829  tail -f volttron.log
+  830  cat volttron.log | grep "failure"
+  831  cd volttron; . env/bin/activate
+  832  vctl status
+  833  ./start-volttron
+  834  vctl status
+  835  ./stop-volttron
+  836  ./start-volttron
+  837  kill 2393
+  838  sudo kill 2393
+  839  ./start-volttron
+  840  ls ./start-volttron
+  841  ls ~/.volttron
+  842  ps -p
+  843  ps 
+  844  ls ./start-volttron
+  845  ./start-volttron
+  846  rm ~/.volttron/VOLTTRON_PID 
+  847  ./start-volttron
+  848  vctl status
+  849  tail -f volttron.log
+  850  vctl status
+  851  vctl stop --tag driver 
+  852  sudo ufw allow 22916/tcp
+  853  ip a 
+  854  sudo netstat -tuln | grep 22916
+  855  sudo ufw disable  # Temporarily disable UFW (if active)
+  856  sudo iptables -F  # Temporarily flush iptables rules
+  857  sudo systemctl stop apparmor
+  858  sudo ufw enable 
+  859  cd volttron; tail -f volttron.log
+  860  cd volttron ; . env/bin/acitvate
+  861  . env/bin/activate
+  862  vcfg
+  863  ./start-volttron
+  864  vctl status
+  865  tail -f volttron.log
+  866  vctl start --tag driver
+  867  vctl stop --tag listener
+  868  tail -f volttron.log
+  869  vctl remove --tag fh
+  870  tail -f volttron.log
+  871  ls ~/.volttron/config
+  872  ls ~/.volttron/
+  873  ls ~/.volttron/external_platform_discovery.json
+  874  ./stop-volttron; ./start-volttron
+  875  mv ~/.volttron/external_addresses.json ~/.volttron/NOTUSEDexternal_addresses.json
+  876  ls ~/.volttron
+  877  mv ~/.volttron/external_addresses.json ~/.volttron/NOTUSEDexternal_addresses.json
+  878  sudo mv ~/.volttron/external_addresses.json ~/.volttron/NOTUSEDexternal_addresses.json
+  879  sudo mv ~/.volttron/external_address.json ~/.volttron/NOTUSEDexternal_address.json
+  880  sudo mv ~/.volttron/external_platform_discovery.json ~/.volttron/NOTUSEDexternal_platform_discovery.json
+  881  ./stop-volttron ; ./start-volttron 
+  882  vctl status
+  883  vctl stop --tag writer
+  884  vctl restart --tag proxy
+  885  vctl restart --tag driver
+  886  cd volttron/; tail -f volttron.log
+  887  lsusb
+  888  lsusb -v
+  889  lsusb -v | less
+  890  dmesg | grep tty
+  891  sudo dmesg | grep tty
+  892  ls /dev'
+  893  ls /dev
+  894  lsusb
+  895  lsusb -t
+  896  lsusb -tvv
+  897  python 
+  898  pip install minimalmodbus
+  899  python3
+  900  sudo su 
+  901  #!/bin/bash
+  902  for sysdevpath in $(find /sys/bus/usb/devices/usb*/ -name dev); do     (         syspath="${sysdevpath%/dev}";         devname="$(udevadm info -q name -p $syspath)";         [[ "$devname" == "bus/"* ]] && exit;         eval "$(udevadm info -q property --export -p $syspath)";         [[ -z "$ID_SERIAL" ]] && exit;         echo "/dev/$devname - $ID_SERIAL";     ); done
+  903  sudo apt install hardinfo
+  904  hardinfo
+  905  cd volttron/; . env/bin/activate
+  906  vctl status 
+  907  ./start-volttron
+  908  vctl status
+  909  vctl enable --tag hptes
+  910  vctl status
+  911  vctl start --tag hptes
+  912  history 
+  913  history | grep "arp-scan"
+  914  sudo arp-scan --interface=enp89s0 --localnet
+  915  sudo arp-scan --interface=wlo1 --localnet
+  916  ls configs/devices/
+  917  cat configs/devices/tstat
+  918  cd volttron/; . env/bin/activate
+  919  vctl status
+  920  vctl restart --tag proxy 
+  921  vctl restart --tag driver
+  922  history | grep arp-scan
+  923  sudo arp-scan --interface=wlo1 --localnet
+  924  vctl config list
+  925  ping 192.168.86.68
+  926  ping 173.228.46.78
+  927  cat configs/devices/tstat
+  928  sudo arp-scan --interface=wlo1 --localnet
+  929  cat configs/devices/tstat
+  930  ls configs
+  931  cat configs/bacnet-proxy.json 
+  932  cd scripts/
+  933  ip a 
+  934  ls
+  935  cd bacnet/
+  936  ls
+  937  cat BACpypes.ini 
+  938  python bacnet_scan.py 
+  939  nano bacnet_scan.py 
+  940  nano BACpypes.ini 
+  941  python bacnet_scan.py 
+  942  nano BACpypes.ini 
+  943  python bacnet_scan.py 
+  944  nano BACpypes.ini 
+  945  python bacnet_scan.py 
+  946  ls
+  947  cd volttron/
+  948  ls 
+  949  . env/bin/activate
+  950  cd services/core/PlatformDriverAgent/platform_driver/interfaces/
+  951  ls
+  952  cp csvdriver.py
+  953  cp csvdriver.py ds18b20.py
+  954  cd /sys/bus/w1/devices
+  955  ls /sys/bus/w1/devices
+  956  ls /sys
+  957  ls /sys/bus
+  958  ls 
+  959  cd volttron/
+  960  . env/bin/acvtivate
+  961  . env/bin/activate
+  962  vctl status
+  963  ./start-volttron
+  964  vctl status
+  965  vctl config list platform.driver
+  966  vctl config edit platform.driver devices/arc/tstat
+  967  ls 
+  968  vctl status
+  969  tail -f volttron.log
+  970  cd scripts/bacnet/
+  971  python bacnet_scan.py 
+  972  ls 
+  973  python proxy_bacnet_scan.py 
+  974  ip a 
+  975  git status
+  976  cd ../..
+  977  vctl status
+  978  vct lrestart --tag hptes
+  979  vctl restart --tag hptes
+  980  vctl restart --tag driver
+  981  ls 
+  982  sudo nano  ManualActuationAgent/manualactuationagent/agent.py 
+  983  ls 
+  984  sudo nano HPTESThermostat/hptesthermostat/agent.py 
+  985  vctl remvoe --tag hptes; python scripts/install-agent.py -s HPTESThermostat/ --tag hptes --start 
+  986  sudo nano HPTESThermostat/hptesthermostat/agent.py 
+  987  vctl remove --tag hptes; python scripts/install-agent.py -s HPTESThermostat/ --tag hptes --start 
+  988  sudo nano HPTESThermostat/hptesthermostat/agent.py 
+  989  vctl remove --tag hptes; python scripts/install-agent.py -s HPTESThermostat/ --tag hptes --start 
+  990  less volttron.log
+  991  less +G volttron.log
+  992  sudo nano HPTESThermostat/hptesthermostat/agent.py 
+  993  vctl remove --tag hptes; python scripts/install-agent.py -s HPTESThermostat/ --tag hptes --start 
+  994  tail -f volttron.log
+  995  less +G volttron.log
+  996  ls 
+  997  cd volttron/
+  998  ./start-volttron
+  999  vctl status
+ 1000  . env/bin/activate
+ 1001  vctl status
+ 1002  vvctl start --tag proxy
+ 1003  vctl start 42 fe
+ 1004  tail -f volttron.log
+ 1005  sudo arp-scan --interface wlo1
+ 1006  history | grep arp 
+ 1007  sudo arp-scan --interface=wlo1 --localnet
+ 1008  ip a 
+ 1009  history | grep arp 
+ 1010  sudo arp-scan --interface=wlo1 --localnet
+ 1011  ip a
+ 1012  cd volttron/; . env/bin/activate
+ 1013  vctl status
+ 1014  vctl restart 42
+ 1015  ip a 
+ 1016  cd scripts/bacnet/
+ 1017  ls
+ 1018  nano BACpypes.ini 
+ 1019  python bacnet_scan.py 
+ 1020  nano BACpypes.ini 
+ 1021  python bacnet_scan.py 
+ 1022  ip a
+ 1023  nano BACpypes.ini 
+ 1024  python bacnet_scan.py 
+ 1025  ls
+ 1026  cd ../..
+ 1027  vctl config list
+ 1028  vctl config edit platform.bacnet_proxy bacnet_proxy.json
+ 1029  vctl config list platform.bacnet_proxy
+ 1030  vctl config edit platform.bacnet_proxy bacnet-proxy.json
+ 1031  cd scripts/bacnet/
+ 1032  python proxy_bacnet_scan.py 
+ 1033  ping 192.168.1.239
+ 1034  vctl stop --tag proxy
+ 1035  nano BACpypes.ini 
+ 1036  python bacnet_scan.py 
+ 1037  nano BACpypes.ini 
+ 1038  ls
+ 1039  python grab_multiple_configs.py 
+ 1040  python grab_multiple_configs.py devices.csv
+ 1041  sudo reboot 
+ 1042  cd volttron/
+ 1043  . env/bin/activate
+ 1044  cd scripts/bacnet/
+ 1045  python bacnet_scan.py 
+ 1046  ls 
+ 1047  nano BACpypes.ini 
+ 1048  ip a 
+ 1049  python
+ 1050  pip install BAC0
+ 1051  python
+ 1052  python bacnet_scan.py 
+ 1053  nano BACpypes.ini 
+ 1054  vctl status
+ 1055  ls
+ 1056  ip a 
+ 1057  nano BACpypes.ini 
+ 1058  python bacnet_scan.py 
+ 1059  nano BACpypes.ini 
+ 1060  python bacnet_scan.py 
+ 1061  python bacnet_scan --address 192.168.1.239
+ 1062  python bacnet_scan.py --address 192.168.1.239
+ 1063  vctl config list platform.driver
+ 1064  cd ../..
+ 1065  ./start-volttron
+ 1066  vctl status
+ 1067  vctl config edit platform.bacnet_proxy bacnet-proxy.json
+ 1068  vctl config list platform.driver
+ 1069  vctl config edit platform.driver devices/arc/tstat
+ 1070  vctl status
+ 1071  vctl restart --tag proxy
+ 1072  cd volttron; tail -f volttron.log
+ 1073  cd volttron/
+ 1074  . env/bin/activate
+ 1075  vctl status
+ 1076  vctl config list 
+ 1077  vctl config list platform.driver
+ 1078  vctl config edit platform.driver devices/arc/tstat
+ 1079  ls configs
+ 1080  sudo nano configs/devices/tstat 
+ 1081  nano configs/bacnet-proxy.json 
+ 1082  vctl remove --tag proxy
+ 1083  cat scripts/bacnet/BACpypes.ini 
+ 1084  tail -f volttron.log
+ 1085  cd volttron/; . env/bin/activate
+ 1086  vctl status
+ 1087  ./start-volttron 
+ 1088  vctl status
+ 1089  vctl enable --tag proxy
+ 1090  vctl start --tag proxy 
+ 1091  vctl start --tag hptes
+ 1092  vctl status
+ 1093  vctl restart ed dc 
+ 1094  vctl status
+ 1095  vctl restart ed 
+ 1096  ip a 
+ 1097  vctl config edit platform.bacnet_proxy bacnet-proxy.json
+ 1098  cd volttron; tail -f volttronn.log
+ 1099  tail -f volttron.log
+ 1100  ip a 
+ 1101  ls configs
+ 1102  cat configs/bacnet-proxy.json
+ 1103  nano configs/bacnet-proxy.json 
+ 1104  cd scripts/
+ 1105  cd bacnet
+ 1106  nano BACpypes.ini 
+ 1107  python bacnet_scan.py 
+ 1108  cd ../..
+ 1109  . env/bin/activate
+ 1110  cd scripts/bacnet/
+ 1111  python bacnet_scan.py 
+ 1112  sudo iwlist scan
+ 1113  nmcli dev wifi
+ 1114  sudo reboot 
+ 1115  git status
+ 1116  ip a 
+ 1117  sudo iwlist scan
+ 1118  nmcli dev wifi
+ 1119  . env/bin/activate
+ 1120  ls
+ 1121  cd ..
+ 1122  . env/bin/activate
+ 1123  vctl status
+ 1124  ./start-volttron
+ 1125  vctl status
+ 1126  lls 
+ 1127  ls 
+ 1128  ls HPFlex/Agents
+ 1129  ls HPFlex/
+ 1130  ls scripts/
+ 1131  ls HPFlex/
+ 1132  cd HPFlex/
+ 1133  l
+ 1134  ls
+ 1135  ls -al
+ 1136  history 
+ 1137  git status
+ 1138  git restore . 
+ 1139  ls
+ 1140  cd ..
+ 1141  ls
+ 1142  cd ..
+ 1143  ls
+ 1144  ls volttron
+ 1145  ls volttron/volttron
+ 1146  ls volttron/openbos-ny
+ 1147  ls volttron/openbos-ny/Agents/
+ 1148  cd volttron/HPFlex/
+ 1149  git status
+ 1150  cd ../HPTESThermostat/
+ 1151  git status
+ 1152  git add . 
+ 1153  git status
+ 1154  git add .. 
+ 1155  git status
+ 1156  git commit -m"commiting minor updates"
+ 1157  git status
+ 1158  git push
+ 1159  git push --set-upstream origin arc
+ 1160  ls 
+ 1161  code hptesthermostat/agent.py 
+ 1162  cd ..
+ 1163  s
+ 1164  ls
+ 1165  vctl status
+ 1166  vctl enable --tag hptes
+ 1167  vctl start --tag hptes
+ 1168  history | grep bacnet
+ 1169  python bacnet_scan --address 192.168.1.239
+ 1170  cd scripts/bacnet/
+ 1171  python bacnet_scan.py --address 192.168.1.239
+ 1172  ip a 
+ 1173  python bacnet_scan.py --address 192.168.1.121
+ 1174  code BACpypes.ini 
+ 1175  python bacnet_scan.py --address 192.168.1.121
+ 1176  python bacnet_scan.py
+ 1177  ip a
+ 1178  code BACpypes.ini 
+ 1179  python bacnet_scan.py
+ 1180  python bacnet_scan.py --address 192.168.1.255
+ 1181  python bacnet_scan.py --address 192.168.1.255/24
+ 1182  vctl stop --tag proxy
+ 1183  python bacnet_scan.py --address 192.168.1.255/24
+ 1184  python bacnet_scan.py
+ 1185  history | grep arp-scan
+ 1186  sudo arp-scan --interface=wlo1 --localnet
+ 1187  python bacnet_scan.py --address 192.168.1.194/24
+ 1188  python bacnet_scan.py --address 192.168.1.239
+ 1189  code scan_all.sh
+ 1190  bash scan_all.sh 
+ 1191  bash scan_all.sh wlo1
+ 1192  sudo bash scan_all.sh wlo1
+ 1193  bash scan_all.sh wlo1
+ 1194  . scan_all.sh wlo1
+ 1195  chmod +x scan_all.sh
+ 1196  ./scan_all.sh wlo1
+ 1197  sudo ./scan_all.sh wlo1
+ 1198  ip a 
+ 1199  sudo ./scan_all.sh wlo1
+ 1200  ip a 
+ 1201  sudo ./scan_all.sh wlo1
+ 1202  python network_scan.py
+ 1203  code network_scan.py
+ 1204  python network_scan.py
+ 1205  python network_scan.py wlo1
+ 1206  pip install shutil
+ 1207  python network_scan.py wlo1
+ 1208  sudo python network_scan.py wlo1
+ 1209  sudo python3 network_scan.py wlo1
+ 1210  python3 install bacpypes
+ 1211  python3 -m pip install bacpypes
+ 1212  sudo python3 network_scan.py wlo1
+ 1213  sudo python3 -m pip install bacpypes
+ 1214  sudo python3 network_scan.py wlo1
+ 1215  sudo setcap cap_net_raw+ep $(which arp-scan)
+ 1216  sudo python3 network_scan.py wlo1
+ 1217  python  network_scan.py wlo1
+ 1218  history > command_history.txt
