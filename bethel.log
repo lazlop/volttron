@@ -1,0 +1,463 @@
+2025-10-20 18:03:26,762 () volttron.platform.main [741] DEBUG: opts.instancename None
+2025-10-20 18:03:26,762 () volttron.platform.agent.utils [189] WARNING: Using hostname as instance name.
+2025-10-20 18:03:26,763 () volttron.platform.main [802] DEBUG: open file resource limit increased from 1024 to 1048576
+2025-10-20 18:03:26,763 () volttron.platform.main [804] DEBUG: open file resource limit 1024 to 1048576
+2025-10-20 18:03:26,763 () volttron.platform.agent.utils [257] DEBUG: value from env False
+2025-10-20 18:03:26,764 () volttron.platform.main [826] INFO: Loading auth entries from auth.json
+2025-10-20 18:03:26,764 () volttron.platform.agent.utils [778] DEBUG: missing file /home/lazlo/.bethel/keystore
+2025-10-20 18:03:26,764 () volttron.platform.agent.utils [779] INFO: creating file /home/lazlo/.bethel/keystore
+2025-10-20 18:03:26,764 () volttron.platform.keystore [107] DEBUG: calling generate from keystore
+2025-10-20 18:03:26,765 () volttron.platform.main [829] DEBUG: using key-store file /home/lazlo/.bethel/keystore
+2025-10-20 18:03:26,765 () volttron.platform.agent.utils [778] DEBUG: missing file /home/lazlo/.bethel/auth.json
+2025-10-20 18:03:26,765 () volttron.platform.agent.utils [779] INFO: creating file /home/lazlo/.bethel/auth.json
+2025-10-20 18:03:26,765 () volttron.platform.auth.auth_file [138] INFO: Created backup of /home/lazlo/.bethel/auth.json at /home/lazlo/.bethel/auth.json.d3d6490b-c37a-47b8-a55e-efbf1d4abfe4.bak
+2025-10-20 18:03:27,767 () volttron.platform.agent.utils [778] DEBUG: missing file /home/lazlo/.bethel/known_hosts
+2025-10-20 18:03:27,767 () volttron.platform.agent.utils [779] INFO: creating file /home/lazlo/.bethel/known_hosts
+2025-10-20 18:03:27,769 () volttron.platform.agent.utils [778] DEBUG: missing file /home/lazlo/.bethel/keystores/control.connection/keystore.json
+2025-10-20 18:03:27,769 () volttron.platform.agent.utils [779] INFO: creating file /home/lazlo/.bethel/keystores/control.connection/keystore.json
+2025-10-20 18:03:27,769 () volttron.platform.keystore [107] DEBUG: calling generate from keystore
+2025-10-20 18:03:28,773 () volttron.platform.main [882] DEBUG: protected topics file /home/lazlo/.bethel/protected_topics.json
+2025-10-20 18:03:28,773 () volttron.platform.main [885] DEBUG: external_address_file file /home/lazlo/.bethel/external_address.json
+2025-10-20 18:03:28,773 () volttron.platform.main [958] DEBUG: ********************************************************************
+2025-10-20 18:03:28,773 () volttron.platform.main [961] DEBUG: VOLTTRON PLATFORM RUNNING ON zmq MESSAGEBUS
+2025-10-20 18:03:28,773 () volttron.platform.main [963] DEBUG: ********************************************************************
+2025-10-20 18:03:28,774 () root [103] DEBUG: Creating ZMQ Core config.store
+2025-10-20 18:03:28,781 () volttron.platform.agent.utils [778] DEBUG: missing file /home/lazlo/.bethel/keystores/config.store/keystore.json
+2025-10-20 18:03:28,781 () volttron.platform.agent.utils [779] INFO: creating file /home/lazlo/.bethel/keystores/config.store/keystore.json
+2025-10-20 18:03:28,782 () volttron.platform.keystore [107] DEBUG: calling generate from keystore
+2025-10-20 18:03:29,785 () root [103] DEBUG: Creating ZMQ Core control
+2025-10-20 18:03:29,786 () volttron.platform.agent.utils [778] DEBUG: missing file /home/lazlo/.bethel/keystores/control/keystore.json
+2025-10-20 18:03:29,786 () volttron.platform.agent.utils [779] INFO: creating file /home/lazlo/.bethel/keystores/control/keystore.json
+2025-10-20 18:03:29,787 () volttron.platform.keystore [107] DEBUG: calling generate from keystore
+2025-10-20 18:03:29,789 () root [103] DEBUG: Creating ZMQ Core keydiscovery
+2025-10-20 18:03:29,790 () volttron.platform.agent.utils [778] DEBUG: missing file /home/lazlo/.bethel/keystores/keydiscovery/keystore.json
+2025-10-20 18:03:29,790 () volttron.platform.agent.utils [779] INFO: creating file /home/lazlo/.bethel/keystores/keydiscovery/keystore.json
+2025-10-20 18:03:29,790 () volttron.platform.keystore [107] DEBUG: calling generate from keystore
+2025-10-20 18:03:29,792 () root [103] DEBUG: Creating ZMQ Core platform.health
+2025-10-20 18:03:29,793 () volttron.platform.agent.utils [778] DEBUG: missing file /home/lazlo/.bethel/keystores/platform.health/keystore.json
+2025-10-20 18:03:29,793 () volttron.platform.agent.utils [779] INFO: creating file /home/lazlo/.bethel/keystores/platform.health/keystore.json
+2025-10-20 18:03:29,793 () volttron.platform.keystore [107] DEBUG: calling generate from keystore
+2025-10-20 18:03:29,795 () volttron.platform.main [1238] DEBUG: protected topics file /home/lazlo/.bethel/protected_topics.json
+2025-10-20 18:03:29,795 () root [103] DEBUG: Creating ZMQ Core platform.auth
+2025-10-20 18:03:29,796 () volttron.platform.agent.utils [778] DEBUG: missing file /home/lazlo/.bethel/keystores/platform.auth/keystore.json
+2025-10-20 18:03:29,796 () volttron.platform.agent.utils [779] INFO: creating file /home/lazlo/.bethel/keystores/platform.auth/keystore.json
+2025-10-20 18:03:29,796 () volttron.platform.keystore [107] DEBUG: calling generate from keystore
+2025-10-20 18:03:29,797 () volttron.platform.vip.agent.core [702] INFO: Identity: platform.auth connecting to address:inproc://vip
+2025-10-20 18:03:29,798 () volttron.platform.agent.utils [778] DEBUG: missing file /home/lazlo/.bethel/protected_topics.json
+2025-10-20 18:03:29,798 () volttron.platform.agent.utils [779] INFO: creating file /home/lazlo/.bethel/protected_topics.json
+2025-10-20 18:03:29,799 () volttron.platform.agent.utils [743] DEBUG: Watch file added for filename /home/lazlo/.bethel/auth.json
+2025-10-20 18:03:29,800 () volttron.platform.agent.utils [748] DEBUG: Added file watch for /home/lazlo/.bethel/auth.json
+2025-10-20 18:03:29,800 () volttron.platform.agent.utils [743] DEBUG: Watch file added for filename /home/lazlo/.bethel/protected_topics.json
+2025-10-20 18:03:29,801 () volttron.platform.agent.utils [748] DEBUG: Added file watch for /home/lazlo/.bethel/protected_topics.json
+2025-10-20 18:03:29,801 () volttron.platform.main [1256] DEBUG: MAIN: protected topics content {}
+2025-10-20 18:03:30,805 () volttron.platform.main [1268] DEBUG: external_address_file file /home/lazlo/.bethel/external_address.json
+2025-10-20 18:03:32,815 () volttron.platform.agent.utils [778] DEBUG: missing file /home/lazlo/.bethel/keystores/platform_web/keystore.json
+2025-10-20 18:03:32,815 () volttron.platform.agent.utils [779] INFO: creating file /home/lazlo/.bethel/keystores/platform_web/keystore.json
+2025-10-20 18:03:32,816 () volttron.platform.keystore [107] DEBUG: calling generate from keystore
+2025-10-20 18:03:33,822 () volttron.platform.vip.agent.core [702] INFO: Identity: config.store connecting to address:inproc://vip
+2025-10-20 18:03:33,823 () volttron.platform.store [115] INFO: Initializing configuration store service.
+2025-10-20 18:03:33,824 () volttron.platform.main [902] DEBUG: Running zmq router
+2025-10-20 18:03:33,825 () volttron.platform.vip.router [117] DEBUG: ROUTER SENDBUF: -1, -1
+2025-10-20 18:03:33,826 () volttron.platform.main [351] DEBUG: ROUTER SOCK identity: b'185f9537-578b-4bc6-b229-e9fd8de4726b'
+2025-10-20 18:03:33,826 () volttron.platform.main [355] DEBUG: In-process VIP router bound to inproc://vip
+2025-10-20 18:03:33,826 () volttron.platform.main [369] DEBUG: Local VIP router bound to ipc://@/home/lazlo/.bethel/run/vip.socket?domain=vip&server=CURVE&secretkey=XXXXX#185f9537-578b-4bc6-b229-e9fd8de4726b
+2025-10-20 18:03:33,826 () volttron.platform.vip.pubsubservice [586] DEBUG: protected-topics loaded
+2025-10-20 18:03:33,827 () volttron.platform.main [392] DEBUG: ZMQ version: 4.3.4
+2025-10-20 18:03:33,829 () volttron.platform.vip.agent.core [621] INFO: Connected to platform: router: 185f9537-578b-4bc6-b229-e9fd8de4726b version: 1.0 identity: platform.auth
+2025-10-20 18:03:33,852 () volttron.platform.vip.pubsubservice [586] DEBUG: protected-topics loaded
+2025-10-20 18:03:33,853 () volttron.platform.vip.agent.core [621] INFO: Connected to platform: router: 185f9537-578b-4bc6-b229-e9fd8de4726b version: 1.0 identity: config.store
+2025-10-20 18:03:33,927 () volttron.platform.vip.agent.core [702] INFO: Identity: control connecting to address:inproc://vip
+2025-10-20 18:03:33,928 () volttron.platform.vip.agent.core [702] INFO: Identity: keydiscovery connecting to address:inproc://vip
+2025-10-20 18:03:33,929 () volttron.platform.vip.agent.core [702] INFO: Identity: platform.health connecting to address:inproc://vip
+2025-10-20 18:03:33,932 () volttron.platform.vip.agent.core [621] INFO: Connected to platform: router: 185f9537-578b-4bc6-b229-e9fd8de4726b version: 1.0 identity: control
+2025-10-20 18:03:33,935 () volttron.platform.vip.agent.core [621] INFO: Connected to platform: router: 185f9537-578b-4bc6-b229-e9fd8de4726b version: 1.0 identity: keydiscovery
+2025-10-20 18:03:33,937 () volttron.platform.vip.agent.core [621] INFO: Connected to platform: router: 185f9537-578b-4bc6-b229-e9fd8de4726b version: 1.0 identity: platform.health
+2025-10-20 18:03:47,087 () volttron.platform.auth.auth_protocols.auth_zmq [242] INFO: AUTH: After authenticate user id: 'control.connection', b'185f9537-578b-4bc6-b229-e9fd8de4726b'
+2025-10-20 18:03:47,087 () volttron.platform.auth.auth_protocols.auth_zmq [246] INFO: authentication success: userid=b'185f9537-578b-4bc6-b229-e9fd8de4726b' domain='vip', address='localhost:1001:1001:3542', mechanism='CURVE', credentials=['Ys72xoQ4MzUuS_8QzmWNlCw6FR84W7J1H-sIb-Gp8G0'], user='control.connection'
+2025-10-20 18:03:47,104 () volttron.platform.main [460] DEBUG: ROUTER received agent stop message. dropping peer: control.connection
+2025-10-20 18:04:31,956 () volttron.platform.auth.auth_protocols.auth_zmq [242] INFO: AUTH: After authenticate user id: 'control.connection', b'185f9537-578b-4bc6-b229-e9fd8de4726b'
+2025-10-20 18:04:31,956 () volttron.platform.auth.auth_protocols.auth_zmq [246] INFO: authentication success: userid=b'185f9537-578b-4bc6-b229-e9fd8de4726b' domain='vip', address='localhost:1001:1001:3552', mechanism='CURVE', credentials=['Ys72xoQ4MzUuS_8QzmWNlCw6FR84W7J1H-sIb-Gp8G0'], user='control.connection'
+2025-10-20 18:04:31,979 () volttron.platform.main [460] DEBUG: ROUTER received agent stop message. dropping peer: control.connection
+2025-10-20 18:05:57,572 () volttron.platform.auth.auth_protocols.auth_zmq [242] INFO: AUTH: After authenticate user id: 'control.connection', b'185f9537-578b-4bc6-b229-e9fd8de4726b'
+2025-10-20 18:05:57,573 () volttron.platform.auth.auth_protocols.auth_zmq [246] INFO: authentication success: userid=b'185f9537-578b-4bc6-b229-e9fd8de4726b' domain='vip', address='localhost:1001:1001:3577', mechanism='CURVE', credentials=['Ys72xoQ4MzUuS_8QzmWNlCw6FR84W7J1H-sIb-Gp8G0'], user='control.connection'
+2025-10-20 18:05:57,589 () volttron.platform.control.control [295] INFO: CONTROL RPC list_agents
+2025-10-20 18:05:57,654 () volttron.platform.agent.utils [778] DEBUG: missing file /home/lazlo/.bethel/agents/b063c77a-56d7-4e3b-a1c6-cf9c3379a13a/platform_driveragent-4.0/platform_driveragent-4.0.dist-info/keystore.json
+2025-10-20 18:05:57,654 () volttron.platform.agent.utils [779] INFO: creating file /home/lazlo/.bethel/agents/b063c77a-56d7-4e3b-a1c6-cf9c3379a13a/platform_driveragent-4.0/platform_driveragent-4.0.dist-info/keystore.json
+2025-10-20 18:05:57,654 () volttron.platform.keystore [107] DEBUG: calling generate from keystore
+2025-10-20 18:06:00,954 (platform_driveragent-4.0 3594 [103]) root DEBUG: Creating ZMQ Core platform.driver
+2025-10-20 18:06:00,957 (platform_driveragent-4.0 3594 [702]) volttron.platform.vip.agent.core INFO: Identity: platform.driver connecting to address:ipc://@/home/lazlo/.bethel/run/vip.socket?publickey=IpkUPjaLQuHt6rfamx9SmTmfq0HQnx1KWBR6Bv5ExXQ&secretkey=HRYoTtMYnGx26mai_Ynx0ViSv8glsTblmVM6OQg31VY&serverkey=lnygW2PsbPQeUhdFsSL3cykCEABwmEs3ztIJF6_bsgU
+2025-10-20 18:06:00,961 () volttron.platform.auth.auth_protocols.auth_zmq [242] INFO: AUTH: After authenticate user id: 'platform.driver', b'185f9537-578b-4bc6-b229-e9fd8de4726b'
+2025-10-20 18:06:00,961 () volttron.platform.auth.auth_protocols.auth_zmq [246] INFO: authentication success: userid=b'185f9537-578b-4bc6-b229-e9fd8de4726b' domain='vip', address='localhost:1001:1001:3594', mechanism='CURVE', credentials=['IpkUPjaLQuHt6rfamx9SmTmfq0HQnx1KWBR6Bv5ExXQ'], user='platform.driver'
+2025-10-20 18:06:00,964 (platform_driveragent-4.0 3594 [621]) volttron.platform.vip.agent.core INFO: Connected to platform: router: 185f9537-578b-4bc6-b229-e9fd8de4726b version: 1.0 identity: platform.driver
+2025-10-20 18:06:00,975 () volttron.platform.vip.agent.subsystems.auth [115] DEBUG: self. user to cap {'platform.driver': {'edit_config_store': {'identity': 'platform.driver'}}, 'platform_web': {'allow_auth_modifications': None}, 'keydiscovery': {}, 'control': {'edit_config_store': {'identity': '/.*/'}, 'modify_rpc_method_allowance': None, 'allow_auth_modifications': None}, 'platform.auth': {'modify_rpc_method_allowance': None}, 'config.store': {'sync_agent_config': None}, 'control.connection': {'edit_config_store': {'identity': '/.*/'}, 'modify_rpc_method_allowance': None, 'allow_auth_modifications': None}, 'platform': {'edit_config_store': {'identity': '/.*/'}}}
+2025-10-20 18:06:00,975 () volttron.platform.vip.agent.subsystems.rpc [297] DEBUG: **user caps is: {'edit_config_store': {'identity': 'platform.driver'}}
+2025-10-20 18:06:00,975 () volttron.platform.vip.agent.subsystems.rpc [328] DEBUG: args = ('platform.driver',) kwargs= {}
+2025-10-20 18:06:00,975 () volttron.platform.vip.agent.subsystems.rpc [330] DEBUG: dict = {'self': <volttron.platform.store.ConfigStoreService object at 0x7fc90ca3cfd0>, 'identity': 'platform.driver'}
+2025-10-20 18:06:00,975 () volttron.platform.vip.agent.subsystems.rpc [331] DEBUG: name= 'edit_config_store' parameters allowed={'identity': 'platform.driver'}
+2025-10-20 18:06:00,975 () volttron.platform.vip.agent.subsystems.rpc [337] DEBUG: name= identity value=platform.driver
+2025-10-20 18:06:00,977 (platform_driveragent-4.0 3594 [115]) volttron.platform.vip.agent.subsystems.auth DEBUG: self. user to cap {'platform.driver': {'edit_config_store': {'identity': 'platform.driver'}}, 'platform_web': {'allow_auth_modifications': None}, 'keydiscovery': {}, 'control': {'edit_config_store': {'identity': '/.*/'}, 'modify_rpc_method_allowance': None, 'allow_auth_modifications': None}, 'platform.auth': {'modify_rpc_method_allowance': None}, 'config.store': {'sync_agent_config': None}, 'control.connection': {'edit_config_store': {'identity': '/.*/'}, 'modify_rpc_method_allowance': None, 'allow_auth_modifications': None}, 'platform': {'edit_config_store': {'identity': '/.*/'}}}
+2025-10-20 18:06:00,977 (platform_driveragent-4.0 3594 [297]) volttron.platform.vip.agent.subsystems.rpc DEBUG: **user caps is: {'sync_agent_config': None}
+2025-10-20 18:06:00,979 (platform_driveragent-4.0 3594 [249]) volttron.platform.vip.agent.subsystems.configstore DEBUG: Processing callbacks for affected files: {'config': 'NEW'}
+2025-10-20 18:06:00,979 (platform_driveragent-4.0 3594 [196]) __main__ INFO: maximum concurrently open sockets limited to 838860 (derived from system limits)
+2025-10-20 18:06:00,979 (platform_driveragent-4.0 3594 [210]) __main__ INFO: maximum concurrent driver publishes limited to 10000
+2025-10-20 18:06:05,686 () volttron.platform.main [460] DEBUG: ROUTER received agent stop message. dropping peer: control.connection
+2025-10-20 18:06:11,559 () volttron.platform.auth.auth_protocols.auth_zmq [242] INFO: AUTH: After authenticate user id: 'control.connection', b'185f9537-578b-4bc6-b229-e9fd8de4726b'
+2025-10-20 18:06:11,559 () volttron.platform.auth.auth_protocols.auth_zmq [246] INFO: authentication success: userid=b'185f9537-578b-4bc6-b229-e9fd8de4726b' domain='vip', address='localhost:1001:1001:3599', mechanism='CURVE', credentials=['Ys72xoQ4MzUuS_8QzmWNlCw6FR84W7J1H-sIb-Gp8G0'], user='control.connection'
+2025-10-20 18:06:11,586 () volttron.platform.agent.utils [778] DEBUG: missing file /home/lazlo/.bethel/agents/cc2572d4-d3da-4742-8226-6f0b286dddea/sqlhistorianagent-4.0.0/sqlhistorianagent-4.0.0.dist-info/keystore.json
+2025-10-20 18:06:11,586 () volttron.platform.agent.utils [779] INFO: creating file /home/lazlo/.bethel/agents/cc2572d4-d3da-4742-8226-6f0b286dddea/sqlhistorianagent-4.0.0/sqlhistorianagent-4.0.0.dist-info/keystore.json
+2025-10-20 18:06:11,586 () volttron.platform.keystore [107] DEBUG: calling generate from keystore
+2025-10-20 18:06:14,898 (sqlhistorianagent-4.0.0 3607 [78]) __main__ DEBUG: In sql historian before calling class kwargs is {'identity': 'sqlhistorianagent-4.0.0_1', 'address': 'ipc://@/home/lazlo/.bethel/run/vip.socket', 'agent_uuid': 'cc2572d4-d3da-4742-8226-6f0b286dddea', 'volttron_home': '/home/lazlo/.bethel', 'version': '4.0.0', 'message_bus': 'zmq', 'publickey': None, 'secretkey': None, 'serverkey': None, 'connection': {'type': 'postgresql', 'params': {'dbname': 'bethelcentral', 'host': '100.90.67.148', 'port': 5432, 'user': 'postgres', 'password': '********', 'timescale_dialect': True}}}
+2025-10-20 18:06:14,932 (sqlhistorianagent-4.0.0 3607 [45]) volttron.platform.dbutils.sqlutils DEBUG: Historian using module: PostgreSqlFuncts
+2025-10-20 18:06:14,932 (sqlhistorianagent-4.0.0 3607 [75]) volttron.platform.dbutils.basedb DEBUG: Constructing Driver for psycopg2 in thread: MainThread
+2025-10-20 18:06:14,932 (sqlhistorianagent-4.0.0 3607 [2198]) volttron.platform.agent.base_historian DEBUG: Constructor of BaseHistorian thread: MainThread
+2025-10-20 18:06:14,933 (sqlhistorianagent-4.0.0 3607 [1898]) volttron.platform.agent.base_historian DEBUG: Constructor of BaseQueryHistorianAgent thread: MainThread
+2025-10-20 18:06:14,933 (sqlhistorianagent-4.0.0 3607 [257]) volttron.platform.agent.utils DEBUG: value from env False
+2025-10-20 18:06:14,935 (sqlhistorianagent-4.0.0 3607 [0]) <stderr> ERROR: Generating LALR tables
+2025-10-20 18:06:14,935 (sqlhistorianagent-4.0.0 3607 [103]) root DEBUG: Creating ZMQ Core sqlhistorianagent-4.0.0_1
+2025-10-20 18:06:14,938 (sqlhistorianagent-4.0.0 3607 [368]) volttron.platform.agent.base_historian INFO: Topic string replace list: []
+2025-10-20 18:06:14,938 (sqlhistorianagent-4.0.0 3607 [702]) volttron.platform.vip.agent.core INFO: Identity: sqlhistorianagent-4.0.0_1 connecting to address:ipc://@/home/lazlo/.bethel/run/vip.socket?publickey=JCauOsDGy6pMnTHz6HHtrjUKAjkJ7dCqQQDM7iffFlc&secretkey=38DuOxc-FZvV9OK_vlj7f6sp4iVOpgmt0KFJRp9yuF8&serverkey=lnygW2PsbPQeUhdFsSL3cykCEABwmEs3ztIJF6_bsgU
+2025-10-20 18:06:14,942 () volttron.platform.auth.auth_protocols.auth_zmq [242] INFO: AUTH: After authenticate user id: 'sqlhistorianagent-4.0.0_1', b'185f9537-578b-4bc6-b229-e9fd8de4726b'
+2025-10-20 18:06:14,942 () volttron.platform.auth.auth_protocols.auth_zmq [246] INFO: authentication success: userid=b'185f9537-578b-4bc6-b229-e9fd8de4726b' domain='vip', address='localhost:1001:1001:3607', mechanism='CURVE', credentials=['JCauOsDGy6pMnTHz6HHtrjUKAjkJ7dCqQQDM7iffFlc'], user='sqlhistorianagent-4.0.0_1'
+2025-10-20 18:06:14,948 (sqlhistorianagent-4.0.0 3607 [621]) volttron.platform.vip.agent.core INFO: Connected to platform: router: 185f9537-578b-4bc6-b229-e9fd8de4726b version: 1.0 identity: sqlhistorianagent-4.0.0_1
+2025-10-20 18:06:14,952 () volttron.platform.vip.agent.subsystems.auth [115] DEBUG: self. user to cap {'sqlhistorianagent-4.0.0_1': {'edit_config_store': {'identity': 'sqlhistorianagent-4.0.0_1'}}, 'platform.driver': {'edit_config_store': {'identity': 'platform.driver'}}, 'platform_web': {'allow_auth_modifications': None}, 'keydiscovery': {}, 'control': {'edit_config_store': {'identity': '/.*/'}, 'modify_rpc_method_allowance': None, 'allow_auth_modifications': None}, 'platform.auth': {'modify_rpc_method_allowance': None}, 'config.store': {'sync_agent_config': None}, 'control.connection': {'edit_config_store': {'identity': '/.*/'}, 'modify_rpc_method_allowance': None, 'allow_auth_modifications': None}, 'platform': {'edit_config_store': {'identity': '/.*/'}}}
+2025-10-20 18:06:14,953 () volttron.platform.vip.agent.subsystems.rpc [297] DEBUG: **user caps is: {'edit_config_store': {'identity': 'sqlhistorianagent-4.0.0_1'}}
+2025-10-20 18:06:14,953 () volttron.platform.vip.agent.subsystems.rpc [328] DEBUG: args = ('sqlhistorianagent-4.0.0_1',) kwargs= {}
+2025-10-20 18:06:14,953 () volttron.platform.vip.agent.subsystems.rpc [330] DEBUG: dict = {'self': <volttron.platform.store.ConfigStoreService object at 0x7fc90ca3cfd0>, 'identity': 'sqlhistorianagent-4.0.0_1'}
+2025-10-20 18:06:14,953 () volttron.platform.vip.agent.subsystems.rpc [331] DEBUG: name= 'edit_config_store' parameters allowed={'identity': 'sqlhistorianagent-4.0.0_1'}
+2025-10-20 18:06:14,953 () volttron.platform.vip.agent.subsystems.rpc [337] DEBUG: name= identity value=sqlhistorianagent-4.0.0_1
+2025-10-20 18:06:14,956 (sqlhistorianagent-4.0.0 3607 [115]) volttron.platform.vip.agent.subsystems.auth DEBUG: self. user to cap {'sqlhistorianagent-4.0.0_1': {'edit_config_store': {'identity': 'sqlhistorianagent-4.0.0_1'}}, 'platform.driver': {'edit_config_store': {'identity': 'platform.driver'}}, 'platform_web': {'allow_auth_modifications': None}, 'keydiscovery': {}, 'control': {'edit_config_store': {'identity': '/.*/'}, 'modify_rpc_method_allowance': None, 'allow_auth_modifications': None}, 'platform.auth': {'modify_rpc_method_allowance': None}, 'config.store': {'sync_agent_config': None}, 'control.connection': {'edit_config_store': {'identity': '/.*/'}, 'modify_rpc_method_allowance': None, 'allow_auth_modifications': None}, 'platform': {'edit_config_store': {'identity': '/.*/'}}}
+2025-10-20 18:06:14,956 (sqlhistorianagent-4.0.0 3607 [297]) volttron.platform.vip.agent.subsystems.rpc DEBUG: **user caps is: {'sync_agent_config': None}
+2025-10-20 18:06:14,957 (sqlhistorianagent-4.0.0 3607 [249]) volttron.platform.vip.agent.subsystems.configstore DEBUG: Processing callbacks for affected files: {'config': 'NEW'}
+2025-10-20 18:06:14,958 (sqlhistorianagent-4.0.0 3607 [574]) volttron.platform.agent.base_historian INFO: Topic string replace list: []
+2025-10-20 18:06:14,958 (sqlhistorianagent-4.0.0 3607 [636]) volttron.platform.agent.base_historian DEBUG: subscribing to devices
+2025-10-20 18:06:14,959 (sqlhistorianagent-4.0.0 3607 [636]) volttron.platform.agent.base_historian DEBUG: subscribing to datalogger
+2025-10-20 18:06:14,959 (sqlhistorianagent-4.0.0 3607 [636]) volttron.platform.agent.base_historian DEBUG: subscribing to analysis
+2025-10-20 18:06:14,960 (sqlhistorianagent-4.0.0 3607 [636]) volttron.platform.agent.base_historian DEBUG: subscribing to record
+2025-10-20 18:06:14,961 (sqlhistorianagent-4.0.0 3607 [480]) volttron.platform.agent.base_historian DEBUG: Stopping the process loop.
+2025-10-20 18:06:14,961 (sqlhistorianagent-4.0.0 3607 [1097]) volttron.platform.agent.base_historian DEBUG: Starting process loop.
+2025-10-20 18:06:14,961 (sqlhistorianagent-4.0.0 3607 [1283]) volttron.platform.agent.base_historian INFO: Trying to setup historian
+2025-10-20 18:06:14,962 (sqlhistorianagent-4.0.0 3607 [328]) __main__ INFO: historian_setup on Thread: Thread-1
+2025-10-20 18:06:14,962 (sqlhistorianagent-4.0.0 3607 [45]) volttron.platform.dbutils.sqlutils DEBUG: Historian using module: PostgreSqlFuncts
+2025-10-20 18:06:14,962 (sqlhistorianagent-4.0.0 3607 [75]) volttron.platform.dbutils.basedb DEBUG: Constructing Driver for psycopg2 in thread: Thread-1
+2025-10-20 18:06:14,962 (sqlhistorianagent-4.0.0 3607 [465]) volttron.platform.agent.base_historian DEBUG: Process thread started.
+2025-10-20 18:06:15,009 (sqlhistorianagent-4.0.0 3607 [154]) volttron.platform.dbutils.postgresqlfuncts DEBUG: Found table data. Historian table exists
+2025-10-20 18:06:15,019 (sqlhistorianagent-4.0.0 3607 [340]) __main__ DEBUG: ###DEBUG Loaded topics and metadata on start. Len of  topics 236 Len of metadata: 236
+2025-10-20 18:06:15,019 (sqlhistorianagent-4.0.0 3607 [1741]) volttron.platform.agent.base_historian DEBUG: Setting up backup DB. /home/lazlo/.bethel/agents/cc2572d4-d3da-4742-8226-6f0b286dddea/sqlhistorianagent-4.0.0
+2025-10-20 18:06:15,019 (sqlhistorianagent-4.0.0 3607 [1750]) volttron.platform.agent.base_historian INFO: Creating  backup db at /home/lazlo/.bethel/agents/cc2572d4-d3da-4742-8226-6f0b286dddea/sqlhistorianagent-4.0.0/sqlhistorianagent-4.0.0.agent-data/backup.sqlite
+2025-10-20 18:06:15,019 (sqlhistorianagent-4.0.0 3607 [1769]) volttron.platform.agent.base_historian DEBUG: Configuring backup DB for the first time.
+2025-10-20 18:06:15,098 (sqlhistorianagent-4.0.0 3607 [1824]) volttron.platform.agent.base_historian DEBUG: Configuring backup DB for the first time.
+2025-10-20 18:06:19,620 () volttron.platform.main [460] DEBUG: ROUTER received agent stop message. dropping peer: control.connection
+2025-10-20 18:06:29,837 () volttron.platform.auth.auth_protocols.auth_zmq [242] INFO: AUTH: After authenticate user id: 'control.connection', b'185f9537-578b-4bc6-b229-e9fd8de4726b'
+2025-10-20 18:06:29,837 () volttron.platform.auth.auth_protocols.auth_zmq [246] INFO: authentication success: userid=b'185f9537-578b-4bc6-b229-e9fd8de4726b' domain='vip', address='localhost:1001:1001:3614', mechanism='CURVE', credentials=['Ys72xoQ4MzUuS_8QzmWNlCw6FR84W7J1H-sIb-Gp8G0'], user='control.connection'
+2025-10-20 18:06:29,857 () volttron.platform.control.control [295] INFO: CONTROL RPC list_agents
+2025-10-20 18:06:30,252 () volttron.platform.control.control [295] INFO: CONTROL RPC list_agents
+2025-10-20 18:06:30,266 () volttron.platform.agent.utils [778] DEBUG: missing file /home/lazlo/.bethel/agents/b9d0f431-a961-4c4c-b6fe-daa8a2529085/daikinserviceagent-0.1/daikinserviceagent-0.1.dist-info/keystore.json
+2025-10-20 18:06:30,266 () volttron.platform.agent.utils [779] INFO: creating file /home/lazlo/.bethel/agents/b9d0f431-a961-4c4c-b6fe-daa8a2529085/daikinserviceagent-0.1/daikinserviceagent-0.1.dist-info/keystore.json
+2025-10-20 18:06:30,266 () volttron.platform.keystore [107] DEBUG: calling generate from keystore
+2025-10-20 18:06:33,567 (daikinserviceagent-0.1 3622 [62]) __main__ DEBUG: Config path: /home/lazlo/.bethel/agents/b9d0f431-a961-4c4c-b6fe-daa8a2529085/daikinserviceagent-0.1/daikinserviceagent-0.1.dist-info/config
+2025-10-20 18:06:33,567 (daikinserviceagent-0.1 3622 [68]) __main__ INFO: Using Agent defaults for starting configuration.
+2025-10-20 18:06:33,567 (daikinserviceagent-0.1 3622 [70]) __main__ DEBUG: config_dict before init: {}
+2025-10-20 18:06:33,567 (daikinserviceagent-0.1 3622 [103]) root DEBUG: Creating ZMQ Core daikin.service
+2025-10-20 18:06:33,569 (daikinserviceagent-0.1 3622 [234]) __main__ DEBUG: vip_identity: daikin.service
+2025-10-20 18:06:33,570 (daikinserviceagent-0.1 3622 [702]) volttron.platform.vip.agent.core INFO: Identity: daikin.service connecting to address:ipc://@/home/lazlo/.bethel/run/vip.socket?publickey=Cvc62v5SCI6Va1Itaw67HGlIMDtB1ao28nEzVtPDmEU&secretkey=sJkotQDGOn2EfZROgDYZ5LmlegiyQjmDi-go5G9Sack&serverkey=lnygW2PsbPQeUhdFsSL3cykCEABwmEs3ztIJF6_bsgU
+2025-10-20 18:06:33,573 () volttron.platform.auth.auth_protocols.auth_zmq [242] INFO: AUTH: After authenticate user id: 'daikin.service', b'185f9537-578b-4bc6-b229-e9fd8de4726b'
+2025-10-20 18:06:33,573 () volttron.platform.auth.auth_protocols.auth_zmq [246] INFO: authentication success: userid=b'185f9537-578b-4bc6-b229-e9fd8de4726b' domain='vip', address='localhost:1001:1001:3622', mechanism='CURVE', credentials=['Cvc62v5SCI6Va1Itaw67HGlIMDtB1ao28nEzVtPDmEU'], user='daikin.service'
+2025-10-20 18:06:33,578 (daikinserviceagent-0.1 3622 [621]) volttron.platform.vip.agent.core INFO: Connected to platform: router: 185f9537-578b-4bc6-b229-e9fd8de4726b version: 1.0 identity: daikin.service
+2025-10-20 18:06:33,590 () volttron.platform.vip.agent.subsystems.auth [115] DEBUG: self. user to cap {'daikin.service': {'edit_config_store': {'identity': 'daikin.service'}}, 'sqlhistorianagent-4.0.0_1': {'edit_config_store': {'identity': 'sqlhistorianagent-4.0.0_1'}}, 'platform.driver': {'edit_config_store': {'identity': 'platform.driver'}}, 'platform_web': {'allow_auth_modifications': None}, 'keydiscovery': {}, 'control': {'edit_config_store': {'identity': '/.*/'}, 'modify_rpc_method_allowance': None, 'allow_auth_modifications': None}, 'platform.auth': {'modify_rpc_method_allowance': None}, 'config.store': {'sync_agent_config': None}, 'control.connection': {'edit_config_store': {'identity': '/.*/'}, 'modify_rpc_method_allowance': None, 'allow_auth_modifications': None}, 'platform': {'edit_config_store': {'identity': '/.*/'}}}
+2025-10-20 18:06:33,590 () volttron.platform.vip.agent.subsystems.rpc [297] DEBUG: **user caps is: {'edit_config_store': {'identity': 'daikin.service'}}
+2025-10-20 18:06:33,590 () volttron.platform.vip.agent.subsystems.rpc [328] DEBUG: args = ('daikin.service',) kwargs= {}
+2025-10-20 18:06:33,590 () volttron.platform.vip.agent.subsystems.rpc [330] DEBUG: dict = {'self': <volttron.platform.store.ConfigStoreService object at 0x7fc90ca3cfd0>, 'identity': 'daikin.service'}
+2025-10-20 18:06:33,591 () volttron.platform.vip.agent.subsystems.rpc [331] DEBUG: name= 'edit_config_store' parameters allowed={'identity': 'daikin.service'}
+2025-10-20 18:06:33,591 () volttron.platform.vip.agent.subsystems.rpc [337] DEBUG: name= identity value=daikin.service
+2025-10-20 18:06:33,594 (daikinserviceagent-0.1 3622 [115]) volttron.platform.vip.agent.subsystems.auth DEBUG: self. user to cap {'daikin.service': {'edit_config_store': {'identity': 'daikin.service'}}, 'sqlhistorianagent-4.0.0_1': {'edit_config_store': {'identity': 'sqlhistorianagent-4.0.0_1'}}, 'platform.driver': {'edit_config_store': {'identity': 'platform.driver'}}, 'platform_web': {'allow_auth_modifications': None}, 'keydiscovery': {}, 'control': {'edit_config_store': {'identity': '/.*/'}, 'modify_rpc_method_allowance': None, 'allow_auth_modifications': None}, 'platform.auth': {'modify_rpc_method_allowance': None}, 'config.store': {'sync_agent_config': None}, 'control.connection': {'edit_config_store': {'identity': '/.*/'}, 'modify_rpc_method_allowance': None, 'allow_auth_modifications': None}, 'platform': {'edit_config_store': {'identity': '/.*/'}}}
+2025-10-20 18:06:33,594 (daikinserviceagent-0.1 3622 [297]) volttron.platform.vip.agent.subsystems.rpc DEBUG: **user caps is: {'sync_agent_config': None}
+2025-10-20 18:06:33,595 (daikinserviceagent-0.1 3622 [249]) volttron.platform.vip.agent.subsystems.configstore DEBUG: Processing callbacks for affected files: {}
+2025-10-20 18:06:38,300 () volttron.platform.main [460] DEBUG: ROUTER received agent stop message. dropping peer: control.connection
+2025-10-20 18:06:38,716 () volttron.platform.auth.auth_protocols.auth_zmq [242] INFO: AUTH: After authenticate user id: 'control.connection', b'185f9537-578b-4bc6-b229-e9fd8de4726b'
+2025-10-20 18:06:38,716 () volttron.platform.auth.auth_protocols.auth_zmq [246] INFO: authentication success: userid=b'185f9537-578b-4bc6-b229-e9fd8de4726b' domain='vip', address='localhost:1001:1001:3626', mechanism='CURVE', credentials=['Ys72xoQ4MzUuS_8QzmWNlCw6FR84W7J1H-sIb-Gp8G0'], user='control.connection'
+2025-10-20 18:06:38,810 () volttron.platform.main [460] DEBUG: ROUTER received agent stop message. dropping peer: platform.driver
+2025-10-20 18:06:38,827 () volttron.platform.main [460] DEBUG: ROUTER received agent stop message. dropping peer: control.connection
+2025-10-20 18:06:39,104 (platform_driveragent-4.0 3632 [103]) root DEBUG: Creating ZMQ Core platform.driver
+2025-10-20 18:06:39,107 (platform_driveragent-4.0 3632 [702]) volttron.platform.vip.agent.core INFO: Identity: platform.driver connecting to address:ipc://@/home/lazlo/.bethel/run/vip.socket?publickey=IpkUPjaLQuHt6rfamx9SmTmfq0HQnx1KWBR6Bv5ExXQ&secretkey=HRYoTtMYnGx26mai_Ynx0ViSv8glsTblmVM6OQg31VY&serverkey=lnygW2PsbPQeUhdFsSL3cykCEABwmEs3ztIJF6_bsgU
+2025-10-20 18:06:39,110 () volttron.platform.auth.auth_protocols.auth_zmq [242] INFO: AUTH: After authenticate user id: 'platform.driver', b'185f9537-578b-4bc6-b229-e9fd8de4726b'
+2025-10-20 18:06:39,110 () volttron.platform.auth.auth_protocols.auth_zmq [246] INFO: authentication success: userid=b'185f9537-578b-4bc6-b229-e9fd8de4726b' domain='vip', address='localhost:1001:1001:3632', mechanism='CURVE', credentials=['IpkUPjaLQuHt6rfamx9SmTmfq0HQnx1KWBR6Bv5ExXQ'], user='platform.driver'
+2025-10-20 18:06:39,116 (platform_driveragent-4.0 3632 [621]) volttron.platform.vip.agent.core INFO: Connected to platform: router: 185f9537-578b-4bc6-b229-e9fd8de4726b version: 1.0 identity: platform.driver
+2025-10-20 18:06:39,131 () volttron.platform.vip.agent.subsystems.auth [115] DEBUG: self. user to cap {'daikin.service': {'edit_config_store': {'identity': 'daikin.service'}}, 'sqlhistorianagent-4.0.0_1': {'edit_config_store': {'identity': 'sqlhistorianagent-4.0.0_1'}}, 'platform.driver': {'edit_config_store': {'identity': 'platform.driver'}}, 'platform_web': {'allow_auth_modifications': None}, 'keydiscovery': {}, 'control': {'edit_config_store': {'identity': '/.*/'}, 'modify_rpc_method_allowance': None, 'allow_auth_modifications': None}, 'platform.auth': {'modify_rpc_method_allowance': None}, 'config.store': {'sync_agent_config': None}, 'control.connection': {'edit_config_store': {'identity': '/.*/'}, 'modify_rpc_method_allowance': None, 'allow_auth_modifications': None}, 'platform': {'edit_config_store': {'identity': '/.*/'}}}
+2025-10-20 18:06:39,131 () volttron.platform.vip.agent.subsystems.rpc [297] DEBUG: **user caps is: {'edit_config_store': {'identity': 'platform.driver'}}
+2025-10-20 18:06:39,132 () volttron.platform.vip.agent.subsystems.rpc [328] DEBUG: args = ('platform.driver',) kwargs= {}
+2025-10-20 18:06:39,132 () volttron.platform.vip.agent.subsystems.rpc [330] DEBUG: dict = {'self': <volttron.platform.store.ConfigStoreService object at 0x7fc90ca3cfd0>, 'identity': 'platform.driver'}
+2025-10-20 18:06:39,132 () volttron.platform.vip.agent.subsystems.rpc [331] DEBUG: name= 'edit_config_store' parameters allowed={'identity': 'platform.driver'}
+2025-10-20 18:06:39,132 () volttron.platform.vip.agent.subsystems.rpc [337] DEBUG: name= identity value=platform.driver
+2025-10-20 18:06:39,135 (platform_driveragent-4.0 3632 [115]) volttron.platform.vip.agent.subsystems.auth DEBUG: self. user to cap {'daikin.service': {'edit_config_store': {'identity': 'daikin.service'}}, 'sqlhistorianagent-4.0.0_1': {'edit_config_store': {'identity': 'sqlhistorianagent-4.0.0_1'}}, 'platform.driver': {'edit_config_store': {'identity': 'platform.driver'}}, 'platform_web': {'allow_auth_modifications': None}, 'keydiscovery': {}, 'control': {'edit_config_store': {'identity': '/.*/'}, 'modify_rpc_method_allowance': None, 'allow_auth_modifications': None}, 'platform.auth': {'modify_rpc_method_allowance': None}, 'config.store': {'sync_agent_config': None}, 'control.connection': {'edit_config_store': {'identity': '/.*/'}, 'modify_rpc_method_allowance': None, 'allow_auth_modifications': None}, 'platform': {'edit_config_store': {'identity': '/.*/'}}}
+2025-10-20 18:06:39,135 (platform_driveragent-4.0 3632 [297]) volttron.platform.vip.agent.subsystems.rpc DEBUG: **user caps is: {'sync_agent_config': None}
+2025-10-20 18:06:39,137 (platform_driveragent-4.0 3632 [249]) volttron.platform.vip.agent.subsystems.configstore DEBUG: Processing callbacks for affected files: {'config': 'NEW'}
+2025-10-20 18:06:39,137 (platform_driveragent-4.0 3632 [196]) __main__ INFO: maximum concurrently open sockets limited to 838860 (derived from system limits)
+2025-10-20 18:06:39,137 (platform_driveragent-4.0 3632 [210]) __main__ INFO: maximum concurrent driver publishes limited to 10000
+2025-10-20 18:07:21,159 () volttron.platform.auth.auth_protocols.auth_zmq [242] INFO: AUTH: After authenticate user id: 'control.connection', b'185f9537-578b-4bc6-b229-e9fd8de4726b'
+2025-10-20 18:07:21,159 () volttron.platform.auth.auth_protocols.auth_zmq [246] INFO: authentication success: userid=b'185f9537-578b-4bc6-b229-e9fd8de4726b' domain='vip', address='localhost:1001:1001:3638', mechanism='CURVE', credentials=['Ys72xoQ4MzUuS_8QzmWNlCw6FR84W7J1H-sIb-Gp8G0'], user='control.connection'
+2025-10-20 18:07:21,183 () volttron.platform.main [460] DEBUG: ROUTER received agent stop message. dropping peer: control.connection
+2025-10-20 18:11:15,168 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 18:16:15,169 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 18:21:15,169 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 18:26:15,170 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 18:31:15,171 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 18:36:15,172 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 18:41:15,173 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 18:46:15,174 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 18:51:15,174 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 18:56:15,175 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 19:01:15,176 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 19:06:15,177 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 19:11:15,178 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 19:16:15,178 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 19:21:15,179 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 19:26:15,180 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 19:31:15,180 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 19:36:15,181 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 19:41:15,182 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 19:46:15,183 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 19:51:15,183 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 19:56:15,184 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 20:01:15,185 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 20:06:15,185 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 20:11:15,186 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 20:16:15,187 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 20:21:15,187 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 20:26:15,188 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 20:31:15,188 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 20:36:15,189 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 20:41:15,190 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 20:46:15,191 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 20:51:15,191 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 20:56:15,192 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 21:01:15,193 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 21:06:15,194 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 21:11:15,195 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 21:16:15,196 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 21:21:15,197 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 21:26:15,198 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 21:31:15,199 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 21:36:15,200 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 21:41:15,201 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 21:46:15,202 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 21:51:15,203 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 21:56:15,204 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 22:01:15,204 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 22:06:15,205 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 22:11:15,206 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 22:16:15,207 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 22:21:15,208 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 22:26:15,208 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 22:31:15,209 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 22:36:15,210 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 22:41:15,211 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 22:46:15,211 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 22:51:15,212 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 22:56:15,213 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 23:01:15,214 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 23:06:15,214 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 23:11:15,215 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 23:16:15,216 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 23:21:15,216 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 23:26:15,217 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 23:31:15,218 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 23:36:15,219 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 23:41:15,220 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 23:46:15,221 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 23:51:15,222 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-20 23:56:15,224 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 00:01:15,225 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 00:06:15,226 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 00:11:15,226 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 00:16:15,227 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 00:21:15,228 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 00:26:15,229 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 00:31:15,229 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 00:36:15,230 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 00:41:15,231 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 00:46:15,231 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 00:51:15,232 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 00:56:15,233 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 01:01:15,234 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 01:06:15,235 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 01:11:15,235 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 01:16:15,236 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 01:21:15,237 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 01:26:15,237 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 01:31:15,238 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 01:36:15,239 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 01:41:15,239 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 01:46:15,240 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 01:51:15,241 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 01:56:15,242 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 02:01:15,243 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 02:06:15,244 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 02:11:15,244 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 02:16:15,245 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 02:21:15,246 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 02:26:15,247 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 02:31:15,248 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 02:36:15,249 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 02:41:15,249 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 02:46:15,250 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 02:51:15,251 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 02:56:15,252 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 03:01:15,252 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 03:06:15,253 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 03:11:15,254 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 03:16:15,255 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 03:21:15,255 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 03:26:15,256 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 03:31:15,257 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 03:36:15,257 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 03:41:15,258 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 03:46:15,259 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 03:51:15,260 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 03:56:15,261 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 04:01:15,261 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 04:06:15,262 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 04:11:15,263 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 04:16:15,264 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 04:21:15,265 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 04:26:15,265 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 04:31:15,266 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 04:36:15,267 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 04:41:15,267 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 04:46:15,268 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 04:51:15,269 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 04:56:15,270 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 05:01:15,271 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 05:06:15,272 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 05:11:15,272 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 05:16:15,273 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 05:21:15,273 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 05:26:15,274 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 05:31:15,275 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 05:36:15,275 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 05:41:15,276 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 05:46:15,277 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 05:51:15,278 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 05:56:15,279 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 06:01:15,279 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 06:06:15,280 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 06:11:15,281 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 06:16:15,281 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 06:21:15,282 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 06:26:15,283 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 06:31:15,284 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 06:36:15,284 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 06:41:15,285 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 06:46:15,286 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 06:51:15,287 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 06:56:15,288 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 07:01:15,288 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 07:06:15,289 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 07:11:15,290 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 07:16:15,291 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 07:21:15,291 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 07:26:15,292 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 07:31:15,293 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 07:36:15,294 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 07:41:15,294 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 07:46:15,295 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 07:51:15,296 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 07:56:15,296 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 08:01:15,297 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 08:06:15,298 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 08:11:15,299 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 08:16:15,299 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 08:21:15,300 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 08:26:15,301 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 08:31:15,301 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 08:36:15,302 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 08:41:15,303 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 08:46:15,303 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 08:51:15,304 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 08:56:15,305 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 09:01:15,306 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 09:06:15,307 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 09:11:15,307 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 09:16:15,308 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 09:21:15,309 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 09:26:15,310 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 09:31:15,310 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 09:36:15,311 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 09:41:15,312 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 09:46:15,313 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 09:51:15,314 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 09:56:15,315 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 10:01:15,315 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 10:06:15,316 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 10:11:15,317 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 10:16:15,318 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 10:21:15,319 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 10:26:15,320 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 10:31:15,320 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 10:36:15,321 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 10:41:15,322 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 10:46:15,323 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 10:51:15,323 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 10:56:15,324 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 11:01:15,325 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 11:06:15,325 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 11:11:15,326 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 11:16:15,327 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 11:21:15,328 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 11:26:15,328 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 11:31:15,329 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 11:36:15,330 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 11:41:15,331 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 11:46:15,331 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 11:51:15,332 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 11:56:15,333 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 12:01:15,333 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 12:06:15,334 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 12:11:15,335 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 12:16:15,336 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 12:21:15,337 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 12:26:15,338 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 12:31:15,338 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 12:36:15,339 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 12:41:15,340 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 12:46:15,341 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 12:51:15,342 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 12:56:15,343 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 13:01:15,343 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 13:06:15,344 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 13:11:15,345 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 13:16:15,345 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 13:21:15,346 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 13:26:15,346 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 13:31:15,347 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 13:36:15,348 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 13:41:15,349 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 13:46:15,350 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 13:51:15,351 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 13:56:15,352 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 14:01:15,352 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 14:06:15,353 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 14:11:15,354 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 14:16:15,355 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 14:21:15,356 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 14:26:15,356 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 14:31:15,357 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 14:36:15,358 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 14:41:15,359 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 14:46:15,360 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 14:51:15,361 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 14:56:15,362 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 15:01:15,362 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 15:06:15,363 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 15:11:15,364 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 15:16:15,364 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 15:21:15,365 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 15:26:15,366 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 15:31:15,367 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 15:36:15,368 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 15:41:15,368 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 15:46:15,369 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 15:51:15,370 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 15:56:15,371 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 16:01:15,371 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 16:06:15,372 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
+2025-10-21 16:11:15,373 (sqlhistorianagent-4.0.0 3607 [1135]) volttron.platform.agent.base_historian DEBUG: Queue wait timed out. Falling out.
