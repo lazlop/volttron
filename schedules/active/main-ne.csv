@@ -1,4 +1,4 @@
-Time,hallway-tstat/coolSetpoint,hallway-tstat/heatSetpoint,hallway-tstat/mode,hallway-tstat/scheduleEnabled
+Time,bet/main-ne/coolSetpoint,bet/main-ne/heatSetpoint,bet/main-ne/mode,bet/main-ne/scheduleEnabled
 2025-06-12 00:00:00,30.0,25.0,3
 2025-06-12 01:00:00,19.0,13.0,3
 2025-06-12 02:00:00,31.0,26.0,3

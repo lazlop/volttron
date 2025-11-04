@@ -1,4 +1,4 @@
-Time,main-room-tstat/coolSetpoint,main-room-tstat/heatSetpoint,main-room-tstat/mode,main-room-tstat/scheduleEnabled
+Time,bet/main-nw/coolSetpoint,bet/main-nw/heatSetpoint,bet/main-nw/mode,bet/main-nw/scheduleEnabled
 0,29.4,13,0,0
 1,29.4,13,0,0
 2,29.4,13,0,0

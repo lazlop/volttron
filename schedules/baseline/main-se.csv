@@ -1,4 +1,4 @@
-Time,hallway-tstat/coolSetpoint,hallway-tstat/heatSetpoint,hallway-tstat/mode,hallway-tstat/scheduleEnabled
+Time,bet/main-se/coolSetpoint,bet/main-se/heatSetpoint,bet/main-se/mode,bet/main-se/scheduleEnabled
 0,29.4,13,0,0
 1,29.4,13,0,0
 2,29.4,13,0,0
