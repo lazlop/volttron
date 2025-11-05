@@ -1,0 +1,9 @@
+[Unit]
+Description=Reconnect to the starlink network
+
+[Service]
+WorkingDirectory=/home/dan/volttron
+ExecStart=/usr/bin/bash reconnect-star.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Run start-volttron on reboot
+
+[Service]
+WorkingDirectory=/home/dan/volttron
+ExecStart=/bin/bash -c '/home/dan/volttron/start-volttron'
+User=dan
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
