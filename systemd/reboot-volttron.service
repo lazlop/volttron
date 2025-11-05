@@ -2,9 +2,9 @@
 Description=Run start-volttron on reboot
 
 [Service]
-WorkingDirectory=/home/dan/volttron
-ExecStart=/bin/bash -c '/home/dan/volttron/start-volttron'
-User=dan
+WorkingDirectory=/home/lazlo/volttron/volttron
+ExecStart=/bin/bash -c '/home/lazlo/volttron/volttron/start-volttron'
+User=lazlo
 Type=forking
 
 [Install]
